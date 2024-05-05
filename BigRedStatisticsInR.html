@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Solomon Chak">
-<meta name="dcterms.date" content="2024-05-01">
+<meta name="dcterms.date" content="2024-05-05">
 
 <title>Big Red Statistics in R</title>
 <style>
@@ -89,7 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">4</span> Descriptive statistics</a></li>
   <li><a href="#start-using-r" id="toc-start-using-r" class="nav-link" data-scroll-target="#start-using-r"><span class="header-section-number">5</span> Start using R</a>
   <ul class="collapse">
-  <li><a href="#using-r-in-rstudio-locally-or-online" id="toc-using-r-in-rstudio-locally-or-online" class="nav-link" data-scroll-target="#using-r-in-rstudio-locally-or-online"><span class="header-section-number">5.1</span> Using R in RStudio locally or online</a>
+  <li><a href="#using-r-in-rstudio-online-or-locally" id="toc-using-r-in-rstudio-online-or-locally" class="nav-link" data-scroll-target="#using-r-in-rstudio-online-or-locally"><span class="header-section-number">5.1</span> Using R in RStudio online or locally</a>
   <ul class="collapse">
   <li><a href="#installation-or-sign-up" id="toc-installation-or-sign-up" class="nav-link" data-scroll-target="#installation-or-sign-up"><span class="header-section-number">5.1.1</span> Installation or sign up</a></li>
   <li><a href="#project-setup-and-file-transfer" id="toc-project-setup-and-file-transfer" class="nav-link" data-scroll-target="#project-setup-and-file-transfer"><span class="header-section-number">5.1.2</span> Project setup and file transfer</a></li>
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 1, 2024</p>
+      <p class="date">May 5, 2024</p>
     </div>
   </div>
   
@@ -163,12 +163,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview-of-the-scientific-method" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Overview of the scientific method</h1>
-<p>…</p>
+<p>(Will have the same text as the current manual)</p>
 <hr>
 </section>
 <section id="the-importance-of-statistical-tests" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> The importance of statistical tests</h1>
-<p>…</p>
+<p>(Will have the same text as the current manual)</p>
 <hr>
 </section>
 <section id="displaying-results-with-a-graph" class="level1" data-number="3">
@@ -194,31 +194,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="start-using-r" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Start using R</h1>
-<section id="using-r-in-rstudio-locally-or-online" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="using-r-in-rstudio-locally-or-online"><span class="header-section-number">5.1</span> Using R in RStudio locally or online</h2>
+<section id="using-r-in-rstudio-online-or-locally" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="using-r-in-rstudio-online-or-locally"><span class="header-section-number">5.1</span> Using R in RStudio online or locally</h2>
 <section id="installation-or-sign-up" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="installation-or-sign-up"><span class="header-section-number">5.1.1</span> Installation or sign up</h3>
 <p>R is a command line program where you interact with it through text (command line) instead of a graphical user interface (e.g., Windows, Excel, etc.). There are two options for running R. Your instructor will let you know how you should use R for the class.</p>
 <p>In both options, you will not interact directly with R, but through an integrated development environment called Rstudio on your computer or online as Posit.</p>
 <ul>
-<li><p><del>You can download RStudio and install it on your computer. Follow the instructions <a href="https://posit.co/download/rstudio-desktop/">here</a> to download and install both R and RStudio.</del></p></li>
-<li><p>You can also use RStudio online. Sign up for an account <a href="https://posit.co/products/cloud/cloud/">here</a>. The “Cloud Free” option will be sufficient. Do not choose the PLUS or other options. {??} Your instructor will send you a link to get access to the class space.</p></li>
+<li><p>You can use RStudio online. Sign up for an account <a href="https://posit.co/products/cloud/cloud/">here</a>. The “Cloud Free” option will be sufficient. Do not choose the PLUS or other options. Your instructor will send you a link to get access to the class space.</p></li>
+<li><p>You can also download RStudio and install it on your computer. Note that depends on the version of RStudio and R, the interface and commands could be slightly different from the online version. Follow the instructions <a href="https://posit.co/download/rstudio-desktop/">here</a> to download and install both R and RStudio.</p></li>
 </ul>
 </section>
 <section id="project-setup-and-file-transfer" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="project-setup-and-file-transfer"><span class="header-section-number">5.1.2</span> Project setup and file transfer</h3>
+<p><strong>Online option</strong></p>
+<p>If you choose the cloud option, you will need to upload data/ download output files to/from the cloud. But the benefit is that you can use R anywhere, and on virtually any machine with internet (even a tablet)!</p>
+<p>Once in the classroom space, you will see any project assignments that your instructor has created for you. Your instructor will also have access to your assignments in this space. Your instructor may also have created a template for you to work from that includes pre-installed packages.</p>
+<p>To create your own project on posit.cloud, click <code>New Project &gt; New RStudio Project</code> on the upper right. Once the project is deployed, on the lower right panel, click the <code>upload</code> button and choose the data file from your computer.</p>
+<p>To download a file, check the box next to the file, click the <code>More &gt; Export…</code> and click <code>Download</code>.</p>
 <p><strong>Local option</strong></p>
 <p>If you choose the local option, you should set up a project and a folder that is associated with this project where all files will be stored.</p>
-<p>For example, create a folder on your desktop that is called “R_is_fun”. Start RStudio, click File &gt; New Project… and select “Existing Directory” and browse to the folder “R_is_fun”.</p>
-<p>Then click “Create Project”. Now you can access all files in the folder “R_is_fun” (without indicating the full pathname). Everything you saved in R will also appear in this folder.</p>
-<p><strong>Online option</strong></p>
-<p>If you choose the cloud option, you will need to upload/download files to/from the cloud. But the benefit is that you can use R anywhere!</p>
-<p>On posit.cloud, click “New Project” &gt; New RStudio Project on the upper right. Once the project is deployed, on the lower right panel, click the “upload” button and choose the file from your computer.</p>
-<p>To download a file, check the box next to the file, click the “More” &gt; Export… and click “Download”.</p>
+<p>For example, create a folder on your desktop that is called “R_is_fun”. Start RStudio, click <code>File &gt; New Project…</code> and select <code>Existing Directory</code> and browse to the folder <code>R_is_fun</code>.</p>
+<p>Then click <code>Create Project</code>. Now you can access all files in the folder <code>R_is_fun</code> (without indicating the full pathname). Everything you saved in R will also appear in this folder.</p>
 </section>
 <section id="the-rstudio-interface" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">5.1.3</span> The RStudio Interface</h3>
-<p>Let’s introduce what is being displayed in RStudio. Before we get started, click File &gt; New File &gt; R Script. This will result in a default four-panel interface <a href="#fig-RStudio_interface">Figure&nbsp;1</a>.</p>
+<p>Let’s introduce what is being displayed in RStudio. Before we get started, click <code>File &gt; New File &gt; R Script</code>. This will result in a default four-panel interface <a href="#fig-RStudio_interface">Figure&nbsp;1</a>.</p>
 <div id="fig-RStudio_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/Rstudio_interface.png" class="img-fluid figure-img"></p>
@@ -228,8 +229,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>(A) The upper left is the R script panel. This is where you will write and save your R script or commands. The panel should be saved regularly, which serves as a record of all the commands that you have (or are planning) to run. For example, clicking File &gt; Save and giving it the name “R_is_fun” will save it as “R_is_fun.R” in your working directory. The scripts here are not being read by R until you click the “Run” button on the top right.</p></li>
 <li><p>(B) The lower left is the R console, which is the innate command line interface of R. A command from the R script above will be displayed here when you click the “Run” button, which is when R “reads” your command. Any output or error from R will also be displayed here. You could type your command directly here, but it will not be saved in the R script.</p></li>
-<li><p>(C) The upper right is the environment panel. Objects that are read or generated in R will be displayed here, along with any packages that you load and functions that you create.</p></li>
-<li><p>(D) The lower right is the files panel. It displays the files in your working directory. It also displays figures in a “Plots” tab if your commands result in graphical outputs. The Help tab displays the manual for each package and command.</p></li>
+<li><p>(C) The upper right is the environment panel. Objects that are read or generated in R (such as dataframes) will be displayed here, along with any packages that you load and functions that you create. History provides all of your commands from the sessionConnections will enable you to connect to data sources. Tutorials will let you run R tutorials.</p></li>
+<li><p>(D) The lower right is the files panel. It displays the files in your working directory. In Posit cloud, you will see files uploaded to the course space by your instructor. It also displays figures in a “Plots” tab if your commands result in graphical outputs. The Packages tab indicates which packages are currently installed, while check marks indicate which ones are loaded in the library. The Help tab displays the manual for each package and command.</p></li>
 </ul>
 <p>For a more comprehensive introduction to RStudio, see <a href="https://education.rstudio.com/learn/beginner/">here</a>.</p>
 </section>
@@ -262,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="6"><span class="header-section-number">6</span> Importing data into R</h1>
 <section id="preparing-a-.csv-file-from-excel" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="preparing-a-.csv-file-from-excel"><span class="header-section-number">6.1</span> Preparing a .csv file from Excel</h2>
-<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values), where each row appears in a new line and each column is separated by a comma (,) (<a href="#fig-excel">Figure&nbsp;2</a>).</p>
+<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files (A) such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values, B), where each row appears in a new line and each column is separated by a comma (,) (<a href="#fig-excel">Figure&nbsp;2</a>).</p>
 <div id="fig-excel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/excel_vs_csv.png" class="img-fluid figure-img"></p>
@@ -271,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>A spreadsheet in Excel can be exported into .csv by clicking <code>File &gt; Save As…</code> and selecting <code>CSV</code> in the drop-down manual under <code>File Format</code>.</p>
 <p>Try doing this with <code>name.xlsx</code> which can be downloaded from <a href="https://github.com/solomonchak/R_Intro/raw/5d08edb7d4981d78066a6a5294567e735fd00350/File/name.xlsx">here</a>.</p>
-<p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud (see <a href="#project-setup-and-file-transfer">Project setup and file transfer</a>).</p>
+<p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud using the Files pane (see <a href="#project-setup-and-file-transfer">Project setup and file transfer</a>).</p>
 <p>Now, you should see the .csv file listed in the lower right panel of RStudio (<strong>?@fig-file_panel</strong>).</p>
 <p><img src="Images/filepanel.png" id="fig-file_panel" class="img-fluid" alt="The file panel after placing the file “name.csv” into the working directory or after uploading it to posit.cloud.">.</p>
 </section>
@@ -288,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-env_panel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/env_panel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: A object loaded into R will appear in the environmental panel.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: An object loaded into R will appear in the environmental panel.</figcaption>
 </figure>
 </div>
 <p>In the environmental panel, you can click on the object to open it in a new tab in the R script panel. Note that doing it actually sends a script to the R console as: <code>View(data_name)</code></p>
@@ -331,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">"read.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can also search for it in the Help tab in the file panel. Another useful tips is that after you type help(, you can hit the tab key and RStudio will show the possible arguments for. Note also that RStudio will auto-complete the closing bracket for you.</p>
+<p>You can also search for it in the Help tab in the file panel. Another useful tip is that after you type a command, like aov(), you can hit the tab key and RStudio will show the possible arguments. Note also that RStudio will auto-complete the closing bracket for you.</p>
 </section>
 <section id="loading-an-excel-file-directly" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="loading-an-excel-file-directly"><span class="header-section-number">6.3</span> Loading an Excel file directly</h2>
@@ -830,7 +831,7 @@ Linear Hypotheses:
 200 - 0 == 0    -695.40      27.55 -25.241  &lt; 0.001 ***
 150 - 100 == 0  -567.00      27.55 -20.580  &lt; 0.001 ***
 200 - 100 == 0  -688.60      27.55 -24.994  &lt; 0.001 ***
-200 - 150 == 0  -121.60      27.55  -4.414  0.00232 ** 
+200 - 150 == 0  -121.60      27.55  -4.414  0.00229 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 (Adjusted p values reported -- single-step method)</code></pre>
