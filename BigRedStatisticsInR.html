@@ -113,19 +113,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression"><span class="header-section-number">9.1</span> Linear regression</a>
   <ul class="collapse">
-  <li><a href="#making-a-figure-with-your-scatter-plot" id="toc-making-a-figure-with-your-scatter-plot" class="nav-link" data-scroll-target="#making-a-figure-with-your-scatter-plot"><span class="header-section-number">9.1.1</span> Making a figure with your scatter plot</a></li>
+  <li><a href="#visualization-scatter-plot" id="toc-visualization-scatter-plot" class="nav-link" data-scroll-target="#visualization-scatter-plot"><span class="header-section-number">9.1.1</span> Visualization: scatter plot</a></li>
   </ul></li>
   <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test"><span class="header-section-number">9.2</span> T-test</a>
   <ul class="collapse">
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">9.2.1</span> <strong>Visualization</strong></a></li>
+  <li><a href="#visualization-boxplot" id="toc-visualization-boxplot" class="nav-link" data-scroll-target="#visualization-boxplot"><span class="header-section-number">9.2.1</span> <strong>Visualization: boxplot</strong></a></li>
   </ul></li>
   <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova"><span class="header-section-number">9.3</span> ANOVA</a>
   <ul class="collapse">
-  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test"><span class="header-section-number">9.3.1</span> <strong><em>Post hoc test</em></strong></a></li>
-  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">9.3.2</span> <strong>Visualization</strong></a></li>
+  <li><a href="#global-anova-test" id="toc-global-anova-test" class="nav-link" data-scroll-target="#global-anova-test"><span class="header-section-number">9.3.1</span> Global ANOVA test</a></li>
+  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test"><span class="header-section-number">9.3.2</span> <strong><em>Post hoc test</em></strong></a></li>
+  <li><a href="#visualization-box-plot-and-bar-plot" id="toc-visualization-box-plot-and-bar-plot" class="nav-link" data-scroll-target="#visualization-box-plot-and-bar-plot"><span class="header-section-number">9.3.3</span> <strong>Visualization: box plot and bar plot</strong></a></li>
   </ul></li>
-  <li><a href="#chi-square---goodness-of-fit-test" id="toc-chi-square---goodness-of-fit-test" class="nav-link" data-scroll-target="#chi-square---goodness-of-fit-test"><span class="header-section-number">9.4</span> Chi-square - Goodness of Fit test</a></li>
-  <li><a href="#chi-square---contingency-test" id="toc-chi-square---contingency-test" class="nav-link" data-scroll-target="#chi-square---contingency-test"><span class="header-section-number">9.5</span> Chi-square - Contingency test</a></li>
+  <li><a href="#chi-square---goodness-of-fit-test" id="toc-chi-square---goodness-of-fit-test" class="nav-link" data-scroll-target="#chi-square---goodness-of-fit-test"><span class="header-section-number">9.4</span> Chi-square - Goodness of Fit test</a>
+  <ul class="collapse">
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">9.4.1</span> <strong>Visualization</strong></a></li>
+  </ul></li>
+  <li><a href="#chi-square---contingency-test" id="toc-chi-square---contingency-test" class="nav-link" data-scroll-target="#chi-square---contingency-test"><span class="header-section-number">9.5</span> Chi-square - Contingency test</a>
+  <ul class="collapse">
+  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">9.5.1</span> <strong>Visualization</strong></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -642,8 +649,8 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <blockquote class="blockquote">
 <p><strong>There is a positive relationship between height and age (slope =</strong> 1.556<strong>, F = 48.47, d.f. = 1 and 8, p =</strong> 0.0001<strong>).</strong></p>
 </blockquote>
-<section id="making-a-figure-with-your-scatter-plot" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="making-a-figure-with-your-scatter-plot"><span class="header-section-number">9.1.1</span> Making a figure with your scatter plot</h3>
+<section id="visualization-scatter-plot" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="visualization-scatter-plot"><span class="header-section-number">9.1.1</span> Visualization: scatter plot</h3>
 <p>Visualization for linear regression is shown above in <a href="#how-to-construct-a-scatter-plot-with-a-linear-fit">How to Construct a Scatter Plot with a Linear Fit</a>. For this dataframe <code>chirps</code>, we can do this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chirps, <span class="fu">aes</span>(<span class="at">x =</span> temperature, <span class="at">y =</span> chirps_per_min)) <span class="sc">+</span> </span>
@@ -657,7 +664,7 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>Figure 3. The relationship between air temperature and chirps per minute of snowy tree crickets.</strong> Chirps were counted for 10 crickets at different temperatures. There was a significant positive relationship between temperature and cricket’s chirps per minute (linear regression, p&lt;0.0001, R<sup>2</sup> = 0.85, y =-26.2+1.57*x).</p>
+<p><strong>Figure 6. The relationship between air temperature and chirps per minute of snowy tree crickets.</strong> Chirps were counted for 10 crickets at different temperatures. There was a significant positive relationship between temperature and cricket’s chirps per minute (linear regression, p&lt;0.0001, R<sup>2</sup> = 0.85, y =-26.2+1.57*x).</p>
 </section>
 </section>
 <section id="t-test" class="level2" data-number="9.2">
@@ -713,8 +720,8 @@ sample estimates:
 <blockquote class="blockquote">
 <p>Treatment group does not significantly affect plant height (t = -5.601, d.f. = 7.476, p = 0.001)</p>
 </blockquote>
-<section id="visualization" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="visualization"><span class="header-section-number">9.2.1</span> <strong>Visualization</strong></h3>
+<section id="visualization-boxplot" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="visualization-boxplot"><span class="header-section-number">9.2.1</span> <strong>Visualization: boxplot</strong></h3>
 <p>You can plot the continuous variable from two groups in a number of ways.</p>
 <p>One way is to use a boxplot:</p>
 <div class="cell">
@@ -730,6 +737,8 @@ sample estimates:
 </section>
 <section id="anova" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="anova"><span class="header-section-number">9.3</span> ANOVA</h2>
+<section id="global-anova-test" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="global-anova-test"><span class="header-section-number">9.3.1</span> Global ANOVA test</h3>
 <p><strong>An ANOVA is used in a similar circumstance as a t-test: nominal independent variable and continuous dependent variable, but when there are three or more categories for the independent variable (perhaps you tried multiple experimental treatments)</strong>.</p>
 <p>If the p value is more than 0.05, then the biologist fails to reject the “null hypothesis” that there is no significant difference between any pairs of groups. If the p value is less than 0.05, then the statistical value you calculate (the ‘F-value’) has a low probability (less than 5%) of occurring by chance if the null hypothesis is true. In this case, the null hypothesis is rejected, and the biologist must then perform additional “post-hoc” tests to determine exactly which pair(s) of groups are significantly different from one another. In the JMP output, groups with the same letters (such as A and A) are not significantly different from one another, while groups with different letters (such as A and B) are significantly different from one another (refer to sample graph). In the case of a significant difference, biologists must determine if the outcome is what they expected or is the opposite of what they expected.&nbsp;</p>
 <p>Let’s say you want to measure the effectiveness of penicillin in disrupting E. coli growth. Penicillin is a common antibiotic that disrupts cell wall formation thus halting cellular division in many microbes. In order to see which dose is most effective, we will test 3 different concentrations as well as a control (no penicillin). The response variable in this case is measured in CFU (colony forming unit). This colony shows that how many single cells survived to divide into a visible colony.</p>
@@ -783,8 +792,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <blockquote class="blockquote">
 <p>Penicillin concentration significantly affect CFU (F = 356.4, d.f. = 3 and 16, p &lt; 0.0001)</p>
 </blockquote>
-<section id="post-hoc-test" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="post-hoc-test"><span class="header-section-number">9.3.1</span> <strong><em>Post hoc test</em></strong></h3>
+</section>
+<section id="post-hoc-test" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="post-hoc-test"><span class="header-section-number">9.3.2</span> <strong><em>Post hoc test</em></strong></h3>
 <p><u><em>If the p value is below 0.05, you must run post hoc tests to compare the means.</em></u> <em>We can compare all means using</em> <strong>Tukey HSD</strong> <em>to obtain information about which pair(s) of species are significantly different from one another.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -826,12 +836,12 @@ Fit: aov(formula = CFU ~ Penicillin_conc, data = penicillin)
 
 Linear Hypotheses:
                Estimate Std. Error t value Pr(&gt;|t|)    
-100 - 0 == 0      -6.80      27.55  -0.247  0.99450    
-150 - 0 == 0    -573.80      27.55 -20.827  &lt; 0.001 ***
-200 - 0 == 0    -695.40      27.55 -25.241  &lt; 0.001 ***
-150 - 100 == 0  -567.00      27.55 -20.580  &lt; 0.001 ***
-200 - 100 == 0  -688.60      27.55 -24.994  &lt; 0.001 ***
-200 - 150 == 0  -121.60      27.55  -4.414  0.00229 ** 
+100 - 0 == 0      -6.80      27.55  -0.247   0.9945    
+150 - 0 == 0    -573.80      27.55 -20.827   &lt;0.001 ***
+200 - 0 == 0    -695.40      27.55 -25.241   &lt;0.001 ***
+150 - 100 == 0  -567.00      27.55 -20.580   &lt;0.001 ***
+200 - 100 == 0  -688.60      27.55 -24.994   &lt;0.001 ***
+200 - 150 == 0  -121.60      27.55  -4.414   0.0023 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 (Adjusted p values reported -- single-step method)</code></pre>
@@ -875,8 +885,8 @@ attr(,"class")
 </div>
 <p>Under $groups, the letters indicates the CFU at 0 and 100 ug/mL of panicillin are not different from each other as they are both in group “a”. But 150 ug/ml and 200 ug/ml are both significantly different from both 0 and 100 ug/mL as they are in different letter groups b and c, respectively.</p>
 </section>
-<section id="visualization-1" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">9.3.2</span> <strong>Visualization</strong></h3>
+<section id="visualization-box-plot-and-bar-plot" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="visualization-box-plot-and-bar-plot"><span class="header-section-number">9.3.3</span> <strong>Visualization: box plot and bar plot</strong></h3>
 <p>Similar to the t-test, we can plot the data used for ANOVA using a boxplot:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
@@ -994,7 +1004,8 @@ X-squared = 4.4815, df = 1, p-value = 0.03426</code></pre>
 </div>
 </div>
 <p>In this second test, the p-value is &lt; 0.05, so we can reject the null hypothesis. Hence the distribution is significantly different from 3:1.</p>
-<p><strong>Visualization</strong></p>
+<section id="visualization" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="visualization"><span class="header-section-number">9.4.1</span> <strong>Visualization</strong></h3>
 <p>You can plot the data for a goodness of fit Chi-square test by using the raw data in <code>data_name</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_name, <span class="fu">aes</span>(<span class="at">x =</span> Age_group)) <span class="sc">+</span> </span>
@@ -1013,6 +1024,7 @@ X-squared = 4.4815, df = 1, p-value = 0.03426</code></pre>
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
 </section>
 <section id="chi-square---contingency-test" class="level2" data-number="9.5">
 <h2 data-number="9.5" class="anchored" data-anchor-id="chi-square---contingency-test"><span class="header-section-number">9.5</span> Chi-square - Contingency test</h2>
@@ -1047,7 +1059,8 @@ X-squared = 0.225, df = 3, p-value = 0.9735</code></pre>
 </div>
 </div>
 <p>The p-value is &gt; 0.05. So we have failed to reject the null hypothesis. Hence the two variable are independent. In other words, <code>Academic_standing</code> does not affect the distribution of <code>Age_group</code>.</p>
-<p><strong>Visualization</strong></p>
+<section id="visualization-1" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">9.5.1</span> <strong>Visualization</strong></h3>
 <p>You can plot the contingency table by <code>geom_bar()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_name, <span class="fu">aes</span>(<span class="at">x =</span> Age_group)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>Academic_standing) <span class="sc">+</span></span>
@@ -1056,6 +1069,7 @@ X-squared = 0.225, df = 3, p-value = 0.9735</code></pre>
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
 </section>
 </section>
 
