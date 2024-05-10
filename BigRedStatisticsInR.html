@@ -1084,7 +1084,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Note that the results is similar to the F-test in the last part of linear regression, because ANOVA and regression are both linear models. But in ANOVA, we don’t have predictions of slope and intercepts.</p>
 <p>In this case, since the p-value is &lt;0.05. We rejected the null hypothesis that <code>Penicillin_conc</code> has an effect on <code>CFU</code> Therefore, we can write a summary statement to say:</p>
 <blockquote class="blockquote">
-<p>Penicillin concentration significantly affect CFU (F = 356.4, d.f. = 3 and 16, p &lt; 0.0001)</p>
+<p>Penicillin concentration significantly affects CFU (F = 356.4, d.f. = 3 and 16, p &lt; 0.0001)</p>
 </blockquote>
 </section>
 <section id="post-hoc-test" class="level3" data-number="9.3.2">
@@ -1129,12 +1129,12 @@ Fit: aov(formula = CFU ~ Penicillin_conc, data = penicillin)
 
 Linear Hypotheses:
                Estimate Std. Error t value Pr(&gt;|t|)    
-100 - 0 == 0      -6.80      27.55  -0.247  0.99450    
-150 - 0 == 0    -573.80      27.55 -20.827  &lt; 0.001 ***
-200 - 0 == 0    -695.40      27.55 -25.241  &lt; 0.001 ***
-150 - 100 == 0  -567.00      27.55 -20.580  &lt; 0.001 ***
-200 - 100 == 0  -688.60      27.55 -24.994  &lt; 0.001 ***
-200 - 150 == 0  -121.60      27.55  -4.414  0.00231 ** 
+100 - 0 == 0      -6.80      27.55  -0.247   0.9945    
+150 - 0 == 0    -573.80      27.55 -20.827   &lt;0.001 ***
+200 - 0 == 0    -695.40      27.55 -25.241   &lt;0.001 ***
+150 - 100 == 0  -567.00      27.55 -20.580   &lt;0.001 ***
+200 - 100 == 0  -688.60      27.55 -24.994   &lt;0.001 ***
+200 - 150 == 0  -121.60      27.55  -4.414   0.0021 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 (Adjusted p values reported -- single-step method)</code></pre>
@@ -1553,7 +1553,7 @@ TA1538 and 4-NOP - TA1535 and water == 0   88.0000    15.9122   5.530  &lt; 1e-0
 TA1535 and 4-NOP - TA1535 and NaN3 == 0  -158.6429    15.9122  -9.970  &lt; 1e-04
 TA1538 and water - TA1535 and NaN3 == 0  -162.2143    15.9122 -10.194  &lt; 1e-04
 TA1538 and NaN3 - TA1535 and NaN3 == 0   -160.5000    15.9122 -10.087  &lt; 1e-04
-TA1538 and 4-NOP - TA1535 and NaN3 == 0   -72.6429    15.9122  -4.565 0.000247
+TA1538 and 4-NOP - TA1535 and NaN3 == 0   -72.6429    15.9122  -4.565 0.000294
 TA1538 and water - TA1535 and 4-NOP == 0   -3.5714    15.9122  -0.224 0.999919
 TA1538 and NaN3 - TA1535 and 4-NOP == 0    -1.8571    15.9122  -0.117 0.999997
 TA1538 and 4-NOP - TA1535 and 4-NOP == 0   86.0000    15.9122   5.405  &lt; 1e-04
