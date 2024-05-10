@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Solomon Chak">
-<meta name="dcterms.date" content="2024-05-09">
+<meta name="dcterms.date" content="2024-05-10">
 
 <title>Big Red Statistics in R</title>
 <style>
@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 9, 2024</p>
+      <p class="date">May 10, 2024</p>
     </div>
   </div>
   
@@ -192,9 +192,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <strong>standard deviation</strong> (<em>s</em>) is a measure of the distribution of the data (i.e.&nbsp;extent of variation among different subjects) and weights each value by its distance from the mean.&nbsp; There is an increase in the standard deviation if there is a large distance of the values from the mean (as in the case of 10, 40, 25, 35, 40, which have a mean of 30).&nbsp; In contrast, there is a decrease in the standard deviation if there is a small distance (if any) of the values from the mean (as in the case of 25, 30, 35, 30, 30, which have the same mean of 30). The result for each group is summarized as the mean “plus or minus” the standard deviation (<span class="math inline">\(\bar{x}\)</span> ± <em>s</em>).&nbsp; This gives you a lot of information about the data set. If someone describes a data set as the mean plus or minus one SD, they are giving you the range into which 68% of the data points fall.&nbsp; Mean ± 2 SD gives you the range of 95% of the data, and Mean ± 3 SD encompasses 99% of the data.&nbsp; Note that the standard deviation is sometimes represented by vertical lines known as <strong>error bars</strong> that extend from the mean in both an upward and downward direction.</p>
 <p><strong><em>Standard error</em></strong></p>
 <p>The standard error of the mean, or simply the <strong>standard error</strong> (SE) is another common way to state the variation around the mean.&nbsp; Instead of telling you about the range of the data set, it tells you the range of the “true” mean.&nbsp; If you added one sample to your study or took one sample away, the mean may change a little.&nbsp; So your mean is correct for your group of samples, but not necessarily for the whole population of all organisms that could have been in your study.&nbsp; SEM tells you that if you could have included every possible subject or sample - the mean probably would have been somewhere in this range.&nbsp; Once you have a calculated the standard deviation of the mean (s), it is easy to calculate SE.</p>
-<p><img src="Images/SE.png" class="img-fluid" width="197"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/SE.png" class="img-fluid figure-img" width="197"></p>
+<figcaption class="figure-caption">.</figcaption>
+</figure>
+</div>
 <p>n = the number of samples or trials. This technique results in a smaller number than s offers, and thus often makes graphs with error bars look smaller. Whether to use s or SE in reporting your statistics and making error bars varies depending on the application, style and field. Be sure to find out what your instructor prefers for your assignments! And always state in your figure legends what your error bars are showing (e.g., “Bars show mean and error bars represent 1SD”).</p>
-<p><img src="Images/errorbar.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/errorbar.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">.</figcaption>
+</figure>
+</div>
 <p><strong><em>Coefficient of variation</em></strong></p>
 <p>The <strong>coefficient of variation (CV)</strong> corresponds to the standard deviation divided by the mean and is useful when comparing the amount of variation for one variable among groups with different means.</p>
 <p>The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.&nbsp;bell curve on a graph); such data are subject to a parametric test. However, the variance in data sometimes does not fit a normal distribution; such data are subject to a non-parametric test (addressed in advanced coursework).</p>
@@ -218,8 +228,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Online option</strong></p>
 <p>If you choose the cloud option, you will need to upload data/ download output files to/from the cloud. But the benefit is that you can use R anywhere, and on virtually any machine with internet (even a tablet)!</p>
 <p>Once in the classroom space, you will see any project assignments that your instructor has created for you. Your instructor will also have access to your assignments in this space. Your instructor may also have created a template for you to work from that includes pre-installed packages.</p>
-<p>To create your own project on posit.cloud, click <code>New Project &gt; New RStudio Project</code> on the upper right. Once the project is deployed, on the lower right panel, click the <code>upload</code> button and choose the data file from your computer.</p>
-<p>To download a file, check the box next to the file, click the <code>More &gt; Export…</code> and click <code>Download</code>.</p>
+<p>To create your own project on posit.cloud, click <code>New Project &gt; New RStudio Project</code> on the upper right (<a href="#fig-NewProject">Figure&nbsp;1</a>).</p>
+<div id="fig-NewProject" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/NewProject.png" class="img-fluid figure-img" width="452"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: New RStudio Project.</figcaption>
+</figure>
+</div>
+<p>Once the project is deployed, on the lower right panel, click the <code>upload</code> button and choose the data file from your computer (<a href="#fig-upload">Figure&nbsp;2</a>).</p>
+<div id="fig-upload" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/upload.png" class="img-fluid figure-img" width="462"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Upload files.</figcaption>
+</figure>
+</div>
+<p>To download a file, check the box next to the file you want to export, click <code>More &gt; Export…</code> and click <code>Download</code> (<a href="#fig-export">Figure&nbsp;3</a>).</p>
+<div id="fig-export" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/Export.png" class="img-fluid figure-img" width="451"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Download files.</figcaption>
+</figure>
+</div>
 <p><strong>Local option</strong></p>
 <p>If you choose the local option, you should set up a project and a folder that is associated with this project where all files will be stored.</p>
 <p>For example, create a folder on your desktop that is called “R_is_fun”. Start RStudio, click <code>File &gt; New Project…</code> and select <code>Existing Directory</code> and browse to the folder <code>R_is_fun</code>.</p>
@@ -227,16 +256,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-rstudio-interface" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">4.1.3</span> The RStudio Interface</h3>
-<p>Let’s introduce what is being displayed in RStudio. Before we get started, click <code>File &gt; New File &gt; R Script</code>. This will result in a default four-panel interface <a href="#fig-RStudio_interface">Figure&nbsp;1</a>.</p>
+<p>Let’s introduce what is being displayed in RStudio. Before we get started, click <code>File &gt; New File &gt; R Script</code>. This will result in a default four-panel interface <a href="#fig-RStudio_interface">Figure&nbsp;4</a>.</p>
 <div id="fig-RStudio_interface" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/Rstudio_interface.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: The four-panel interface of RStudio.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4: The four-panel interface of RStudio.</figcaption>
 </figure>
 </div>
 <ul>
-<li><p>(A) The upper left is the R script panel. This is where you will write and save your R script or commands. The panel should be saved regularly, which serves as a record of all the commands that you have (or are planning) to run. For example, clicking File &gt; Save and giving it the name “R_is_fun” will save it as “R_is_fun.R” in your working directory. The scripts here are not being read by R until you click the “Run” button on the top right.</p></li>
-<li><p>(B) The lower left is the R console, which is the innate command line interface of R. A command from the R script above will be displayed here when you click the “Run” button, which is when R “reads” your command. Any output or error from R will also be displayed here. You could type your command directly here, but it will not be saved in the R script.</p></li>
+<li><p>(A) The upper left is the R <strong>script</strong> panel. This is where you will write and save your R script or commands. The panel should be saved regularly, which serves as a record of all the commands that you have (or are planning) to run. For example, clicking File &gt; Save and giving it the name “R_is_fun” will save it as “R_is_fun.R” in your working directory. The scripts here are not being read by R until you click the “Run” button on the top right.</p></li>
+<li><p>(B) The lower left is the R <strong>console</strong>, which is the innate command line interface of R. A command from the R script above will be displayed here when you click the “Run” button, which is when R “reads” your command. Any output or error from R will also be displayed here. You could type your command directly here, but it will not be saved in the R script.</p></li>
 <li><p>(C) The upper right is the environment panel. Objects that are read or generated in R (such as dataframes) will be displayed here, along with any packages that you load and functions that you create. History provides all of your commands from the sessionConnections will enable you to connect to data sources. Tutorials will let you run R tutorials.</p></li>
 <li><p>(D) The lower right is the files panel. It displays the files in your working directory. In Posit cloud, you will see files uploaded to the course space by your instructor. It also displays figures in a “Plots” tab if your commands result in graphical outputs. The Packages tab indicates which packages are currently installed, while check marks indicate which ones are loaded in the library. The Help tab displays the manual for each package and command.</p></li>
 </ul>
@@ -253,7 +282,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"Rmisc"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reshape"</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"agricolae"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"multcomp"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then, we will load this packages such that functions from these packages can be used. <em>Note that you WILL need to run this each time when you start your Project.</em></p>
 <div class="cell">
@@ -261,7 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"readxl"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"Rmisc"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"reshape"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#library("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"multcomp"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#library("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
@@ -271,21 +302,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="5"><span class="header-section-number">5</span> Importing data into R</h1>
 <section id="preparing-a-.csv-file-from-excel" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="preparing-a-.csv-file-from-excel"><span class="header-section-number">5.1</span> Preparing a .csv file from Excel</h2>
-<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files (A) such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values, B), where each row appears in a new line and each column is separated by a comma (,) (<a href="#fig-excel">Figure&nbsp;2</a>).</p>
+<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files (A) such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values, B), where each row appears in a new line and each column is separated by a comma (,) (<a href="#fig-excel">Figure&nbsp;5</a>).</p>
 <div id="fig-excel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/excel_vs_csv.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Comparison of the same table in (A) Excel and (B) .csv format.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;5: Comparison of the same table in (A) Excel and (B) .csv format.</figcaption>
 </figure>
 </div>
 <p>A spreadsheet in Excel can be exported into .csv by clicking <code>File &gt; Save As…</code> and selecting <code>CSV</code> in the drop-down manual under <code>File Format</code>.</p>
 <p>Try doing this with <code>name.xlsx</code> which can be downloaded from <a href="https://github.com/solomonchak/R_Intro/raw/5d08edb7d4981d78066a6a5294567e735fd00350/File/name.xlsx">here</a>.</p>
 <p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud using the Files pane (see <a href="#project-setup-and-file-transfer">Project setup and file transfer</a>).</p>
-<p>Now, you should see the .csv file listed in the lower right panel of RStudio (<a href="#fig-FilePanel">Figure&nbsp;3</a>).</p>
+<p>Now, you should see the .csv file listed in the lower right panel of RStudio (<a href="#fig-FilePanel">Figure&nbsp;6</a>).</p>
 <div id="fig-FilePanel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/filepanel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: The file panel after placing the file “name.csv” into the working directory or after uploading it to posit.cloud.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6: The file panel after placing the file “name.csv” into the working directory or after uploading it to posit.cloud.</figcaption>
 </figure>
 </div>
 </section>
@@ -306,11 +337,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data_name = read.csv("name.csv")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(Note that you can copy everything on the above “code chunk” using the copy button that appears when you hover your cruiser on the code chunk.)</p>
-<p>What the code does is load <code>name.csv</code> into R and save it as an object called <code>data_name</code>. Now the object <code>data_name</code> should appear in the environment panel (<a href="#fig-env_panel">Figure&nbsp;4</a>).</p>
+<p>What the code does is load <code>name.csv</code> into R and save it as an object called <code>data_name</code>. Now the object <code>data_name</code> should appear in the environment panel (<a href="#fig-env_panel">Figure&nbsp;7</a>).</p>
 <div id="fig-env_panel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/env_panel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: An object loaded into R will appear in the environmental panel.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;7: An object loaded into R will appear in the environmental panel.</figcaption>
 </figure>
 </div>
 <p>In the environmental panel, you can click on the object to open it in a new tab in the R script panel. Note that doing it actually sends a script to the R console as: <code>View(data_name)</code></p>
@@ -576,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_name, <span class="fu">aes</span>(<span class="at">x =</span> Academic_standing, <span class="at">y =</span> Height_ft)) <span class="sc">+</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -606,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s say that you measure the length of each of 12 seashells. Here are the instructions for determining the mean and standard deviation using R:</p>
 <p>Follow the instructions in the previous section to enter your continuous data into a new dataframe called <code>seashells</code>. In this case your dependent variable is <code>Length_cm</code> of the seashells.</p>
 <p>For example, you can first enter your data into Excel (<strong>?@fig-seashellexcel</strong>), and save if as <code>seashells.csv</code> in your project’s directory.</p>
-<p><img src="Images/seashell%20data%20in%20excel.png" id="fig-seashellexcel" class="img-fluid" alt="Entering the data in Excel.">.</p>
+<p><img src="Images/seashell%20data%20in%20excel.png" id="fig-seashellexcel" class="img-fluid" width="165" alt="Entering the data in Excel.">.</p>
 <p>Then you can run this to load it as a dataframe called <code>seashells</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>seashells <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"seashells.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -710,11 +741,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 3 Species3 4     3.800 1.0295630 0.5147815 1.6382645</code></pre>
 </div>
 </div>
-<p>With this data, you can make a table to summarize descriptive statistics of seashell lengths from three different species (<a href="#fig-meanshell">Figure&nbsp;5</a>).</p>
+<p>With this data, you can make a table to summarize descriptive statistics of seashell lengths from three different species (<a href="#fig-meanshell">Figure&nbsp;8</a>).</p>
 <div id="fig-meanshell" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/Mean%20shell%20length%20by%20species.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Mean shell length ( 1 standard deviation) for species 1, 2, and 3.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;8: Mean shell length ( 1 standard deviation) for species 1, 2, and 3.</figcaption>
 </figure>
 </div>
 <hr>
@@ -722,11 +753,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="inferential-statistics" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Inferential statistics</h1>
 <p>Step One: Figure out what statistic you should use! How do you do that? First, you should be able to clearly write out your experimental question, your hypothesis, and identify your dependent and independent variables. Go ahead – do it now – I’ll wait.</p>
-<p>Once you have your variables identified, determine if they are continuous (measurement) data or nominal (categorical) data. Now you can use the chart below to figure out which type of statistic is right for you (<a href="#fig-stat">Figure&nbsp;6</a>). Note that each combination of variable types also has a type of graph or table that is typically used to display the data! Instructions for how to run each stat and make each figure are given in the sections that follow.</p>
+<p>Once you have your variables identified, determine if they are continuous (measurement) data or nominal (categorical) data. Now you can use the chart below to figure out which type of statistic is right for you (<a href="#fig-stat">Figure&nbsp;9</a>). Note that each combination of variable types also has a type of graph or table that is typically used to display the data! Instructions for how to run each stat and make each figure are given in the sections that follow.</p>
 <div id="fig-stat" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Images/Statistic_Chart.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: Statistic decision chart.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;9: Statistic decision chart.</figcaption>
 </figure>
 </div>
 <section id="linear-regression" class="level2" data-number="9.1">
@@ -872,16 +903,16 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 </div>
 <p>To test whether <code>Plant_height_cm</code> is different between <code>Treatment</code> , in other word, whether <code>Treatment</code> affect <code>Plant_height_cm</code>, we will use <code>t.test()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Plant_height_cm<span class="sc">~</span>Treatment, <span class="at">data =</span> fertilizer, <span class="at">alternative =</span> <span class="st">"two.sided"</span>, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Plant_height_cm <span class="sc">~</span> Treatment, <span class="at">data =</span> fertilizer, <span class="at">alternative =</span> <span class="st">"two.sided"</span>, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Welch Two Sample t-test
+    Two Sample t-test
 
 data:  Plant_height_cm by Treatment
-t = -5.6014, df = 7.4757, p-value = 0.0006475
+t = -5.6014, df = 8, p-value = 0.0005094
 alternative hypothesis: true difference in means between group Soil and group Soil+fertilizer is not equal to 0
 95 percent confidence interval:
- -8.925619 -3.674381
+ -8.893614 -3.706386
 sample estimates:
            mean in group Soil mean in group Soil+fertilizer 
                          11.5                          17.8 </code></pre>
@@ -900,7 +931,7 @@ sample estimates:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fertilizer, <span class="fu">aes</span>(<span class="at">x =</span> Treatment, <span class="at">y =</span> Plant_height_cm)) <span class="sc">+</span> </span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatment"</span>, <span class="at">y =</span> <span class="st">"Plant height (cm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid" width="672"></p>
@@ -958,16 +989,16 @@ sample estimates:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run t test</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Values<span class="sc">~</span>AminoAcid, <span class="at">data =</span> TwoTen_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Values<span class="sc">~</span>AminoAcid, <span class="at">data =</span> TwoTen_data, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-    Welch Two Sample t-test
+    Two Sample t-test
 
 data:  Values by AminoAcid
-t = -4.117, df = 10.404, p-value = 0.00192
+t = -4.117, df = 14, p-value = 0.001047
 alternative hypothesis: true difference in means between group Glucose and group Proline is not equal to 0
 95 percent confidence interval:
- -20.864105  -6.260895
+ -20.627976  -6.497024
 sample estimates:
 mean in group Glucose mean in group Proline 
               25.4375               39.0000 </code></pre>
@@ -980,7 +1011,7 @@ mean in group Glucose mean in group Proline
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> TwoTen_data, <span class="fu">aes</span>(<span class="at">x =</span> AminoAcid, <span class="at">y =</span> Values)) <span class="sc">+</span> </span>
 <span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Nutrient"</span>, <span class="at">y =</span> <span class="st">"Ring size (cm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid" width="672"></p>
@@ -1091,63 +1122,31 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <h3 data-number="9.3.2" class="anchored" data-anchor-id="post-hoc-test"><span class="header-section-number">9.3.2</span> <strong><em>Post hoc test</em></strong></h3>
 <p><u><em>If the p value is below 0.05, you must run post hoc tests to compare the means.</em></u> <em>We can compare all means using</em> <strong>Tukey HSD</strong> <em>to obtain information about which pair(s) of species are significantly different from one another.</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: mvtnorm</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: survival</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: TH.data</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: MASS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'TH.data'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:MASS':
-
-    geyser</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tukey HSD test:</span></span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>post_test <span class="ot">=</span> <span class="fu">glht</span>(p_anova_model, <span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">Penicillin_conc =</span> <span class="st">"Tukey"</span>))</span>
-<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(post_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(p_anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-     Simultaneous Tests for General Linear Hypotheses
-
-Multiple Comparisons of Means: Tukey Contrasts
-
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
 
 Fit: aov(formula = CFU ~ Penicillin_conc, data = penicillin)
 
-Linear Hypotheses:
-               Estimate Std. Error t value Pr(&gt;|t|)    
-100 - 0 == 0      -6.80      27.55  -0.247   0.9945    
-150 - 0 == 0    -573.80      27.55 -20.827   &lt;0.001 ***
-200 - 0 == 0    -695.40      27.55 -25.241   &lt;0.001 ***
-150 - 100 == 0  -567.00      27.55 -20.580   &lt;0.001 ***
-200 - 100 == 0  -688.60      27.55 -24.994   &lt;0.001 ***
-200 - 150 == 0  -121.60      27.55  -4.414   0.0021 ** 
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-(Adjusted p values reported -- single-step method)</code></pre>
+$Penicillin_conc
+          diff        lwr        upr     p adj
+100-0     -6.8  -85.62304   72.02304 0.9945014
+150-0   -573.8 -652.62304 -494.97696 0.0000000
+200-0   -695.4 -774.22304 -616.57696 0.0000000
+150-100 -567.0 -645.82304 -488.17696 0.0000000
+200-100 -688.6 -767.42304 -609.77696 0.0000000
+200-150 -121.6 -200.42304  -42.77696 0.0022097</code></pre>
 </div>
 </div>
-<p><em>This test compares the mean of each group to determine which are significantly different from each other. <code>Pr(&gt;|t|)</code> indicates the p values for each pair. This shows us that all the means of E. coli growth are different except for the 0 and 100 ug/mL concentrations. These differences can be indicated with letters on your final figure.</em></p>
+<p><em>This test compares the mean of each group to determine which are significantly different from each other. <code>p adj</code> indicates the Tukey adjusted p values for each pair. This shows us that all the means of E. coli growth are different except for the 0 and 100 ug/mL concentrations. These differences can be indicated with letters on your final figure.</em></p>
 <p>To generate the letter groupings, we need to run the same test with a different library:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>hsd <span class="ot">=</span> <span class="fu">HSD.test</span>(p_anova_model, <span class="at">trt =</span> <span class="st">"Penicillin_conc"</span>, <span class="at">group =</span> T)</span>
-<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>hsd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>hsd <span class="ot">=</span> <span class="fu">HSD.test</span>(p_anova_model, <span class="at">trt =</span> <span class="st">"Penicillin_conc"</span>, <span class="at">group =</span> T)</span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>hsd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$statistics
   MSerror Df  Mean       CV      MSD
@@ -1184,23 +1183,23 @@ attr(,"class")
 <h3 data-number="9.3.3" class="anchored" data-anchor-id="visualization-box-plot-and-bar-plot"><span class="header-section-number">9.3.3</span> <strong>Visualization: box plot and bar plot</strong></h3>
 <p>Similar to the t-test, we can plot the data used for ANOVA using a boxplot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We can also incorporate results from the post hoc test to the figure:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We use the letters from hsd to build a dataframe to help us label the plot</span></span>
-<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>temp_label <span class="ot">=</span> <span class="fu">merge</span>(hsd<span class="sc">$</span>means, hsd<span class="sc">$</span>groups, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"row.names"</span>, <span class="fu">names</span>(hsd<span class="sc">$</span>means)[<span class="dv">1</span>]))</span>
-<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(temp_label)[<span class="dv">1</span>] <span class="ot">=</span> hsd<span class="sc">$</span>parameters<span class="sc">$</span>name.t</span>
-<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>temp_label</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We use the letters from hsd to build a dataframe to help us label the plot</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>temp_label <span class="ot">=</span> <span class="fu">merge</span>(hsd<span class="sc">$</span>means, hsd<span class="sc">$</span>groups, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"row.names"</span>, <span class="fu">names</span>(hsd<span class="sc">$</span>means)[<span class="dv">1</span>]))</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(temp_label)[<span class="dv">1</span>] <span class="ot">=</span> hsd<span class="sc">$</span>parameters<span class="sc">$</span>name.t</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>temp_label</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Penicillin_conc   CFU      std r       se Min Max Q25 Q50 Q75 groups
 1               0 696.4 66.18006 5 19.48127 611 795 675 698 703      a
@@ -1210,15 +1209,15 @@ attr(,"class")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can add labels to the ggplot</span></span>
-<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
-<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL))) <span class="sc">+</span> </span>
-<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> temp_label, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, </span>
-<span id="cb104-8"><a href="#cb104-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
-<span id="cb104-9"><a href="#cb104-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Then we can add labels to the ggplot</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL))) <span class="sc">+</span> </span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> temp_label, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, </span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
+<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Use of `temp_label$Max` is discouraged.
 ℹ Use `Max` instead.</code></pre>
@@ -1229,17 +1228,17 @@ attr(,"class")
 </div>
 <p>Similar to <a href="#how-to-construct-a-bar-graph">How to Construct a Bar Graph</a>, we can create a bar plot with error bars and the post hoc letter groupings.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>penicillin_summary <span class="ot">=</span> <span class="fu">summarySE</span>(<span class="at">data =</span> penicillin, <span class="at">measurevar =</span> <span class="st">"CFU"</span>, <span class="at">groupvars =</span> <span class="st">"Penicillin_conc"</span>)</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin_summary, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span></span>
-<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
-<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>CFU<span class="sc">-</span>sd, <span class="at">ymax=</span>CFU<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
-<span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
-<span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL))) <span class="sc">+</span> </span>
-<span id="cb106-8"><a href="#cb106-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb106-9"><a href="#cb106-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> temp_label, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, </span>
-<span id="cb106-10"><a href="#cb106-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
-<span id="cb106-11"><a href="#cb106-11" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>penicillin_summary <span class="ot">=</span> <span class="fu">summarySE</span>(<span class="at">data =</span> penicillin, <span class="at">measurevar =</span> <span class="st">"CFU"</span>, <span class="at">groupvars =</span> <span class="st">"Penicillin_conc"</span>)</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin_summary, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>CFU<span class="sc">-</span>sd, <span class="at">ymax=</span>CFU<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Amount of penicillin "</span> (mu<span class="sc">*</span>g<span class="sc">/</span>mL))) <span class="sc">+</span> </span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> temp_label, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, </span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Use of `temp_label$Max` is discouraged.
 ℹ Use `Max` instead.</code></pre>
@@ -1253,16 +1252,16 @@ attr(,"class")
 <h3 data-number="9.3.4" class="anchored" data-anchor-id="example-anova-for-faculty-only"><span class="header-section-number">9.3.4</span> 210 Example: ANOVA (For Faculty only)</h3>
 <p>Here is a sample code to analyze the 210 data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># After loading 210_t_test.csv into posit.cloud</span></span>
-<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>ames <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"210_ANOVA.csv"</span>) </span>
-<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: Object name cannot begin with numbers. so 210_data will not work.</span></span>
-<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking if the file is loaded correctly</span></span>
-<span id="cb108-9"><a href="#cb108-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-10"><a href="#cb108-10" aria-hidden="true" tabindex="-1"></a>ames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># After loading 210_t_test.csv into posit.cloud</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>ames <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"210_ANOVA.csv"</span>) </span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: Object name cannot begin with numbers. so 210_data will not work.</span></span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking if the file is loaded correctly</span></span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>ames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     line treatment values
 1  TA1535     water      9
@@ -1350,7 +1349,7 @@ attr(,"class")
 83 TA1538     4-NOP     53
 84 TA1538     4-NOP     58</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     line            treatment             values      
  Length:84          Length:84          Min.   :  1.00  
@@ -1360,25 +1359,25 @@ attr(,"class")
                                        3rd Qu.: 70.50  
                                        Max.   :329.00  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>line)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>line)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "TA1535" "TA1538"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "water" "NaN3"  "4-NOP"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In 210, we combine the strain (line) and treatment (water, NaN3, 4-NOP) into one predictor variable. </span></span>
-<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="co"># You can do that in Excel, or within R, as shown below.</span></span>
-<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new column that combines line and treatment</span></span>
-<span id="cb116-6"><a href="#cb116-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-7"><a href="#cb116-7" aria-hidden="true" tabindex="-1"></a>ames<span class="sc">$</span>predictor <span class="ot">=</span> <span class="fu">paste</span>(ames<span class="sc">$</span>line, ames<span class="sc">$</span>treatment, <span class="at">sep =</span> <span class="st">" and "</span>)</span>
-<span id="cb116-8"><a href="#cb116-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-9"><a href="#cb116-9" aria-hidden="true" tabindex="-1"></a>ames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In 210, we combine the strain (line) and treatment (water, NaN3, 4-NOP) into one predictor variable. </span></span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="co"># You can do that in Excel, or within R, as shown below.</span></span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-5"><a href="#cb109-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new column that combines line and treatment</span></span>
+<span id="cb109-6"><a href="#cb109-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-7"><a href="#cb109-7" aria-hidden="true" tabindex="-1"></a>ames<span class="sc">$</span>predictor <span class="ot">=</span> <span class="fu">paste</span>(ames<span class="sc">$</span>line, ames<span class="sc">$</span>treatment, <span class="at">sep =</span> <span class="st">" and "</span>)</span>
+<span id="cb109-8"><a href="#cb109-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-9"><a href="#cb109-9" aria-hidden="true" tabindex="-1"></a>ames</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     line treatment values        predictor
 1  TA1535     water      9 TA1535 and water
@@ -1466,7 +1465,7 @@ attr(,"class")
 83 TA1538     4-NOP     53 TA1538 and 4-NOP
 84 TA1538     4-NOP     58 TA1538 and 4-NOP</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     line            treatment             values        predictor        
  Length:84          Length:84          Min.   :  1.00   Length:84         
@@ -1476,29 +1475,29 @@ attr(,"class")
                                        3rd Qu.: 70.50                     
                                        Max.   :329.00                     </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>predictor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(ames<span class="sc">$</span>predictor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "TA1535 and water" "TA1538 and water" "TA1535 and NaN3"  "TA1538 and NaN3" 
 [5] "TA1535 and 4-NOP" "TA1538 and 4-NOP"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If needed, we can adjust predictor to be a ordered factor.</span></span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Say for example, we want TA1535 to be shown before TA1538</span></span>
-<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a>ames<span class="sc">$</span>predictor <span class="ot">=</span> <span class="fu">factor</span>(ames<span class="sc">$</span>predictor, <span class="at">ordered =</span> T, </span>
-<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"TA1535 and water"</span>, </span>
-<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1535 and NaN3"</span>,  </span>
-<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1535 and 4-NOP"</span>, </span>
-<span id="cb122-8"><a href="#cb122-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and water"</span>, </span>
-<span id="cb122-9"><a href="#cb122-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and NaN3"</span>,  </span>
-<span id="cb122-10"><a href="#cb122-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and 4-NOP"</span>))</span>
-<span id="cb122-11"><a href="#cb122-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-12"><a href="#cb122-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the new lines above are not required. It simply dispalys better.</span></span>
-<span id="cb122-13"><a href="#cb122-13" aria-hidden="true" tabindex="-1"></a><span class="co"># You can copy the levels from unique() above to adjust the levels here.</span></span>
-<span id="cb122-14"><a href="#cb122-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-15"><a href="#cb122-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-16"><a href="#cb122-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If needed, we can adjust predictor to be a ordered factor.</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Say for example, we want TA1535 to be shown before TA1538</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a>ames<span class="sc">$</span>predictor <span class="ot">=</span> <span class="fu">factor</span>(ames<span class="sc">$</span>predictor, <span class="at">ordered =</span> T, </span>
+<span id="cb115-5"><a href="#cb115-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"TA1535 and water"</span>, </span>
+<span id="cb115-6"><a href="#cb115-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1535 and NaN3"</span>,  </span>
+<span id="cb115-7"><a href="#cb115-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1535 and 4-NOP"</span>, </span>
+<span id="cb115-8"><a href="#cb115-8" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and water"</span>, </span>
+<span id="cb115-9"><a href="#cb115-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and NaN3"</span>,  </span>
+<span id="cb115-10"><a href="#cb115-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"TA1538 and 4-NOP"</span>))</span>
+<span id="cb115-11"><a href="#cb115-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-12"><a href="#cb115-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the new lines above are not required. It simply dispalys better.</span></span>
+<span id="cb115-13"><a href="#cb115-13" aria-hidden="true" tabindex="-1"></a><span class="co"># You can copy the levels from unique() above to adjust the levels here.</span></span>
+<span id="cb115-14"><a href="#cb115-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-15"><a href="#cb115-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb115-16"><a href="#cb115-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     line            treatment             values                  predictor 
  Length:84          Length:84          Min.   :  1.00   TA1535 and water:14  
@@ -1508,14 +1507,14 @@ attr(,"class")
                                        3rd Qu.: 70.50   TA1538 and NaN3 :14  
                                        Max.   :329.00   TA1538 and 4-NOP:14  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note how the summary differ now for treatment.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note how the summary differ now for treatment.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the global ANOVA</span></span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>ames_anova_model <span class="ot">=</span> <span class="fu">aov</span>(<span class="at">formula =</span> values <span class="sc">~</span> predictor, <span class="at">data =</span> ames)</span>
-<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames_anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the global ANOVA</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>ames_anova_model <span class="ot">=</span> <span class="fu">aov</span>(<span class="at">formula =</span> values <span class="sc">~</span> predictor, <span class="at">data =</span> ames)</span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames_anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)    
 predictor    5 324875   64975   36.66 &lt;2e-16 ***
@@ -1525,70 +1524,43 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Post hoc test</span></span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(multcomp) <span class="co"># In case you haven't loaded this.</span></span>
-<span id="cb127-4"><a href="#cb127-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb127-5"><a href="#cb127-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tukey HSD test:</span></span>
-<span id="cb127-6"><a href="#cb127-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb127-7"><a href="#cb127-7" aria-hidden="true" tabindex="-1"></a>ames_posthoc <span class="ot">=</span> <span class="fu">glht</span>(ames_anova_model, <span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">predictor =</span> <span class="st">"Tukey"</span>))</span>
-<span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb127-9"><a href="#cb127-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ames_posthoc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Post hoc Tukey HSD test</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(ames_anova_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-     Simultaneous Tests for General Linear Hypotheses
-
-Multiple Comparisons of Means: Tukey Contrasts
-
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
 
 Fit: aov(formula = values ~ predictor, data = ames)
 
-Linear Hypotheses:
-                                          Estimate Std. Error t value Pr(&gt;|t|)
-TA1535 and NaN3 - TA1535 and water == 0   160.6429    15.9122  10.096  &lt; 1e-04
-TA1535 and 4-NOP - TA1535 and water == 0    2.0000    15.9122   0.126 0.999995
-TA1538 and water - TA1535 and water == 0   -1.5714    15.9122  -0.099 0.999999
-TA1538 and NaN3 - TA1535 and water == 0     0.1429    15.9122   0.009 1.000000
-TA1538 and 4-NOP - TA1535 and water == 0   88.0000    15.9122   5.530  &lt; 1e-04
-TA1535 and 4-NOP - TA1535 and NaN3 == 0  -158.6429    15.9122  -9.970  &lt; 1e-04
-TA1538 and water - TA1535 and NaN3 == 0  -162.2143    15.9122 -10.194  &lt; 1e-04
-TA1538 and NaN3 - TA1535 and NaN3 == 0   -160.5000    15.9122 -10.087  &lt; 1e-04
-TA1538 and 4-NOP - TA1535 and NaN3 == 0   -72.6429    15.9122  -4.565 0.000294
-TA1538 and water - TA1535 and 4-NOP == 0   -3.5714    15.9122  -0.224 0.999919
-TA1538 and NaN3 - TA1535 and 4-NOP == 0    -1.8571    15.9122  -0.117 0.999997
-TA1538 and 4-NOP - TA1535 and 4-NOP == 0   86.0000    15.9122   5.405  &lt; 1e-04
-TA1538 and NaN3 - TA1538 and water == 0     1.7143    15.9122   0.108 0.999998
-TA1538 and 4-NOP - TA1538 and water == 0   89.5714    15.9122   5.629  &lt; 1e-04
-TA1538 and 4-NOP - TA1538 and NaN3 == 0    87.8571    15.9122   5.521  &lt; 1e-04
-                                            
-TA1535 and NaN3 - TA1535 and water == 0  ***
-TA1535 and 4-NOP - TA1535 and water == 0    
-TA1538 and water - TA1535 and water == 0    
-TA1538 and NaN3 - TA1535 and water == 0     
-TA1538 and 4-NOP - TA1535 and water == 0 ***
-TA1535 and 4-NOP - TA1535 and NaN3 == 0  ***
-TA1538 and water - TA1535 and NaN3 == 0  ***
-TA1538 and NaN3 - TA1535 and NaN3 == 0   ***
-TA1538 and 4-NOP - TA1535 and NaN3 == 0  ***
-TA1538 and water - TA1535 and 4-NOP == 0    
-TA1538 and NaN3 - TA1535 and 4-NOP == 0     
-TA1538 and 4-NOP - TA1535 and 4-NOP == 0 ***
-TA1538 and NaN3 - TA1538 and water == 0     
-TA1538 and 4-NOP - TA1538 and water == 0 ***
-TA1538 and 4-NOP - TA1538 and NaN3 == 0  ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-(Adjusted p values reported -- single-step method)</code></pre>
+$predictor
+                                          diff        lwr        upr     p adj
+TA1535 and NaN3-TA1535 and water   160.6428571  114.15116  207.13456 0.0000000
+TA1535 and 4-NOP-TA1535 and water    2.0000000  -44.49170   48.49170 0.9999954
+TA1538 and water-TA1535 and water   -1.5714286  -48.06313   44.92027 0.9999986
+TA1538 and NaN3-TA1535 and water     0.1428571  -46.34884   46.63456 1.0000000
+TA1538 and 4-NOP-TA1535 and water   88.0000000   41.50830  134.49170 0.0000060
+TA1535 and 4-NOP-TA1535 and NaN3  -158.6428571 -205.13456 -112.15116 0.0000000
+TA1538 and water-TA1535 and NaN3  -162.2142857 -208.70599 -115.72258 0.0000000
+TA1538 and NaN3-TA1535 and NaN3   -160.5000000 -206.99170 -114.00830 0.0000000
+TA1538 and 4-NOP-TA1535 and NaN3   -72.6428571 -119.13456  -26.15116 0.0002584
+TA1538 and water-TA1535 and 4-NOP   -3.5714286  -50.06313   42.92027 0.9999188
+TA1538 and NaN3-TA1535 and 4-NOP    -1.8571429  -48.34884   44.63456 0.9999968
+TA1538 and 4-NOP-TA1535 and 4-NOP   86.0000000   39.50830  132.49170 0.0000100
+TA1538 and NaN3-TA1538 and water     1.7142857  -44.77742   48.20599 0.9999979
+TA1538 and 4-NOP-TA1538 and water   89.5714286   43.07973  136.06313 0.0000040
+TA1538 and 4-NOP-TA1538 and NaN3    87.8571429   41.36544  134.34884 0.0000062</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the letter groups</span></span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae) <span class="co"># In case you haven't loaded this.</span></span>
-<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>ames_hsd <span class="ot">=</span> <span class="fu">HSD.test</span>(ames_anova_model, <span class="at">trt =</span> <span class="st">"predictor"</span>, <span class="at">group =</span> T)</span>
-<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>ames_hsd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the letter groups</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae) <span class="co"># In case you haven't loaded this.</span></span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a>ames_hsd <span class="ot">=</span> <span class="fu">HSD.test</span>(ames_anova_model, <span class="at">trt =</span> <span class="st">"predictor"</span>, <span class="at">group =</span> T)</span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a>ames_hsd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$statistics
    MSerror Df     Mean       CV     MSD
@@ -1622,28 +1594,28 @@ TA1538 and water   6.357143      c
 attr(,"class")
 [1] "group"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: In the predictor name, you may be tempted to use "&amp;" instead of "and". But using "&amp;" will cause an error here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: In the predictor name, you may be tempted to use "&amp;" instead of "and". But using "&amp;" will cause an error here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple boxplot without letters</span></span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values)) <span class="sc">+</span> </span>
-<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple boxplot without letters</span></span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values)) <span class="sc">+</span> </span>
+<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb125-6"><a href="#cb125-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-59-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can then add the letters. </span></span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="co"># But we first need to extract the letters from hsd to build a dataframe to help us label the plot</span></span>
-<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a>ames_temp_label <span class="ot">=</span> <span class="fu">merge</span>(ames_hsd<span class="sc">$</span>means, ames_hsd<span class="sc">$</span>groups, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"row.names"</span>, <span class="fu">names</span>(ames_hsd<span class="sc">$</span>means)[<span class="dv">1</span>]))</span>
-<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ames_temp_label)[<span class="dv">1</span>] <span class="ot">=</span> ames_hsd<span class="sc">$</span>parameters<span class="sc">$</span>name.t</span>
-<span id="cb133-7"><a href="#cb133-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-8"><a href="#cb133-8" aria-hidden="true" tabindex="-1"></a>ames_temp_label</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can then add the letters. </span></span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="co"># But we first need to extract the letters from hsd to build a dataframe to help us label the plot</span></span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a>ames_temp_label <span class="ot">=</span> <span class="fu">merge</span>(ames_hsd<span class="sc">$</span>means, ames_hsd<span class="sc">$</span>groups, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"row.names"</span>, <span class="fu">names</span>(ames_hsd<span class="sc">$</span>means)[<span class="dv">1</span>]))</span>
+<span id="cb126-5"><a href="#cb126-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-6"><a href="#cb126-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ames_temp_label)[<span class="dv">1</span>] <span class="ot">=</span> ames_hsd<span class="sc">$</span>parameters<span class="sc">$</span>name.t</span>
+<span id="cb126-7"><a href="#cb126-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-8"><a href="#cb126-8" aria-hidden="true" tabindex="-1"></a>ames_temp_label</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         predictor     values       std  r       se Min Max    Q25   Q50    Q75
 1 TA1535 and 4-NOP   9.928571  2.813820 14 11.25163   6  16   8.00   9.5  11.00
@@ -1662,19 +1634,19 @@ attr(,"class")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We also need summarySE to get the mean, SD and SE if we are doing a bar plot.</span></span>
-<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>ames_summary <span class="ot">=</span> <span class="fu">summarySE</span>(<span class="at">data =</span> ames, <span class="at">measurevar =</span> <span class="st">"values"</span>, <span class="at">groupvars =</span> <span class="st">"predictor"</span>)</span>
-<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames_summary, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values)) <span class="sc">+</span></span>
-<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
-<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>values<span class="sc">-</span>sd, <span class="at">ymax=</span>values<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
-<span id="cb135-8"><a href="#cb135-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
-<span id="cb135-9"><a href="#cb135-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>) <span class="sc">+</span> </span>
-<span id="cb135-10"><a href="#cb135-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb135-11"><a href="#cb135-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> predictor, </span>
-<span id="cb135-12"><a href="#cb135-12" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
-<span id="cb135-13"><a href="#cb135-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We also need summarySE to get the mean, SD and SE if we are doing a bar plot.</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>ames_summary <span class="ot">=</span> <span class="fu">summarySE</span>(<span class="at">data =</span> ames, <span class="at">measurevar =</span> <span class="st">"values"</span>, <span class="at">groupvars =</span> <span class="st">"predictor"</span>)</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames_summary, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values)) <span class="sc">+</span></span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>values<span class="sc">-</span>sd, <span class="at">ymax=</span>values<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
+<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb128-9"><a href="#cb128-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>) <span class="sc">+</span> </span>
+<span id="cb128-10"><a href="#cb128-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> predictor, <span class="at">y =</span> values), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb128-11"><a href="#cb128-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> predictor, </span>
+<span id="cb128-12"><a href="#cb128-12" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
+<span id="cb128-13"><a href="#cb128-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Use of `ames_temp_label$Max` is discouraged.
 ℹ Use `Max` instead.</code></pre>
@@ -1684,39 +1656,39 @@ attr(,"class")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Better to plot with facet.</span></span>
-<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="co"># But we need to add the columns "line" and "treatment" back to both ames_temp_label and ames_summary</span></span>
-<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a>ames_temp_label <span class="ot">=</span> <span class="fu">merge</span>(ames_temp_label, <span class="fu">unique</span>(ames[,<span class="fu">c</span>(<span class="st">"line"</span>, <span class="st">"treatment"</span>, <span class="st">"predictor"</span>)]), <span class="at">by =</span> <span class="st">"predictor"</span>)</span>
-<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-7"><a href="#cb137-7" aria-hidden="true" tabindex="-1"></a>ames_summary <span class="ot">=</span> <span class="fu">merge</span>(ames_summary, <span class="fu">unique</span>(ames[,<span class="fu">c</span>(<span class="st">"line"</span>, <span class="st">"treatment"</span>, <span class="st">"predictor"</span>)]), <span class="at">by =</span> <span class="st">"predictor"</span>)</span>
-<span id="cb137-8"><a href="#cb137-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-9"><a href="#cb137-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-10"><a href="#cb137-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This line:</span></span>
-<span id="cb137-11"><a href="#cb137-11" aria-hidden="true" tabindex="-1"></a><span class="co"># unique(ames[,c("line", "treatment", "predictor")])</span></span>
-<span id="cb137-12"><a href="#cb137-12" aria-hidden="true" tabindex="-1"></a><span class="co"># is taking just the three names columnes in "ames"</span></span>
-<span id="cb137-13"><a href="#cb137-13" aria-hidden="true" tabindex="-1"></a><span class="co"># and getting just the unique rows.</span></span>
-<span id="cb137-14"><a href="#cb137-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-15"><a href="#cb137-15" aria-hidden="true" tabindex="-1"></a><span class="co"># merge() is used to combine two dataframe by a column specified by the "by" argument.</span></span>
-<span id="cb137-16"><a href="#cb137-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-17"><a href="#cb137-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = ames, aes())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Better to plot with facet.</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="co"># But we need to add the columns "line" and "treatment" back to both ames_temp_label and ames_summary</span></span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>ames_temp_label <span class="ot">=</span> <span class="fu">merge</span>(ames_temp_label, <span class="fu">unique</span>(ames[,<span class="fu">c</span>(<span class="st">"line"</span>, <span class="st">"treatment"</span>, <span class="st">"predictor"</span>)]), <span class="at">by =</span> <span class="st">"predictor"</span>)</span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>ames_summary <span class="ot">=</span> <span class="fu">merge</span>(ames_summary, <span class="fu">unique</span>(ames[,<span class="fu">c</span>(<span class="st">"line"</span>, <span class="st">"treatment"</span>, <span class="st">"predictor"</span>)]), <span class="at">by =</span> <span class="st">"predictor"</span>)</span>
+<span id="cb130-8"><a href="#cb130-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-9"><a href="#cb130-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-10"><a href="#cb130-10" aria-hidden="true" tabindex="-1"></a><span class="co"># This line:</span></span>
+<span id="cb130-11"><a href="#cb130-11" aria-hidden="true" tabindex="-1"></a><span class="co"># unique(ames[,c("line", "treatment", "predictor")])</span></span>
+<span id="cb130-12"><a href="#cb130-12" aria-hidden="true" tabindex="-1"></a><span class="co"># is taking just the three names columnes in "ames"</span></span>
+<span id="cb130-13"><a href="#cb130-13" aria-hidden="true" tabindex="-1"></a><span class="co"># and getting just the unique rows.</span></span>
+<span id="cb130-14"><a href="#cb130-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-15"><a href="#cb130-15" aria-hidden="true" tabindex="-1"></a><span class="co"># merge() is used to combine two dataframe by a column specified by the "by" argument.</span></span>
+<span id="cb130-16"><a href="#cb130-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-17"><a href="#cb130-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = ames, aes())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now can do a similar ggplot with facet. </span></span>
-<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of using "predictor" as x, we will now use "treatment"</span></span>
-<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="co"># because line (the strain) is now used as a facetting variable.</span></span>
-<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames_summary, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values)) <span class="sc">+</span></span>
-<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>line) <span class="sc">+</span> <span class="co"># using line to facet</span></span>
-<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>values<span class="sc">-</span>sd, <span class="at">ymax=</span>values<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
-<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
-<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_jitter</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> treatment, </span>
-<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
-<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups)) <span class="sc">+</span></span>
-<span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now can do a similar ggplot with facet. </span></span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of using "predictor" as x, we will now use "treatment"</span></span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="co"># because line (the strain) is now used as a facetting variable.</span></span>
+<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames_summary, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values)) <span class="sc">+</span></span>
+<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>line) <span class="sc">+</span> <span class="co"># using line to facet</span></span>
+<span id="cb131-8"><a href="#cb131-8" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>values<span class="sc">-</span>sd, <span class="at">ymax=</span>values<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>,</span>
+<span id="cb131-9"><a href="#cb131-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(.<span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb131-10"><a href="#cb131-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_jitter</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb131-11"><a href="#cb131-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> treatment, </span>
+<span id="cb131-12"><a href="#cb131-12" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
+<span id="cb131-13"><a href="#cb131-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups)) <span class="sc">+</span></span>
+<span id="cb131-14"><a href="#cb131-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Use of `ames_temp_label$Max` is discouraged.
 ℹ Use `Max` instead.</code></pre>
@@ -1726,17 +1698,17 @@ attr(,"class")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can do a boxplot, which is actually simplier!</span></span>
-<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we can build the plot using the raw data, so geom_jitter doesn't need to call "ames" again.</span></span>
-<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values)) <span class="sc">+</span></span>
-<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>line) <span class="sc">+</span> <span class="co"># using line to facet</span></span>
-<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb140-8"><a href="#cb140-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> treatment, </span>
-<span id="cb140-9"><a href="#cb140-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
-<span id="cb140-10"><a href="#cb140-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups)) <span class="sc">+</span></span>
-<span id="cb140-11"><a href="#cb140-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can do a boxplot, which is actually simplier!</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we can build the plot using the raw data, so geom_jitter doesn't need to call "ames" again.</span></span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ames, <span class="fu">aes</span>(<span class="at">x =</span> treatment, <span class="at">y =</span> values)) <span class="sc">+</span></span>
+<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>line) <span class="sc">+</span> <span class="co"># using line to facet</span></span>
+<span id="cb133-7"><a href="#cb133-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb133-8"><a href="#cb133-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> ames_temp_label, <span class="fu">aes</span>(<span class="at">x =</span> treatment, </span>
+<span id="cb133-9"><a href="#cb133-9" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(ames_temp_label<span class="sc">$</span>Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
+<span id="cb133-10"><a href="#cb133-10" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups)) <span class="sc">+</span></span>
+<span id="cb133-11"><a href="#cb133-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatments"</span>, <span class="at">y =</span> <span class="st">"CFU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Use of `ames_temp_label$Max` is discouraged.
 ℹ Use `Max` instead.</code></pre>
@@ -1754,7 +1726,7 @@ attr(,"class")
 <section id="chi-square---goodness-of-fit-test" class="level3" data-number="9.4.1">
 <h3 data-number="9.4.1" class="anchored" data-anchor-id="chi-square---goodness-of-fit-test"><span class="header-section-number">9.4.1</span> <strong>Chi-square - Goodness of Fit test</strong></h3>
 <p>The <strong>Goodness of Fit test</strong> is used to determine if the observed result (i.e.&nbsp;collected during an experiment) is significantly different than the “expected” result (i.e.&nbsp;that based on the laws of probability). It involves calculating the degrees of freedom (DF), which corresponds to the following equation: DF = (C – 1) where C is the number of categories. It also involves calculating the Chi-square value (X<sup>2</sup>), which corresponds to the following equation: X<sup>2</sup> = S (D<sup>2</sup>/E) where D is the difference between the observed result (O) and expected result (E). The biologist determines if the X<sup>2</sup> value is less than the “critical” X<sup>2</sup> value for an experiment with a particular DF to determine if there is a significant difference (p value &lt; 0.05) between the observed and expected result.</p>
-<p><img src="Images/chisq.png" id="chisq" class="img-fluid">.</p>
+<p><img src="Images/chisq.png" id="chisq" class="img-fluid" alt="Chi-square">.</p>
 <p>Let’s say that you have crustaceans and test their preference for a light or dark environment. In this example there is only ONE variable: the observed preference (are they in the light or dark when you check on them?). You want to see if the distribution of crustaceans is random (roughly 50% in the light and 50% in the dark because they have no preference and distribute according to the laws of probability) OR if the distribution is non-random because they prefer either dark or light.</p>
 <p>The <strong>null hypothesis</strong> for this test is that the variable of interest (light/dark environment) will have no impact on the distribution of the data. In other words, the null hypothesis assumes a random distribution, which means <strong>observed is no different from expected</strong>. If p&gt;0.05, you accept the null.</p>
 <p>A <strong>significant result</strong> (p&lt;0.05) means the distribution of your <strong>observed data is different than expected</strong>; it is non-random.</p>
@@ -1765,9 +1737,9 @@ attr(,"class")
 </blockquote>
 <p>We will create a file that may be similar to how your raw data will look like in a “long form”:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>crust_sp1 <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 1"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>))</span>
-<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a>crust_sp1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>crust_sp1 <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 1"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>))</span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>crust_sp1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Crustacean Result
 1   Species 1  light
@@ -1798,9 +1770,9 @@ attr(,"class")
 </div>
 <p>We can convert this into the “short form” :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>crust_table <span class="ot">=</span> <span class="fu">table</span>(crust_sp1[,<span class="st">"Result"</span>])</span>
-<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>crust_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>crust_table <span class="ot">=</span> <span class="fu">table</span>(crust_sp1[,<span class="st">"Result"</span>])</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a>crust_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  dark light 
@@ -1809,7 +1781,7 @@ attr(,"class")
 </div>
 <p>We can then test whether the observed distribution of <code>Result</code> is equally distributed among the two groups (i.e., 1:1) using <code>chisq.test()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> crust_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> crust_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Chi-squared test for given probabilities
@@ -1822,7 +1794,7 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 <p>The null hypothesis of the test is that the groups are equally distributed. The p-value is &lt; 0.05, which means that we can reject the null hypothesis. Therefore, our observed distribution of Age_group is significantly different from 1:1.</p>
 <p>If there is an a priori reason that the distribution should be, for example, 3:1, we can modify the code to test this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> crust_table, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> crust_table, <span class="at">p =</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Chi-squared test for given probabilities
@@ -1837,29 +1809,34 @@ X-squared = 32, df = 1, p-value = 1.542e-08</code></pre>
 <p><em>For a table</em>:</p>
 <p>The table should be <u>a simplified version</u> of the table that JMP provided.&nbsp; Rather than trying to modify the JMP table, just start from scratch in Excel or Word and make your own. Adjust the sizes of the cells and other formatting as needed to make it easy to read. See Table 2 at the very end of the Chi-square section for a good example.*</p>
 <p>Just as a graph has a figure legend, a table must be accompanied by a table heading.&nbsp; Similar to a figure legend, the table heading starts with a number and a title in bold, then gives a description of the result <u>and statistics</u> in complete sentences.&nbsp; One key difference, while figure legends should be placed directly below a figure, the table heading goes above the table.&nbsp; Also, if you have both figures (graphs or pictures) and tables in your paper, you number them separately. Again, see Table 2 in the next section for good example.*</p>
-<p><img src="Images/chisq_table.png" id="fig-chisq_table" class="img-fluid"></p>
+<div id="fig-chisq_table" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/chisq_table.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;10: .</figcaption>
+</figure>
+</div>
 <p><em>For a graph</em>:</p>
 <p>The type of graph used to display frequency (count) data is called a histogram.</p>
 <p>You can plot the data for a goodness of fit Chi-square test by using the raw data in <code>crust_sp1</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_sp1, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> </span>
-<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_sp1, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> </span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-69-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Alternative, you could also plot using the count data <code>crust_table</code> after converting it to a dataframe:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(crust_table), <span class="fu">aes</span>(Var1, Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span> </span>
-<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
-<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(crust_table), <span class="fu">aes</span>(Var1, Freq, <span class="at">fill =</span> Var1)) <span class="sc">+</span> </span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-70-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fill tells R to color the bar by Var1</span></span>
-<span id="cb152-2"><a href="#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="co"># you can remove the side legned by adding:</span></span>
-<span id="cb152-3"><a href="#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="co"># + theme(legend.position = "none")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fill tells R to color the bar by Var1</span></span>
+<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="co"># you can remove the side legned by adding:</span></span>
+<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a><span class="co"># + theme(legend.position = "none")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="chi-square---contingency-test" class="level3" data-number="9.4.2">
@@ -1867,13 +1844,18 @@ X-squared = 32, df = 1, p-value = 1.542e-08</code></pre>
 <p>The <strong>Contingency test,</strong> also called the <strong>Test of Independence</strong>, is used to determine if the difference between two groups is significantly different depending on <strong>(contingent on)</strong> another variable.&nbsp; Or, put another way, you might want to determine if the frequency of outcomes for one set of observations matches those for another set of observations.&nbsp; For example, let’s imagine that we want to know whether two different species of crustaceans exhibit the same preference for light or dark.&nbsp; In other words, is the preference for light or dark contingent on which species it is?&nbsp; To find this out one uses a special version of Chi-square tests known as a <em>contingency table</em>.</p>
 <p>In this case, your <strong>independent variable</strong> is species and your <strong>dependent variable</strong> is preference (because you think preference might depend on species); your null hypothesis is that there is no difference in the preference for light versus dark between Species 1 and 2, regardless of whatever that preference is. When you run a contingency test you produce a X<sup>2</sup> value as in the Goodness of Fit test.&nbsp; If the X<sup>2</sup> value is large enough (leading to p&lt;0.05), then you can reject the null hypothesis that the proportion of crustaceans showing a preference for light is not different between the two species, and state that the data show that the preference for light or dark is contingent on the species.&nbsp; Another way to say the same thing: the two species show significantly different preferences for light.</p>
 <p>Let’s imagine that we test the preference of two crustacean species for light versus dark and compare the preferences.&nbsp; The values could be arranged in a table like the one below.&nbsp;</p>
-<p><img src="Images/Contingency_data.png" id="fig-Contingency_data" class="img-fluid"></p>
+<div id="fig-Contingency_data" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/Contingency_data.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;11: .</figcaption>
+</figure>
+</div>
 <p>If the preferences of the two species were the same, then they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences?&nbsp; <em>Note that the total number of observations/ occurrences <u>do not</u> have to be the same for both species.</em>&nbsp; A contingency test will correct for different sizes between samples. Let’s conduct the test and see.</p>
 <p>We will begin by making up the data for species 2:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>crust_sp2 <span class="ot">=</span>  <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 2"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"dark"</span>, <span class="dv">22</span>), <span class="fu">rep</span>(<span class="st">"light"</span>, <span class="dv">2</span>)))</span>
-<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a>crust_sp2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>crust_sp2 <span class="ot">=</span>  <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 2"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"dark"</span>, <span class="dv">22</span>), <span class="fu">rep</span>(<span class="st">"light"</span>, <span class="dv">2</span>)))</span>
+<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>crust_sp2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Crustacean Result
 1   Species 2   dark
@@ -1904,17 +1886,17 @@ X-squared = 32, df = 1, p-value = 1.542e-08</code></pre>
 </div>
 <p>Then we will add it to the previous <code>crust_sp1</code> to make a new object;</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>crust_twoSp <span class="ot">=</span> <span class="fu">rbind</span>(crust_sp1, crust_sp2)</span>
-<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb155-3"><a href="#cb155-3" aria-hidden="true" tabindex="-1"></a>crust_twoSp</span>
-<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The table is very long; so we are not displaying it here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>crust_twoSp <span class="ot">=</span> <span class="fu">rbind</span>(crust_sp1, crust_sp2)</span>
+<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a>crust_twoSp</span>
+<span id="cb148-4"><a href="#cb148-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-5"><a href="#cb148-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The table is very long; so we are not displaying it here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We will first reshape our data into a contingency table using <code>table()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>crust_twoSp_table <span class="ot">=</span> <span class="fu">table</span>(crust_twoSp<span class="sc">$</span>Crustacean, crust_twoSp<span class="sc">$</span>Result)</span>
-<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>crust_twoSp_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>crust_twoSp_table <span class="ot">=</span> <span class="fu">table</span>(crust_twoSp<span class="sc">$</span>Crustacean, crust_twoSp<span class="sc">$</span>Result)</span>
+<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a>crust_twoSp_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           
             dark light
@@ -1924,7 +1906,7 @@ X-squared = 32, df = 1, p-value = 1.542e-08</code></pre>
 </div>
 <p>We can then test the null hypothesis that there is no difference in the preference for light versus dark between Species 1 and 2.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(crust_twoSp_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(crust_twoSp_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test with Yates' continuity correction
@@ -1936,8 +1918,8 @@ X-squared = 19.286, df = 1, p-value = 1.125e-05</code></pre>
 <p><strong>Visualization</strong></p>
 <p>You can plot the contingency table by <code>geom_bar()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_twoSp, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>Crustacean) <span class="sc">+</span></span>
-<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_twoSp, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>Crustacean) <span class="sc">+</span></span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-75-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1945,7 +1927,7 @@ X-squared = 19.286, df = 1, p-value = 1.125e-05</code></pre>
 <p>The legend to this figure should be:</p>
 <p><strong>Figure __. Two crustacean species showed different light/dark preferences.</strong> Twenty-four crustaceans of each species were observed to see if they moved to the light or dark portion of their tanks. The species were found to have significantly different preferences, with Species 1 being found in the light more often while Species 2 were more likely to be in the dark (Chi- square contingency test, Χ2 =24.442, d.f.= 1, p&lt;0.001).</p>
 <p><em>Just as a graph has a figure legend, a table must be accompanied by a table heading.&nbsp; Similar to a figure legend, the table heading starts with a number and a title in bold, then gives a description of the result <u>and statistics</u> in complete sentences (Table 2).&nbsp; One key difference, while figure legends should be placed directly below a figure, the table heading goes above the table.&nbsp; Also, if you have both figures (graphs or pictures) and tables in your paper, you number them separately.</em></p>
-<p><img src="Images/Contingency_table3.png" id="fig-Contingency_table3" class="img-fluid"> <img src="Images/Contingency_table4.png" class="img-fluid"></p>
+<p><img src="Images/Contingency_table3.png" id="fig-Contingency_table3" class="img-fluid" alt="."> <img src="Images/Contingency_table4.png" class="img-fluid"></p>
 <hr>
 </section>
 </section>
