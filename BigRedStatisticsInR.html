@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-08-14">
+<meta name="dcterms.date" content="2024-08-16">
 
 <title>Big Red Statistics in R</title>
 <style>
@@ -82,79 +82,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview-of-the-scientific-method" id="toc-overview-of-the-scientific-method" class="nav-link active" data-scroll-target="#overview-of-the-scientific-method"><span class="header-section-number">1</span> Overview of the scientific method</a></li>
-  <li><a href="#the-importance-of-statistical-tests" id="toc-the-importance-of-statistical-tests" class="nav-link" data-scroll-target="#the-importance-of-statistical-tests"><span class="header-section-number">2</span> The importance of statistical tests</a></li>
-  <li><a href="#key-steps-in-data-analysis-using-r" id="toc-key-steps-in-data-analysis-using-r" class="nav-link" data-scroll-target="#key-steps-in-data-analysis-using-r"><span class="header-section-number">3</span> Key steps in data analysis using R</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">4</span> Descriptive statistics</a></li>
-  <li><a href="#start-using-r" id="toc-start-using-r" class="nav-link" data-scroll-target="#start-using-r"><span class="header-section-number">5</span> Start using R</a>
+  <li><a href="#i.-overview-of-the-scientific-method" id="toc-i.-overview-of-the-scientific-method" class="nav-link active" data-scroll-target="#i.-overview-of-the-scientific-method">I. Overview of the scientific method</a></li>
+  <li><a href="#ii.-the-importance-of-statistical-tests" id="toc-ii.-the-importance-of-statistical-tests" class="nav-link" data-scroll-target="#ii.-the-importance-of-statistical-tests">II. The importance of statistical tests</a></li>
+  <li><a href="#iii.-descriptive-statistics" id="toc-iii.-descriptive-statistics" class="nav-link" data-scroll-target="#iii.-descriptive-statistics">III. Descriptive statistics</a></li>
+  <li><a href="#iv.-key-steps-in-data-analysis-using-r" id="toc-iv.-key-steps-in-data-analysis-using-r" class="nav-link" data-scroll-target="#iv.-key-steps-in-data-analysis-using-r">IV. Key steps in data analysis using R</a></li>
+  <li><a href="#v.-start-using-r" id="toc-v.-start-using-r" class="nav-link" data-scroll-target="#v.-start-using-r">V. Start using R</a>
   <ul>
-  <li><a href="#using-r-online-or-locally" id="toc-using-r-online-or-locally" class="nav-link" data-scroll-target="#using-r-online-or-locally"><span class="header-section-number">5.1</span> Using R online or locally</a>
+  <li><a href="#a.-access-r-via-posit-cloud-or-rstudio" id="toc-a.-access-r-via-posit-cloud-or-rstudio" class="nav-link" data-scroll-target="#a.-access-r-via-posit-cloud-or-rstudio">A. Access R via Posit Cloud or RStudio</a></li>
+  <li><a href="#b.-project-setup-and-file-transfer" id="toc-b.-project-setup-and-file-transfer" class="nav-link" data-scroll-target="#b.-project-setup-and-file-transfer">B. Project setup and file transfer</a>
   <ul class="collapse">
-  <li><a href="#installation-or-sign-up" id="toc-installation-or-sign-up" class="nav-link" data-scroll-target="#installation-or-sign-up"><span class="header-section-number">5.1.1</span> Installation or sign up</a></li>
-  <li><a href="#project-setup-and-file-transfer" id="toc-project-setup-and-file-transfer" class="nav-link" data-scroll-target="#project-setup-and-file-transfer"><span class="header-section-number">5.1.2</span> Project setup and file transfer</a></li>
-  <li><a href="#the-rstudio-interface" id="toc-the-rstudio-interface" class="nav-link" data-scroll-target="#the-rstudio-interface"><span class="header-section-number">5.1.3</span> The RStudio Interface</a></li>
-  <li><a href="#using-packages" id="toc-using-packages" class="nav-link" data-scroll-target="#using-packages"><span class="header-section-number">5.1.4</span> Using packages</a>
+  <li><a href="#online---posit-cloud" id="toc-online---posit-cloud" class="nav-link" data-scroll-target="#online---posit-cloud"><strong>Online - Posit Cloud</strong></a></li>
+  <li><a href="#local---rstudio" id="toc-local---rstudio" class="nav-link" data-scroll-target="#local---rstudio"><strong>Local - RStudio</strong></a></li>
+  </ul></li>
+  <li><a href="#c.-starting-an-r-script" id="toc-c.-starting-an-r-script" class="nav-link" data-scroll-target="#c.-starting-an-r-script">C. Starting an R script</a></li>
+  <li><a href="#d.-the-rstudio-interface" id="toc-d.-the-rstudio-interface" class="nav-link" data-scroll-target="#d.-the-rstudio-interface">D. The RStudio Interface</a></li>
+  <li><a href="#e.-r-packages" id="toc-e.-r-packages" class="nav-link" data-scroll-target="#e.-r-packages">E. R packages</a>
   <ul class="collapse">
-  <li><a href="#install-packages" id="toc-install-packages" class="nav-link" data-scroll-target="#install-packages"><span class="header-section-number">5.1.4.1</span> Install packages</a></li>
-  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages"><span class="header-section-number">5.1.4.2</span> Load packages</a></li>
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
+  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages">Loading packages</a></li>
   </ul></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#importing-data-into-r" id="toc-importing-data-into-r" class="nav-link" data-scroll-target="#importing-data-into-r"><span class="header-section-number">6</span> Importing data into R</a>
+  <li><a href="#vi.-importing-data-into-r" id="toc-vi.-importing-data-into-r" class="nav-link" data-scroll-target="#vi.-importing-data-into-r">VI. Importing data into R</a>
   <ul>
-  <li><a href="#preparing-a-.csv-file-from-excel" id="toc-preparing-a-.csv-file-from-excel" class="nav-link" data-scroll-target="#preparing-a-.csv-file-from-excel"><span class="header-section-number">6.1</span> Preparing a .csv file from Excel</a></li>
-  <li><a href="#loading-a-.csv-file-into-r" id="toc-loading-a-.csv-file-into-r" class="nav-link" data-scroll-target="#loading-a-.csv-file-into-r"><span class="header-section-number">6.2</span> Loading a .csv file into R</a></li>
+  <li><a href="#a.-preparing-a-.csv-file-from-excel" id="toc-a.-preparing-a-.csv-file-from-excel" class="nav-link" data-scroll-target="#a.-preparing-a-.csv-file-from-excel">A. Preparing a .csv file from Excel</a></li>
+  <li><a href="#b.-loading-a-.csv-file-into-r" id="toc-b.-loading-a-.csv-file-into-r" class="nav-link" data-scroll-target="#b.-loading-a-.csv-file-into-r">B. Loading a .csv file into R</a></li>
   </ul></li>
-  <li><a href="#how-to-generate-descriptive-statistics" id="toc-how-to-generate-descriptive-statistics" class="nav-link" data-scroll-target="#how-to-generate-descriptive-statistics"><span class="header-section-number">7</span> How to generate descriptive statistics</a></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="header-section-number">8</span> Inferential statistics</a>
+  <li><a href="#vii.-how-to-generate-descriptive-statistics" id="toc-vii.-how-to-generate-descriptive-statistics" class="nav-link" data-scroll-target="#vii.-how-to-generate-descriptive-statistics">VII. How to generate descriptive statistics</a></li>
+  <li><a href="#viii.-inferential-statistics-graphs" id="toc-viii.-inferential-statistics-graphs" class="nav-link" data-scroll-target="#viii.-inferential-statistics-graphs">VIII. Inferential statistics &amp; graphs</a>
   <ul>
-  <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test"><span class="header-section-number">8.1</span> T-test</a>
+  <li><a href="#a.-t-test" id="toc-a.-t-test" class="nav-link" data-scroll-target="#a.-t-test">A. T-test</a>
   <ul class="collapse">
-  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test"><span class="header-section-number">8.1.1</span> Two sample t test</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">8.1.2</span> <strong>Visualization</strong></a>
+  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test">Two-sample t-test</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><strong>Visualization</strong></a>
   <ul class="collapse">
-  <li><a href="#bar-graph" id="toc-bar-graph" class="nav-link" data-scroll-target="#bar-graph"><span class="header-section-number">8.1.2.1</span> Bar graph</a></li>
-  <li><a href="#exporting-graphs" id="toc-exporting-graphs" class="nav-link" data-scroll-target="#exporting-graphs"><span class="header-section-number">8.1.2.2</span> Exporting graphs</a></li>
-  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">8.1.2.3</span> Boxplot</a></li>
+  <li><a href="#bar-graph" id="toc-bar-graph" class="nav-link" data-scroll-target="#bar-graph">Bar graph</a></li>
+  <li><a href="#exporting-graphs" id="toc-exporting-graphs" class="nav-link" data-scroll-target="#exporting-graphs">Exporting graphs</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova"><span class="header-section-number">8.2</span> ANOVA</a>
+  <li><a href="#b.-anova" id="toc-b.-anova" class="nav-link" data-scroll-target="#b.-anova">B. ANOVA</a>
   <ul class="collapse">
-  <li><a href="#global-anova-test" id="toc-global-anova-test" class="nav-link" data-scroll-target="#global-anova-test"><span class="header-section-number">8.2.1</span> Global ANOVA test</a></li>
-  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test"><span class="header-section-number">8.2.2</span> <strong><em>Post hoc test</em></strong></a></li>
-  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">8.2.3</span> <strong>Visualization</strong></a>
+  <li><a href="#global-anova-test" id="toc-global-anova-test" class="nav-link" data-scroll-target="#global-anova-test">Global ANOVA test</a></li>
+  <li><a href="#post-hoc-test" id="toc-post-hoc-test" class="nav-link" data-scroll-target="#post-hoc-test"><strong><em>Post hoc test</em></strong></a></li>
+  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><strong>Visualization</strong></a>
   <ul class="collapse">
-  <li><a href="#bar-graph-1" id="toc-bar-graph-1" class="nav-link" data-scroll-target="#bar-graph-1"><span class="header-section-number">8.2.3.1</span> <strong>Bar graph</strong></a></li>
-  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"><span class="header-section-number">8.2.3.2</span> <strong>Box plot</strong></a></li>
+  <li><a href="#bar-graph-1" id="toc-bar-graph-1" class="nav-link" data-scroll-target="#bar-graph-1"><strong>Bar graph</strong></a></li>
+  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"><strong>Box plot</strong></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#linear-regression" id="toc-linear-regression" class="nav-link" data-scroll-target="#linear-regression"><span class="header-section-number">8.3</span> Linear regression</a>
+  <li><a href="#c.-linear-regression" id="toc-c.-linear-regression" class="nav-link" data-scroll-target="#c.-linear-regression">C. Linear regression</a>
   <ul class="collapse">
-  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression"><span class="header-section-number">8.3.1</span> Simple linear regression</a></li>
-  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2"><span class="header-section-number">8.3.2</span> Visualization</a>
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple linear regression</a></li>
+  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2">Visualization</a>
   <ul class="collapse">
-  <li><a href="#scatter-plot-line-plot" id="toc-scatter-plot-line-plot" class="nav-link" data-scroll-target="#scatter-plot-line-plot"><span class="header-section-number">8.3.2.1</span> Scatter plot / Line plot</a></li>
+  <li><a href="#scatter-plot-line-plot" id="toc-scatter-plot-line-plot" class="nav-link" data-scroll-target="#scatter-plot-line-plot">Scatter plot / Line plot</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#two-types-of-chi-square-x2-tests" id="toc-two-types-of-chi-square-x2-tests" class="nav-link" data-scroll-target="#two-types-of-chi-square-x2-tests"><span class="header-section-number">8.4</span> Two types of Chi-square (X<sup>2</sup>) tests</a>
+  <li><a href="#d.-two-types-of-chi-square-x2-tests" id="toc-d.-two-types-of-chi-square-x2-tests" class="nav-link" data-scroll-target="#d.-two-types-of-chi-square-x2-tests">D. Two types of Chi-square (X<sup>2</sup>) tests</a>
   <ul class="collapse">
-  <li><a href="#chi-square---goodness-of-fit-test" id="toc-chi-square---goodness-of-fit-test" class="nav-link" data-scroll-target="#chi-square---goodness-of-fit-test"><span class="header-section-number">8.4.1</span> <strong>Chi-square - Goodness of Fit test</strong></a>
+  <li><a href="#chi-square---goodness-of-fit-test" id="toc-chi-square---goodness-of-fit-test" class="nav-link" data-scroll-target="#chi-square---goodness-of-fit-test"><strong>Chi-square - Goodness of Fit test</strong></a>
   <ul class="collapse">
-  <li><a href="#visualization-3" id="toc-visualization-3" class="nav-link" data-scroll-target="#visualization-3"><span class="header-section-number">8.4.1.1</span> <strong>Visualization</strong></a></li>
+  <li><a href="#visualization-3" id="toc-visualization-3" class="nav-link" data-scroll-target="#visualization-3"><strong>Visualization</strong></a></li>
   </ul></li>
-  <li><a href="#chi-square---contingency-test" id="toc-chi-square---contingency-test" class="nav-link" data-scroll-target="#chi-square---contingency-test"><span class="header-section-number">8.4.2</span> Chi-square - Contingency test</a></li>
+  <li><a href="#chi-square---contingency-test" id="toc-chi-square---contingency-test" class="nav-link" data-scroll-target="#chi-square---contingency-test">Chi-square - Contingency test</a>
+  <ul class="collapse">
+  <li><a href="#visualization-4" id="toc-visualization-4" class="nav-link" data-scroll-target="#visualization-4"><strong>Visualization</strong></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#appendix-1.-editing-data-in-.csv-and-dataframe" id="toc-appendix-1.-editing-data-in-.csv-and-dataframe" class="nav-link" data-scroll-target="#appendix-1.-editing-data-in-.csv-and-dataframe"><span class="header-section-number">9</span> Appendix 1. Editing data in .csv and dataframe</a>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
   <ul>
-  <li><a href="#changing-column-names" id="toc-changing-column-names" class="nav-link" data-scroll-target="#changing-column-names"><span class="header-section-number">9.1</span> Changing column names</a></li>
-  <li><a href="#changing-values-in-a-data-frame" id="toc-changing-values-in-a-data-frame" class="nav-link" data-scroll-target="#changing-values-in-a-data-frame"><span class="header-section-number">9.2</span> Changing values in a data frame</a></li>
-  <li><a href="#combining-text-from-two-columns" id="toc-combining-text-from-two-columns" class="nav-link" data-scroll-target="#combining-text-from-two-columns"><span class="header-section-number">9.3</span> Combining text from two columns</a></li>
+  <li><a href="#appendix-1.-editing-data-in-r" id="toc-appendix-1.-editing-data-in-r" class="nav-link" data-scroll-target="#appendix-1.-editing-data-in-r">Appendix 1. Editing data in R</a>
+  <ul class="collapse">
+  <li><a href="#changing-column-names" id="toc-changing-column-names" class="nav-link" data-scroll-target="#changing-column-names">Changing column names</a></li>
+  <li><a href="#changing-values-in-a-data-frame" id="toc-changing-values-in-a-data-frame" class="nav-link" data-scroll-target="#changing-values-in-a-data-frame">Changing values in a data frame</a></li>
+  <li><a href="#combining-text-from-two-columns" id="toc-combining-text-from-two-columns" class="nav-link" data-scroll-target="#combining-text-from-two-columns">Combining text from two columns</a></li>
   </ul></li>
-  <li><a href="#appendix-2.-advanced-graphing" id="toc-appendix-2.-advanced-graphing" class="nav-link" data-scroll-target="#appendix-2.-advanced-graphing"><span class="header-section-number">10</span> Appendix 2. Advanced graphing</a>
-  <ul>
-  <li><a href="#overlaying-data-points-in-bar-graph-and-boxplot" id="toc-overlaying-data-points-in-bar-graph-and-boxplot" class="nav-link" data-scroll-target="#overlaying-data-points-in-bar-graph-and-boxplot"><span class="header-section-number">10.1</span> Overlaying data points in bar graph and boxplot</a></li>
-  <li><a href="#adding-post-hoc-grouping-into-bar-graph-and-boxplot" id="toc-adding-post-hoc-grouping-into-bar-graph-and-boxplot" class="nav-link" data-scroll-target="#adding-post-hoc-grouping-into-bar-graph-and-boxplot"><span class="header-section-number">10.2</span> Adding post hoc grouping into bar graph and boxplot</a></li>
+  <li><a href="#appendix-2.-advanced-graphing" id="toc-appendix-2.-advanced-graphing" class="nav-link" data-scroll-target="#appendix-2.-advanced-graphing">Appendix 2. Advanced graphing</a>
+  <ul class="collapse">
+  <li><a href="#overlaying-data-points-in-bar-graph-and-boxplot" id="toc-overlaying-data-points-in-bar-graph-and-boxplot" class="nav-link" data-scroll-target="#overlaying-data-points-in-bar-graph-and-boxplot">Overlaying data points in bar graph and boxplot</a></li>
+  <li><a href="#adding-post-hoc-grouping-into-bar-graph-and-boxplot" id="toc-adding-post-hoc-grouping-into-bar-graph-and-boxplot" class="nav-link" data-scroll-target="#adding-post-hoc-grouping-into-bar-graph-and-boxplot">Adding post hoc grouping into bar graph and boxplot</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -174,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 14, 2024</p>
+      <p class="date">August 16, 2024</p>
     </div>
   </div>
   
@@ -184,8 +192,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="overview-of-the-scientific-method" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Overview of the scientific method</h1>
+<section id="i.-overview-of-the-scientific-method" class="level1">
+<h1>I. Overview of the scientific method</h1>
 <p>Biologists are interested in organisms (either unicellular or multicellular), populations, and/or communities in a variety of contexts, including their molecular biology, physiology, growth, development, behavior, ecology, and evolution. Regardless of their specific interest, biologists usually rely on the <strong>scientific method</strong> to obtain information if it is not already available in the scientific literature. The scientific method consists of several steps: 1) making observations, 2) asking a question, 3) forming a hypothesis, 4) designing and executing an experiment to test the hypothesis, 5) analyzing the data (including a statistical test, if appropriate), 6) interpreting the results, and 7) communicating the results (usually with a table or graph).</p>
 <p>An experiment often involves one or more <strong>variables</strong>; these may be <strong>numeric</strong> variables, expressed as numbers (e.g.&nbsp;“2.4 cm”), <strong>nominal</strong> variables, expressed as named categories (e.g.&nbsp;“female” vs.&nbsp;“male”), or <strong>ordinal</strong> variables, expressed as positions (e.g.&nbsp;“first’’ vs.&nbsp;``second” vs.&nbsp;“third”). The type of variable(s) determines the type of analysis that should be applied. In the case of numeric variables, the data may be <strong>continuous</strong> corresponding to an infinite range of values (e.g.&nbsp;as when measuring the length of a leaf) or <strong>discrete</strong>, corresponding to whole numbers (e.g.&nbsp;as when counting the number of stomata in a leaf).</p>
 <p>In most cases, an experiment involves determining if a <strong>dependent variable</strong> is affected by an <strong>independent variable</strong> (e.g.&nbsp;as when counting the number of offspring – dependent - to determine if temperature – independent - has any effect on reproduction), or determining if there is a relationship between the two variables that may or may not involve cause and effect (e.g.&nbsp;as when you measure the weight of an organism to determine if it is related to the height of the organism).</p>
@@ -196,8 +204,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A hypothesis becomes a <strong>theory</strong> if the results of many additional, independent tests continue to support it. A theory is an explanation that is supported by such a wide body of evidence that it is accepted as fact. Thus, biologists’ use of the term “theory” differs significantly from that of the general public who use the term when referring to speculation. One example of a theory is the theory of evolution, which is accepted as fact although there is still much for biologists to learn about natural selection and other mechanisms that result in a change in the relative frequency of alleles within a population over different time scales (i.e.&nbsp;micro versus macroevolution).</p>
 <hr>
 </section>
-<section id="the-importance-of-statistical-tests" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> The importance of statistical tests</h1>
+<section id="ii.-the-importance-of-statistical-tests" class="level1">
+<h1>II. The importance of statistical tests</h1>
 <p>Biologists often apply a statistical test for a less biased approach to interpreting the results of an experiment. A statistical test will estimate the probability of producing the observed result under the null hypothesis. In particular, it will yield a <strong>p value</strong>, which is the probability of producing the observed result by chance when there is actually no relationship between variables (e.g., when the null hypothesis is true). The p value ranges from 0 to 1, with 0 being no chance of producing this data set by chance if there is no relationship, and 1 being a 100% chance of producing this data set when there is no relationship. <strong>If the p value is less than 0.05</strong>, then the null hypothesis is rejected and the results are referred to as “significant,” indicating that there is a significant relationship between the variables. It is important to note that the value is a probability and thus the conclusion you draw from the p value could still be inaccurate as in the case of <strong>false positives</strong> (referred to as Type I errors), in which the data deviate from the null hypothesis by chance, and <strong>false negatives</strong> (referred to as Type II errors), in which the data erroneously support the null hypothesis (often due to the sample size being limited). Let’s reiterate those definitions:</p>
 <ul>
 <li><p>Type I error (false positive): for your sample, the p value is &lt;0.05 indicating a relationship between variables, but there would be no relationship if you measured a different or larger population.</p></li>
@@ -207,32 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="Images/flow.png" class="img-fluid"></p>
 <hr>
 </section>
-<section id="key-steps-in-data-analysis-using-r" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Key steps in data analysis using R</h1>
-<p>Here is the basic steps to analyze your data in R.</p>
-<ol type="1">
-<li><p>Access Posit Cloud (<a href="https://posit.cloud/" class="uri">https://posit.cloud/</a>) online or RStudio on your computer.</p></li>
-<li><p>Create or open your project.</p></li>
-<li><p>If you are starting a new project, install a set of required packages by entering a code in the script panel.</p></li>
-<li><p>Prepare R to use those packages by entering a code in the script panel.</p></li>
-<li><p>In Excel, save your data into a .csv file. If needed, edit your data in Excel.</p></li>
-<li><p>Upload the .csv file into Posit Cloud or RStudio.</p></li>
-<li><p>Read your data file into R by entering a code.</p></li>
-<li><p>If needed, generate descriptive statistics on one or more of the variables in your data set.</p></li>
-<li><p>If not done prior to collecting your data, decide which inferential statistical test to use, such as a t-test, linear regression, ANOVA, or Chi-squared test.</p></li>
-<li><p><strong>Locate the general code for the test you want to use and type (or copy &amp; paste) the code into the script panel in R.</strong></p></li>
-<li><p><strong>If needed, substitute the names of your data file and variables into the general code.</strong></p></li>
-<li><p><strong>Press <code>Run</code> in the upper right corner of the script panel. The output will appear in the console panel.</strong></p></li>
-<li><p>Trouble-shoot errors that show up in the console panel.</p></li>
-<li><p>Once the code is running correctly, decide what the output is telling you. For instance, do the findings lead you to accept or reject the test’s null hypothesis?</p></li>
-<li><p>If needed, run a post hoc test.</p></li>
-<li><p>Visualize the findings of your statistical test by making a graph in R or table in Excel.</p></li>
-<li><p>Export or copy your graph into your lab assignment or into your research paper. Also record the needed statistical output, such a F or P values, so you can finish your lab assignment or use the output when writing a research paper.</p></li>
-</ol>
-<hr>
-</section>
-<section id="descriptive-statistics" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Descriptive statistics</h1>
+<section id="iii.-descriptive-statistics" class="level1">
+<h1>III. Descriptive statistics</h1>
 <p><strong><em>Mean</em></strong></p>
 <p>The <strong>mean (</strong><span class="math inline">\(\bar{X}\)</span><strong>)</strong> (often referred to as the average) corresponds to the sum of the measurements divided by the number of measurements (as in the case of 10, 40, 25, 35, and 40, which produce a mean of 30). In the case of an odd number of measurements, the <strong>median</strong> corresponds to the measurement in the middle when all of the measurements are sorted from lowest to highest (as in the case of 10, 40, 25, 35, and 40, which produces a median of 35). In the case of an even number of measurements, the median corresponds to the mean of the two measurements in the middle when all of the measurements are sorted from lowest to highest. Finally, the <strong>mode</strong> corresponds to the most common measurement (as in the case of 10, 40, 25, 35, and 40, which produces a mode of 40).</p>
 <p><strong><em>Standard deviation</em></strong></p>
@@ -241,78 +225,93 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><em>Standard error</em></strong></p>
 <p>The standard error of the mean (SEM), or simply the <strong>standard error</strong> (SE) is another common way to state the variation around the mean. Instead of telling you about the range of the data set, it tells you the range of the “true” mean. If you added one sample to your study or took one sample away, the mean may change a little. So your mean is correct for your group of samples, but not necessarily for the whole population of all organisms that could have been in your study. SEM tells you that if you could have included every possible subject or sample - the mean probably would have been somewhere in this range. Once you have calculated the standard deviation of the mean (s), it is easy to calculate SE.</p>
 <p><img src="Images/SE.png" class="img-fluid" width="197"></p>
-<p>n = the number of samples or trials or replicates. This technique results in a smaller number than the standard deviation (s) offers, and thus often makes graphs with error bars look smaller. Whether to use s or SE in reporting your statistics and making error bars varies depending on the application, style and field. Be sure to find out what your instructor prefers for your assignments!</p>
+<p>n = the number of samples or trials or replicates. This technique results in a smaller number than the standard deviation (s) offers, and thus often makes graphs with error bars look smaller. Whether to use s or SE in reporting your statistics and making error bars varies depending on the application, style, and field. Be sure to find out what your instructor prefers for your assignments!</p>
 <p><strong><em>Coefficient of variation</em></strong></p>
 <p>The <strong>coefficient of variation (CV)</strong> corresponds to the standard deviation divided by the mean and is useful when comparing the amount of variation for one variable among groups with different means.</p>
 <p><br>
 The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.&nbsp;bell curve on a graph); such data are subject to a parametric test. However, the variance in data sometimes does not fit a normal distribution; such data are subject to a non-parametric test (addressed in advanced coursework).</p>
 <hr>
 </section>
-<section id="start-using-r" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Start using R</h1>
-<section id="using-r-online-or-locally" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="using-r-online-or-locally"><span class="header-section-number">5.1</span> Using R online or locally</h2>
-<section id="installation-or-sign-up" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="installation-or-sign-up"><span class="header-section-number">5.1.1</span> Installation or sign up</h3>
-<p>R is a command line program in which you interact through text (the command line) instead of a graphical user interface (e.g., Windows, Excel, etc.). We provide two options for running R through an intergrative environment called RStudio. In both options, you will not interact directly with R. You will run RStudio through Posit Cloud or Rstudio software downloaded to your computer. Your instructor will let you know how you should use R for the class.</p>
+<section id="iv.-key-steps-in-data-analysis-using-r" class="level1">
+<h1>IV. Key steps in data analysis using R</h1>
+<p>Here is the basic steps to analyze your data in R.</p>
+<ol type="1">
+<li><p>Access Posit Cloud (<a href="https://posit.cloud/" class="uri">https://posit.cloud/</a>) online or RStudio on your computer.</p></li>
+<li><p>Create or open a project.</p></li>
+<li><p>Create or open an R script.</p></li>
+<li><p>If you are starting a new project, install a set of required packages by entering a code in the Script Panel and running it.</p></li>
+<li><p>Prepare R to use those packages by ‘loading’ the packages. Do this every time!</p></li>
+<li><p>In Excel, save your data into a .csv file. If needed, edit your data in Excel.</p></li>
+<li><p>Upload the .csv file into Posit Cloud or RStudio.</p></li>
+<li><p>Read your data file into R by entering a code.</p></li>
+<li><p>If needed, generate descriptive statistics on one or more of the variables in your data set.</p></li>
+<li><p>If not done prior to data collection, decide which inferential statistical test to use, such as a t-test, ANOVA, linear regression, or Chi-squared test.</p></li>
+<li><p><strong>Locate the general code for the test you want to use and type (or copy &amp; paste) the code into the Script Panel in R.</strong></p></li>
+<li><p><strong>If needed, substitute the names of your data file and variables into the general code.</strong></p></li>
+<li><p><strong>Press <code>Run</code> in the upper right corner of the script panel. The output will appear in the Console Panel.</strong></p></li>
+<li><p>Trouble-shoot errors that show up in the Console Panel.</p></li>
+<li><p>Once the code is running correctly, decide what the output is telling you. For instance, do the findings lead you to accept or reject the test’s null hypothesis?</p></li>
+<li><p>If needed, run a post hoc test.</p></li>
+<li><p>Visualize the findings of your statistical test by making a graph in R or table in Excel.</p></li>
+<li><p>Export or copy your graph into your lab assignment or into your research paper. Also record the needed statistical output, such a F or P values, so you can finish your lab assignment or use the output when writing a research paper.</p></li>
+<li><p>Save the R script.</p></li>
+</ol>
+<hr>
+</section>
+<section id="v.-start-using-r" class="level1">
+<h1>V. Start using R</h1>
+<section id="a.-access-r-via-posit-cloud-or-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="a.-access-r-via-posit-cloud-or-rstudio">A. Access R via Posit Cloud or RStudio</h2>
+<p>R is a command line program in which you interact through text (the command line) instead of a graphical user interface (e.g., Windows, Excel, etc.). We provide two options for running R through an integrative environment called RStudio. In both options, you will not interact directly with R. You will run RStudio through Posit Cloud or RStudio software downloaded to your computer. Your instructor will let you know how you should use R for the class.</p>
 <ul>
 <li><p>The online version of RStudio is called <strong>Posit Cloud</strong>. Sign up for an account <a href="https://posit.co/products/cloud/cloud/">here</a>. The “Cloud Free” option will be sufficient. Do not choose the PLUS or other options. Your instructor will send you a link to get access to a shared class space, which has more memory and run time allocations than the “Cloud free” account.</p></li>
 <li><p>If directed by your instructor, you can download RStudio and install it on your computer. Depending on the version of RStudio and R, the interface and commands could be slightly different from the online version. Follow the instructions <a href="https://posit.co/download/rstudio-desktop/">here</a> to download and install both R and RStudio.</p></li>
 </ul>
 </section>
-<section id="project-setup-and-file-transfer" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="project-setup-and-file-transfer"><span class="header-section-number">5.1.2</span> Project setup and file transfer</h3>
-<p><strong>Online option - Posit Cloud</strong></p>
-<p>For the online option, you will need to upload data to the cloud or download output files from the cloud. The benefit is that you can use R anywhere and on virtually any machine with internet (even a tablet)!</p>
+<section id="b.-project-setup-and-file-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="b.-project-setup-and-file-transfer">B. Project setup and file transfer</h2>
+<section id="online---posit-cloud" class="level3">
+<h3 class="anchored" data-anchor-id="online---posit-cloud"><strong>Online - Posit Cloud</strong></h3>
+<p>For the online option, you will need to upload data to the cloud or download output files from the cloud. The benefit is that you can use R anywhere and on virtually any machine with the internet (even a tablet)!</p>
 <p>Once in the classroom space, you will see project assignments that your instructor has created for you. Your instructor will also have access to your assignments in this space. In some cases, your instructor may have created a template that includes pre-installed packages.</p>
-<p>To create your own project on Posit, click <code>New Project &gt; New RStudio Project</code> on the upper right (<a href="#fig-NewProject">Figure&nbsp;1</a>). You should rename your project(s) as directed by your instructor.</p>
-<div id="fig-NewProject" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/NewProject.png" class="img-fluid figure-img" width="452"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: New RStudio Project.</figcaption>
-</figure>
-</div>
-<p>Once the project is deployed, on the lower right panel, click the <code>Upload</code> button and choose the data file from your computer (<a href="#fig-upload">Figure&nbsp;2</a>).</p>
-<div id="fig-upload" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/upload.png" class="img-fluid figure-img" width="462"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Upload files.</figcaption>
-</figure>
-</div>
-<p>To download a file, check the box next to the file you want to export, click <code>More &gt; Export…</code> and click <code>Download</code> (<a href="#fig-export">Figure&nbsp;3</a>).</p>
-<div id="fig-export" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/Export.png" class="img-fluid figure-img" width="451"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Download files.</figcaption>
-</figure>
-</div>
-<p><strong>Local option - RStudio</strong></p>
+<p>To create your own project on Posit, click <code>New Project &gt; New RStudio Project</code> on the upper right. You should rename your project(s) as directed by your instructor.</p>
+<p><img src="Images/NewProject.png" id="fig-NewProject" class="img-fluid" width="452"></p>
+<p>Once the project is deployed, on the lower right panel, click the <code>Upload</code> button and choose the data file from your computer.</p>
+<p><img src="Images/upload.png" id="fig-upload" class="img-fluid" width="462"></p>
+<p>To download a file, check the box next to the file you want to export, click <code>More &gt; Export…</code> and click <code>Download</code>.</p>
+<p><img src="Images/Export.png" id="fig-export" class="img-fluid" width="451"></p>
+</section>
+<section id="local---rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="local---rstudio"><strong>Local - RStudio</strong></h3>
 <p>If you choose the local option, you should set up a project and a folder that is associated with this project where all files will be stored.</p>
 <p>For example, create a folder on your desktop that is called “R_is_fun”. Start RStudio, click <code>File &gt; New Project…</code> and select <code>Existing Directory</code> and browse to the folder <code>R_is_fun</code>.</p>
 <p>Then click <code>Create Project</code>. Now you can access all files in the folder <code>R_is_fun</code> (without indicating the full pathname). Everything you saved in R will also appear in this folder.</p>
 </section>
-<section id="the-rstudio-interface" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">5.1.3</span> The RStudio Interface</h3>
-<p>Let’s introduce what is being displayed in Posit and RStudio. Before we get started, click <code>File &gt; New File &gt; R Script</code>. This will result in a default four-panel interface <a href="#fig-RStudio_interface">Figure&nbsp;4</a>.</p>
-<div id="fig-RStudio_interface" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/Rstudio_interface.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: The four-panel interface of RStudio.</figcaption>
-</figure>
-</div>
+</section>
+<section id="c.-starting-an-r-script" class="level2">
+<h2 class="anchored" data-anchor-id="c.-starting-an-r-script">C. Starting an R script</h2>
+<p>Once your project is opened, you should create an R script. The R script is a text file in which your R commands and notes will be saved.</p>
+<p>To do this, click <code>File &gt; New File &gt; R Script</code>.</p>
+<p>To save the R script, click <code>File &gt; Save</code> and give it an informative name. You should rename your R script(s) as directed by your instructor. The R script will be saved to a file with a .R extension. It is a text file that can be opened in any text editor.</p>
+<p>If you are opening an existing project, the R scripts from your previous run are typically opened automatically.</p>
+</section>
+<section id="d.-the-rstudio-interface" class="level2">
+<h2 class="anchored" data-anchor-id="d.-the-rstudio-interface">D. The RStudio Interface</h2>
+<p>Let’s introduce what is being displayed in Posit and RStudio. With an R script opened, you should see a default four-panel interface.</p>
+<p><img src="Images/Rstudio_interface.png" id="fig-RStudio_interface" class="img-fluid"></p>
 <ul>
-<li><p>(A) The upper left is the R <strong>Script Panel</strong>. This is where you will write and save your R script or commands. The panel should be saved regularly, which serves as a record of all the commands that you have (or are planning) to run. For example, clicking File &gt; Save and giving it the name <code>R_is_fun</code> will save it as <code>R_is_fun.R</code> in your working directory. The scripts here are not being read by R until you click the <code>Run</code> button on the top right.</p></li>
-<li><p>(B) The lower left is the R <strong>Console Panel</strong>, which is the innate command line interface of R. A command from the R script above will be displayed here when you click the <code>Run</code> button, which is when R “reads” your command. Any output or error from R will also be displayed here. You could type your command directly here, but it will not be saved in the R script.</p></li>
-<li><p>(C) The upper right is the <strong>Environment Panel</strong>. Objects that are read or generated in R will be displayed here.</p></li>
-<li><p>(D) The lower right is the <strong>Files Panel</strong>. It displays the files in your working directory. In Posit cloud, you will see files uploaded to the course space by your instructor. It also displays figures in the <code>Plots</code> tab if your commands result in graphical outputs. The <code>Packages</code> tab indicates which packages are currently installed, while check marks indicate which ones are loaded in the library. The <code>Help</code> tab displays the manual for each package and command.</p></li>
+<li><p><span class="math inline">\(A\)</span> The upper left is the R <strong>Script Panel</strong>. This is where you will write and save your R script or commands. The panel should be saved regularly, which serves as a record of all the commands that you have (or are planning) to run. The scripts here are not being read by R until you click the <code>Run</code> button on the top right.</p></li>
+<li><p><span class="math inline">\(B\)</span> The lower left is the R <strong>Console Panel</strong>, which is the innate command line interface of R. A command from the R script above will be displayed here when you click the <code>Run</code> button, which is when R “reads” your command. Any output or error from R will also be displayed here. You could type your command directly here, but it will not be saved in the R script.</p></li>
+<li><p><span class="math inline">\(C\)</span> The upper right is the <strong>Environment Panel</strong>. Objects that are read or generated in R will be displayed here.</p></li>
+<li><p><span class="math inline">\(D\)</span> The lower right is the <strong>Files Panel</strong>. It displays the files in your working directory. In Posit cloud, you will see files uploaded to the course space by your instructor. It also displays figures in the <code>Plots</code> tab if your commands result in graphical outputs. The <code>Packages</code> tab indicates which packages are currently installed, while check marks indicate which ones are loaded in the library. The <code>Help</code> tab displays the manual for each package and command.</p></li>
 </ul>
 <p>For a more comprehensive introduction to RStudio, see <a href="https://education.rstudio.com/learn/beginner/">here</a>.</p>
 </section>
-<section id="using-packages" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="using-packages"><span class="header-section-number">5.1.4</span> Using packages</h3>
+<section id="e.-r-packages" class="level2">
+<h2 class="anchored" data-anchor-id="e.-r-packages">E. R packages</h2>
 <p>Many packages are available to expand the basic functions of base R. This is similar to adding a plug-in or extension to your web browser.</p>
-<section id="install-packages" class="level4" data-number="5.1.4.1">
-<h4 data-number="5.1.4.1" class="anchored" data-anchor-id="install-packages"><span class="header-section-number">5.1.4.1</span> Install packages</h4>
+<section id="installing-packages" class="level3">
+<h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
 <p>To use these packages, you have to install them when you start the project for the first time. You will not need to install them again when you start an old project. Then you can load the package as libraries.</p>
 <p>We will install a few packages that will be used in this document:</p>
 <ul>
@@ -320,7 +319,6 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="Images/copy_code_chunk.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Copying code chunk.</figcaption>
 </figure>
 </div></li>
 <li><p>Highlight all the codes and hit the <code>Run</code> button on the top right of the Script Panel. Alternatively, use the keyboard shortcut <code>Ctrl+Enter</code> (PC) or <code>Cmd+Enter</code> (Mac).</p></li>
@@ -342,15 +340,10 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># We will explain the R syntax below in "Importing data into R"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Alternatively, you can install packages from the <code>Package</code> tab on the Files Panel (Panel D). Click <code>Install</code> and type the package name in the box (it will auto-complete for you to prevent typos).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Images/install_package.png" class="img-fluid figure-img" width="322"></p>
-<figcaption class="figure-caption">Installing packages from the Packages tab (located in the Files Panel, Panel D).</figcaption>
-</figure>
-</div>
+<p><img src="Images/install_package.png" class="img-fluid" width="322"></p>
 </section>
-<section id="load-packages" class="level4" data-number="5.1.4.2">
-<h4 data-number="5.1.4.2" class="anchored" data-anchor-id="load-packages"><span class="header-section-number">5.1.4.2</span> Load packages</h4>
+<section id="loading-packages" class="level3">
+<h3 class="anchored" data-anchor-id="loading-packages">Loading packages</h3>
 <p>Then, we will load these packages such that functions from these packages can be used. <em>Note: You WILL need to run library() for each package EVERY TIME you start a new Project. But you will not need to install them again.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -366,48 +359,32 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 </section>
 </section>
 </section>
-</section>
-<section id="importing-data-into-r" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Importing data into R</h1>
-<section id="preparing-a-.csv-file-from-excel" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="preparing-a-.csv-file-from-excel"><span class="header-section-number">6.1</span> Preparing a .csv file from Excel</h2>
-<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files (A) such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values, B), where each row appears in a new line and each column is separated by a comma (,) (<a href="#fig-excel">Figure&nbsp;5</a>). Note that there is a header line (the first row) that specifies the column names.</p>
-<div id="fig-excel" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/excel_vs_csv.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Comparison of the same table in (A) Excel and (B) .csv format.</figcaption>
-</figure>
-</div>
+<section id="vi.-importing-data-into-r" class="level1">
+<h1>VI. Importing data into R</h1>
+<section id="a.-preparing-a-.csv-file-from-excel" class="level2">
+<h2 class="anchored" data-anchor-id="a.-preparing-a-.csv-file-from-excel">A. Preparing a .csv file from Excel</h2>
+<p>Your data should be entered and stored in spreadsheet programs such as Microsoft Excel before being imported into R. While R can read Excel files (A) such as .xls and .xlsx, data are typically saved into a simpler text format such as .csv (comma-separated values, B), where each row appears in a new line and each column is separated by a comma (,). Note that there is a header line (the first row) that specifies the column names.</p>
+<p><img src="Images/excel_vs_csv.png" id="fig-excel" class="img-fluid"></p>
 <p>A spreadsheet in Excel can be exported into .csv by clicking <code>File &gt; Save As…</code> and selecting <code>CSV</code> in the drop-down manual under <code>File Format</code>.</p>
-<p>Try doing this with <code>name.xlsx</code> which can be downloaded from <a href="https://github.com/solomonchak/R_Intro/raw/5d08edb7d4981d78066a6a5294567e735fd00350/File/name.xlsx">here</a> (https://tinyurl.com/2k2aksxf)</p>
-<p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud using the Files pane (see <a href="#project-setup-and-file-transfer">Project setup and file transfer</a>).</p>
-<p>Now, you should see the .csv file listed in the File Panel (Panel D) of RStudio (<a href="#fig-FilePanel">Figure&nbsp;6</a>).</p>
-<div id="fig-FilePanel" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/filepanel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: The file panel after placing the file “name.csv” into the working directory or after uploading it to posit.cloud.</figcaption>
-</figure>
-</div>
+<p>Try doing this with <code>name.xlsx</code> which can be downloaded from <a href="https://github.com/solomonchak/R_Intro/raw/5d08edb7d4981d78066a6a5294567e735fd00350/File/name.xlsx">here</a> (<a href="https://tinyurl.com/2k2aksxf" class="uri">https://tinyurl.com/2k2aksxf</a>)</p>
+<p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud using the Files pane (see <span class="math display">\[Project setup and file transfer\]</span>).</p>
+<p>Now, you should see the .csv file listed in the File Panel (Panel D) of RStudio.</p>
+<p><img src="Images/filepanel.png" id="fig-FilePanel" class="img-fluid"></p>
 </section>
-<section id="loading-a-.csv-file-into-r" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="loading-a-.csv-file-into-r"><span class="header-section-number">6.2</span> Loading a .csv file into R</h2>
+<section id="b.-loading-a-.csv-file-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="b.-loading-a-.csv-file-into-r">B. Loading a .csv file into R</h2>
 <p>Note that while the <code>name.csv</code> file is in the file panel, it has not been loaded into R yet. It is merely present in the folder on the cloud (or your computer). To load the file into R, in the R Script Panel (Panel A), type or paste:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_name <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"name.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here is a breakdown of the R syntax:<br>
 <br>
-<code>read.csv()</code> is a function. You can pass “arguments” inside the <code>()</code> to specific how the function should operate. A function can have no argument or many arguments separated by commas (,). In read.csv(), the first argument is <code>file</code> and we pass <code>"name.csv"</code> to this argument after the <code>=</code>.</p>
+<code>read.csv()</code> is a function. You can pass “arguments” inside the <code>()</code> to specific how the function should operate. A function can have no argument, or many arguments separated by commas (,). In read.csv(), the first argument is <code>file</code> and we pass <code>"name.csv"</code> to this argument after the <code>=</code>.</p>
 <p>Since R knows the expected sequence of arguments (this is called positional argument), you could skip the name and just write: <code>data_name = read.csv("name.csv")</code></p>
 <p>There are many other arguments in <code>read.csv</code>. To see them, type <code>?read.csv</code> in the Console Panel (Panel B) to display the Help page in the File Console (Panel D). | For now, the default works (e.g., header = TRUE, sep = “,”) because <code>name.csv</code> has a header row and values are separated by “,”. So <code>data_name = read.csv("name.csv")</code> is doing the same opreation as <code>data_name = read.csv("name.csv", header = TRUE, sep = ",")</code>. | Because of this default arguments, R may read a csv file incorrectly if it does not have a header line!</p>
 <p>The code above will read <code>name.csv</code> into R and save it as an “object” called <code>data_name</code>. An object is data that is stored in R. Objects are different from files that are being imported into Posit Cloud and RStudio. Objects can be used in the Script or Console Panel (e.g., by running <code>data_name</code>), but files in the File Panel cannot.</p>
-<p>Now the object <code>data_name</code> will appear in the Environment Panel (Panel C, <a href="#fig-env_panel">Figure&nbsp;7</a>).</p>
-<div id="fig-env_panel" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/env_panel.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: An object loaded into R will appear in the environment panel.</figcaption>
-</figure>
-</div>
+<p>Now the object <code>data_name</code> will appear in the Environment Panel (Panel C).</p>
+<p><img src="Images/env_panel.png" id="fig-env_panel" class="img-fluid"></p>
 <p>In the environment panel, you can click on the object to open it in a new tab in the Script Panel. Note that doing it actually sends a code to the Console Panel as <code>View(data_name)</code></p>
 <p>You can show the content of the object in the Console Panel by running (or “calling”) it directly:</p>
 <div class="cell">
@@ -426,7 +403,7 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 </div>
 </div>
 <p>As shown above, when you view an object in the console panel, the file has loaded correctly. The 9 rows and 4 columns are present, as well as the column names.</p>
-<p>The object is a <em>dataframe</em>, which stores a two dimensional table. There are many other classes of R object, see <a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/">here</a> for other classes in R. We will only be using dataframes in this guide.</p>
+<p>The object is a <em>dataframe</em>, which stores a two-dimensional table. There are many other classes of R object, see <a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/">here</a> for other classes in R. We will only be using dataframes in this guide.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(data_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -437,22 +414,17 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <ul>
 <li><p>After you type a command (e.g., <code>aov()</code>)), you can hit the tab key and RStudio will show the possible arguments.</p></li>
 <li><p>RStudio will auto-complete the close bracket.</p></li>
-<li><p>If you need to edit your data, the easiest way is to to it in Excel, then upload it to Posit Cloud and read it in to R. See the Appendix if you need to edit your data in the .csv file or object within R.</p></li>
+<li><p>If you need to edit your data, the easiest way is to to it in Excel, then upload it to Posit Cloud and read it into R. See the Appendix if you need to edit your data in the .csv file or object within R.</p></li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="how-to-generate-descriptive-statistics" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> How to generate descriptive statistics</h1>
+<section id="vii.-how-to-generate-descriptive-statistics" class="level1">
+<h1>VII. How to generate descriptive statistics</h1>
 <p>Let’s say that you measure the length of 12 seashells. Here are the instructions for determining the mean and standard deviation using R:</p>
 <p>Follow the instructions in the previous section to enter your continuous data into a new dataframe called <code>seashells</code>. In this case your dependent variable is <code>Length_cm</code> of the seashells.</p>
-<p>For example, you can first enter your data into Excel (<a href="#fig-seashellexcel">Figure&nbsp;8</a>), save it as <code>seashells.csv</code>, and upload that to your project’s directory in Posit.</p>
-<div id="fig-seashellexcel" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/seashell%20data%20in%20excel.png" class="img-fluid figure-img" width="139"></p>
-<figcaption class="figure-caption">Figure&nbsp;8: Entering the data in Excel.</figcaption>
-</figure>
-</div>
+<p>For example, you can first enter your data into Excel, save it as <code>seashells.csv</code>, and upload that to your project’s directory in Posit.</p>
+<p><img src="Images/seashell%20data%20in%20excel.png" id="fig-seashellexcel" class="img-fluid" width="139"></p>
 <p>Then you can load it as a dataframe called <code>seashells</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>seashells <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"seashells.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -538,9 +510,7 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 </div>
 <p>Then use <code>summarySE()</code> with an additional groupvars argument:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarySE</span>(<span class="at">data =</span> seashells, </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">measurevar =</span> <span class="st">"Length_cm"</span>, </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">groupvars =</span> <span class="st">"Species"</span>, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarySE</span>(<span class="at">data =</span> seashells, <span class="at">measurevar =</span> <span class="st">"Length_cm"</span>, <span class="at">groupvars =</span> <span class="st">"Species"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Species N Length_cm        sd        se        ci
 1 Species1 4     3.700 0.7615773 0.3807887 1.2118394
@@ -548,27 +518,22 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 3 Species3 4     3.800 1.0295630 0.5147815 1.6382645</code></pre>
 </div>
 </div>
-<p>With this data, you can make a table in Excel to summarize descriptive statistics of seashell lengths from three different species (<strong>?@fig-meanshell</strong>).</p>
+<p>With this data, you can make a table in Excel to summarize descriptive statistics of seashell lengths from three different species.</p>
 <p><img src="Images/Mean%20shell%20length%20by%20species.png" id="fig-meanshell" class="img-fluid"></p>
 <hr>
 </section>
-<section id="inferential-statistics" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Inferential statistics</h1>
+<section id="viii.-inferential-statistics-graphs" class="level1">
+<h1>VIII. Inferential statistics &amp; graphs</h1>
 <p><em>Step One: Figure out what statistical test you should use!</em></p>
 <p>How do you do that? First, you should be able to clearly write out your experimental question, your hypothesis, and identify your dependent and independent variables.</p>
-<p>Once you have your variables identified, determine if they are continuous (measurement) data or nominal (categorical) data. Now you can use the chart below to figure out which type of statistic is right for you (<a href="#fig-stat">Figure&nbsp;9</a>). Note that each combination of variable types also has a type of graph or table that is typically used to display the data! Instructions for how to run each stat and make each figure are given in the sections that follow.</p>
-<div id="fig-stat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Images/Statistic_Chart.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;9: Statistical test decision chart.</figcaption>
-</figure>
-</div>
+<p>Once you have your variables identified, determine if they are continuous (measurement) data or nominal (categorical) data. Now you can use the chart below to figure out which type of statistic is right for you. Note that each combination of variable types also has a type of graph or table that is typically used to display the data! Instructions for how to run each stat and make each figure are given in the sections that follow.</p>
+<p><img src="Images/Statistic_Chart.png" id="fig-stat" class="img-fluid"></p>
 <hr>
-<section id="t-test" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="t-test"><span class="header-section-number">8.1</span> T-test</h2>
-<section id="two-sample-t-test" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="two-sample-t-test"><span class="header-section-number">8.1.1</span> Two sample t test</h3>
-<p>A <strong>t-test is used when the independent variable is nominal (categorical) and has exactly two categories (such as an experimental group and a control group) and the dependent variable consists of continuous (measurement) data</strong>. In this case you are determining if there are differences in the means of the dependent variable between the two categories of the independent variable.</p>
+<section id="a.-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="a.-t-test">A. T-test</h2>
+<section id="two-sample-t-test" class="level3">
+<h3 class="anchored" data-anchor-id="two-sample-t-test">Two-sample t-test</h3>
+<p>A <strong>t-test is used when the independent variable is nominal (categorical) and has exactly two categories (such as an experimental group and a control group) and the dependent variable consists of continuous (measurement) data</strong>. In this case, you are determining if there are differences in the means of the dependent variable between the two categories of the independent variable.</p>
 <p>Let’s say that you want to test if a fertilizer has a significant effect on the growth of plants. You measure the height of 10 plants, 5 grown with just soil and 5 grown with soil and added fertilizer. Both groups are grown for the same length of time. Here are the instructions for performing a t-test (for comparing two groups) using R:</p>
 <p>Run this code to generate the data manually.</p>
 <div class="cell">
@@ -621,19 +586,19 @@ sample estimates:
 </div>
 </div>
 <p>The argument <code>alternative</code> can also be “greater” or “less” if you have an a priori reason to test for a directional difference between groups.</p>
-<p>In this case, the p-value is 0.0005. We reject the null hypothesis that <code>Treatment</code> has no effect on <code>Plant_height_cm</code>. Hence we can write a summary statement like:</p>
+<p>In this case, the p-value is 0.0005. We reject the null hypothesis that <code>Treatment</code> has no effect on <code>Plant_height_cm</code>. Hence, we can write a summary statement like:</p>
 <blockquote class="blockquote">
-<p>Plants grown in soil with fertilizer were taller than plants grown soil with no fertilizer (t = -5.601, d.f. = 8, p = 0.0005 [or p &lt; 0.001])</p>
+<p>Plants grown in soil with fertilizer were taller than plants grown soil with no fertilizer (t = -5.601, d.f. = 8, p = 0.0005 or p &lt; 0.001)</p>
 </blockquote>
 </section>
-<section id="visualization" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="visualization"><span class="header-section-number">8.1.2</span> <strong>Visualization</strong></h3>
-<p>Biologists often display the results of an experiment in the form of a graph. There are a few types of graphs encountered in biology: bar graphs, boxplot, scatter plot, and line graphs. Bar graph and boxplot are useful when your independent variable is categorical and your dependent variable is continuous. Scatter plot and line graph are useful if both variables are continuous. Otherwise, they share many of the same features including a title and labels for the X and Y-axes (including the units of measurement, if any). <strong>The predictor (independent) variable is plotted on the X-axis, while the response (dependent) variable is plotted on the Y-axis.</strong> Refer to your instructor for guidline about writing figure captions.</p>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization"><strong>Visualization</strong></h3>
+<p>Biologists often display the results of an experiment in the form of a graph. There are a few types of graphs encountered in biology: bar graph, boxplot, scatter plot, and line graph. Bar graph and boxplot are useful when your independent variable is categorical and your dependent variable is continuous. Scatter plot and line graph are useful if both variables are continuous. Otherwise, they share many of the same features including a title and labels for the X and Y-axes (including the units of measurement, if any). <strong>The predictor (independent) variable is plotted on the X-axis, while the response (dependent) variable is plotted on the Y-axis.</strong> Refer to your instructor for guideline about writing figure captions.</p>
 <p>You can plot the continuous variable from two groups with a bar graph or boxplot.</p>
-<section id="bar-graph" class="level4" data-number="8.1.2.1">
-<h4 data-number="8.1.2.1" class="anchored" data-anchor-id="bar-graph"><span class="header-section-number">8.1.2.1</span> Bar graph</h4>
+<section id="bar-graph" class="level4">
+<h4 class="anchored" data-anchor-id="bar-graph">Bar graph</h4>
 <p>In this example, we will use the dataframe <code>fertilizer</code>, which was used above for the t-test. We will plot the mean <code>Plant_height_cm</code> across different <code>Treatment</code> and add an error bar that represents the standard deviation (or standard error if needed).</p>
-<p>Because the dataframe <code>fertilizer</code> does not have the mean or standard deviation, we will use <code>summarySE()</code> to generate the mean, SD, and SE by group, similar to how we generated descriptive statistics in <a href="#how-to-generate-descriptive-statistics">How to generate descriptive statistics</a>.</p>
+<p>Because the dataframe <code>fertilizer</code> does not have the mean or standard deviation, we will use <code>summarySE()</code> to generate the mean, SD, and SE by group, similar to how we generated descriptive statistics in <a href="#vii.-how-to-generate-descriptive-statistics">VII. How to generate descriptive statistics</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We will store the result of summarySE as a new object called height_by_Trt_summary</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -676,22 +641,22 @@ The argument <code>width = 0.2</code> controls the width of the error bar.<br>
 The last line <code>labs(x = "Treatment", y = "Plant height (cm)")</code> specifies the x and y axis labels.<br>
 <br>
 You will need at least the first two lines (connected by +) to build a ggplot. For example: <code>ggplot(data = height_by_Trt_summary, aes(x = Treatment, y = Plant_height_cm)) +    geom_bar(stat="identity")</code></p>
-<p>See Appendix 2: Overlaying data points on how to overlay data points on a bar graph.</p>
+<p>See the Appendix if you want to overlay data points on the graph.</p>
 </section>
-<section id="exporting-graphs" class="level4" data-number="8.1.2.2">
-<h4 data-number="8.1.2.2" class="anchored" data-anchor-id="exporting-graphs"><span class="header-section-number">8.1.2.2</span> Exporting graphs</h4>
+<section id="exporting-graphs" class="level4">
+<h4 class="anchored" data-anchor-id="exporting-graphs">Exporting graphs</h4>
 <p>To export your plot from Posit Cloud, go to the <code>Plot</code> tab on the Files Panel and click <code>Export</code>.</p>
 <p><img src="Images/export_graph.png" class="img-fluid"></p>
 <ul>
 <li><p>You can simple do <code>Copy to Clipboard</code> and paste the figure into other programs on your computer. This option may not work for all programs and operation systems.</p></li>
-<li><p>With <code>Save as Image…</code>, you can adjust the image size so the the font size and image size would fit the document where you intend to use the image for (e.g., lab report, presentation, or poster). You should enter an informative name in the box next to <code>File name:</code>.</p></li>
+<li><p>With <code>Save as Image…</code>, you can adjust the image size so that the font size and image size would fit the document where you intend to use the image for (e.g., lab report, presentation, or poster). You should enter an informative name in the box next to <code>File name:</code>.</p></li>
 </ul>
-<p>After exporting the figure, it will appear as an image file in the Files Panel in Posit Cloud or as a file in the project’s folder in RSdutio on your computer. For Posit Cloud, you should download the image file to your computer.</p>
-<p>In the Files Panel, check the box next to the image file hat you want to download. Click <code>More</code>, and choose <code>Export</code>. In the pop-up window, click <code>Download</code>.</p>
+<p>After exporting the figure, it will appear as an image file in the Files Panel in Posit Cloud or as a file in the project’s folder in RStudio on your computer. For Posit Cloud, you should download the image file to your computer.</p>
+<p>In the Files Panel, check the box next to the image file that you want to download. Click <code>More</code> and choose <code>Export</code>. In the pop-up window, click <code>Download</code>.</p>
 <p><img src="Images/download_graph.png" class="img-fluid" width="542"></p>
 </section>
-<section id="boxplot" class="level4" data-number="8.1.2.3">
-<h4 data-number="8.1.2.3" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">8.1.2.3</span> Boxplot</h4>
+<section id="boxplot" class="level4">
+<h4 class="anchored" data-anchor-id="boxplot">Boxplot</h4>
 <p>Another good way to display the same data is to use a boxplot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fertilizer, <span class="fu">aes</span>(<span class="at">x =</span> Treatment, <span class="at">y =</span> Plant_height_cm)) <span class="sc">+</span> </span>
@@ -702,16 +667,17 @@ You will need at least the first two lines (connected by +) to build a ggplot. F
 </div>
 </div>
 <p>Type <code>?geom_boxplot</code> in the Console Panel to show the help page for <code>geom_boxplot()</code>. The values displayed by the hinges and whiskers are explained in the section “Summary statistics”. Note that SD and SE are not displayed in the boxplot.</p>
+<p>See the Appendix if you want to overlay data points on the graph.</p>
 <hr>
 </section>
 </section>
 </section>
-<section id="anova" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="anova"><span class="header-section-number">8.2</span> ANOVA</h2>
-<section id="global-anova-test" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="global-anova-test"><span class="header-section-number">8.2.1</span> Global ANOVA test</h3>
+<section id="b.-anova" class="level2">
+<h2 class="anchored" data-anchor-id="b.-anova">B. ANOVA</h2>
+<section id="global-anova-test" class="level3">
+<h3 class="anchored" data-anchor-id="global-anova-test">Global ANOVA test</h3>
 <p><strong>An ANOVA is used in a similar circumstance as a t-test: nominal independent variable and continuous dependent variable, but when there are three or more categories for the independent variable (perhaps you tried multiple experimental treatments)</strong>. If this test is significant, you must then perform additional “post hoc” tests to determine exactly which pair(s) of groups are significantly different from one another.</p>
-<p>Let’s say you want to measure the effectiveness of penicillin in disrupting <em>E. coli</em> growth. In order to see if doses of penicillin differ in effectiveness, we will test 3 different concentrations as well as a control (no penicillin). The response variable in this case is measured in CFU (colony forming unit).</p>
+<p>Let’s say you want to measure the effectiveness of penicillin in disrupting <em>E. coli</em> growth. To see if doses of penicillin differ in effectiveness, we will test 3 different concentrations as well as a control (no penicillin). The response variable in this case is measured in CFU (colony forming unit).</p>
 <p><strong>Here are the instructions for performing an ANOVA (for comparing more than 2 groups) in R:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run this code to enter the data manually.</span></span>
@@ -767,8 +733,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <p>Penicillin concentration affects CFU in <em>E. coli</em> (F = 356.4, d.f. = 3 and 16, p &lt; 0.0001)</p>
 </blockquote>
 </section>
-<section id="post-hoc-test" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="post-hoc-test"><span class="header-section-number">8.2.2</span> <strong><em>Post hoc test</em></strong></h3>
+<section id="post-hoc-test" class="level3">
+<h3 class="anchored" data-anchor-id="post-hoc-test"><strong><em>Post hoc test</em></strong></h3>
 <p><u><em>If the p value is below 0.05, you must run post hoc tests to compare the means.</em></u> <em>We can compare all means using</em> <strong>Tukey HSD</strong> <em>to obtain information about which pair(s) of</em> penicillin concentrations <em>are significantly different from one another.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>hsd <span class="ot">=</span> <span class="fu">HSD.test</span>(p_anova_model, <span class="at">trt =</span> <span class="st">"Penicillin_conc"</span>, <span class="at">group =</span> T)</span>
@@ -806,12 +772,12 @@ attr(,"class")
 </div>
 <p>Under <code>$groups</code>, the letters indicate the CFU of <em>E. coli</em> at 0 and 100 ug/mL of penicillin are not different from each other as they are both in group “a”. But 150 ug/ml and 200 ug/ml are both significantly different from both 0 and 100 ug/mL as they are in different letter groups b and c, respectively. This means that the means of <em>E. coli</em> growth are different among groups except for the 0 and 100 ug/mL concentrations.</p>
 </section>
-<section id="visualization-1" class="level3" data-number="8.2.3">
-<h3 data-number="8.2.3" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">8.2.3</span> <strong>Visualization</strong></h3>
-<section id="bar-graph-1" class="level4" data-number="8.2.3.1">
-<h4 data-number="8.2.3.1" class="anchored" data-anchor-id="bar-graph-1"><span class="header-section-number">8.2.3.1</span> <strong>Bar graph</strong></h4>
-<p>Similar to a t-test, we can create a bar graph with error bars after using <code>summarySE()</code> to generate the mean, SD and SE for each predictor group.</p>
-<p>After you export the figure, you can use Words, PowerPoints, Preview (Macs) or other software to add the post hoc letter labels from <code>hsd</code>. Alternatively, you can do this usind codes in R, see <a href="#adding-post-hoc-grouping-into-bar-graph-and-boxplot">Adding post hoc grouping into bar graph and boxplot</a>.</p>
+<section id="visualization-1" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-1"><strong>Visualization</strong></h3>
+<section id="bar-graph-1" class="level4">
+<h4 class="anchored" data-anchor-id="bar-graph-1"><strong>Bar graph</strong></h4>
+<p>Similar to a t-test, we can create a bar graph with error bars after using <code>summarySE()</code> to generate the mean, SD, and SE for each predictor group.</p>
+<p>After you export the figure, you can use Words, PowerPoints, Preview (Macs), or other software to add the post hoc letter labels from <code>hsd</code>. Alternatively, you can do this using codes in R. See Appendix 2 Advanced graphing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>penicillin_summary <span class="ot">=</span> <span class="fu">summarySE</span>(<span class="at">data =</span> penicillin, <span class="at">measurevar =</span> <span class="st">"CFU"</span>, <span class="at">groupvars =</span> <span class="st">"Penicillin_conc"</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -825,9 +791,9 @@ attr(,"class")
 </div>
 </div>
 </section>
-<section id="box-plot" class="level4" data-number="8.2.3.2">
-<h4 data-number="8.2.3.2" class="anchored" data-anchor-id="box-plot"><span class="header-section-number">8.2.3.2</span> <strong>Box plot</strong></h4>
-<p>Similar to the t-test, we can plot the data used for ANOVA using a boxplot. Again, you can export the graph to add the post hoc grouping or do it in R.</p>
+<section id="box-plot" class="level4">
+<h4 class="anchored" data-anchor-id="box-plot"><strong>Box plot</strong></h4>
+<p>Similar to the t-test, we can plot the data used for ANOVA using a boxplot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penicillin, <span class="fu">aes</span>(<span class="at">x =</span> Penicillin_conc, <span class="at">y =</span> CFU)) <span class="sc">+</span> </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
@@ -836,16 +802,17 @@ attr(,"class")
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Again, you can export the graph to add the post hoc grouping. Alternatively, you can do it in R. See Appendix 2 Advanced graphing.</p>
 <hr>
 </section>
 </section>
 </section>
-<section id="linear-regression" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="linear-regression"><span class="header-section-number">8.3</span> Linear regression</h2>
-<section id="simple-linear-regression" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="simple-linear-regression"><span class="header-section-number">8.3.1</span> Simple linear regression</h3>
-<p>A linear regression is employed to determine if there is a relationship between two variables, X and Y <strong>when both variables are continuous</strong> (numerical or measurement) type data. In other words whether the slope of the linear regression line is different from zero (remember a flat line has a slope of zero). This statistical test will also indicate the direction and magnitude of the relationship. The direction is inferred from the slope of the line (m), while the magnitude or strength of the relationship is inferred from the coefficient of determination (R2). If R2 = 1, then the line is a perfect “fit,” meaning that Y can be predicted from X (or vice versa) using the equation of the line (y = mx + b). If R2 &lt; 1, then the line is not a perfect “fit,” meaning that only a proportion of Y can be predicted from X (or vice versa) using the equation of the line (y = mx + b). For example, if R2 = 0.94, then 94% of the variation in Y can be explained by X. Note that the equation of the line is ONLY relevant if there is a significant relationship (p &lt; 0.05).</p>
-<p>Let’s say that you want to determine if chirp rates of the snowy tree cricket are related to temperature. You measure the temperature and the rate of 10 chirping crickets at those respective temperatures. Since crickets are ectotherms and their metabolism is affected by their external environment, we should expect to see an increase in chirping as temperature increases.</p>
+<section id="c.-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="c.-linear-regression">C. Linear regression</h2>
+<section id="simple-linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="simple-linear-regression">Simple linear regression</h3>
+<p>A linear regression is employed to determine if there is a relationship between two variables, X and Y <strong>when both variables are continuous</strong> (numerical or measurement) type data. In other words, whether the slope of the linear regression line is different from zero (remember a flat line has a slope of zero). This statistical test will also indicate the direction and magnitude of the relationship. The direction is inferred from the slope of the line (m), while the magnitude or strength of the relationship is inferred from the coefficient of determination (R2). If R2 = 1, then the line is a perfect “fit,” meaning that Y can be predicted from X (or vice versa) using the equation of the line (y = mx + b). If R2 &lt; 1, then the line is not a perfect “fit,” meaning that only a proportion of Y can be predicted from X (or vice versa) using the equation of the line (y = mx + b). For example, if R2 = 0.94, then 94% of the variation in Y can be explained by X. Note that the equation of the line is ONLY relevant if there is a significant relationship (p &lt; 0.05).</p>
+<p>Let’s say that you want to determine if the chirp rates of the snowy tree cricket are related to temperature. You measure the temperature and the rate of 10 chirping crickets at those respective temperatures. Since crickets are ectotherms and their metabolism is affected by their external environment, we should expect to see an increase in chirping as temperature increases.</p>
 <p>Manually create the dataframe <code>chirps</code> in R by running the code below. We have two continuous variables <code>temperature</code> and <code>chips_per_min</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe called chirps using the command data.frame()</span></span>
@@ -910,21 +877,21 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <li><p>Residual standard error: lower values suggest better fit (i.e., less distance between the data point and the predicted line).</p></li>
 <li><p><strong>Degrees of freedom: the maximum number of logically independent values.</strong></p></li>
 <li><p><strong>Multiple R-squared: the percentage of the variation in the response (dependent) variable that the model (dependent variables) explains.</strong></p></li>
-<li><p>Adjusted R-squared*: R-squared adjusted for the number of terms in the model. Use this to compare between models with more than one predictor variables.</p></li>
+<li><p>Adjusted R-squared*: R-squared adjusted for the number of terms in the model. Use this to compare models with more than one predictor variable.</p></li>
 <li><p>F-statistics: Statistics of a F-test that evaluates the fit of the model.</p></li>
 </ul>
 <p>*If there are multiple predictor variables, although the F-test is at the end of the statistical output, it should be examined first to determine whether the linear model fits the data. Only when the model is well fitted (as judged by the F- and P-values), should you further interpret the significance of the slope of a particular predictor.</p>
 <p>In this example, the linear regression is significant because the p-value of the F test is lower than 0.05 (p = 0.000117), so we can continue to examine the intercept and slope.</p>
 <p>The slope is 1.5556 (under “Estimate” in “Coefficient”) and the t-test indicates that it is significantly different from zero (p = 0.000117). Note that this p-value is the same as that of the F-test only when there is a single predictor variable. In multiple regression, there will be separate t-tests for each predictor variable.</p>
-<p>Therefore we can write a statement to summarize the result and provide the statistical support:</p>
+<p>Therefore, we can write a statement to summarize the result and provide statistical support:</p>
 <blockquote class="blockquote">
 <p><strong>There is a positive relationship between temperature and chirp rate (slope =</strong> 1.556<strong>, F = 48.47, d.f. = 1 and 8, p =</strong> 0.0001<strong>).</strong></p>
 </blockquote>
 </section>
-<section id="visualization-2" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">8.3.2</span> Visualization</h3>
-<section id="scatter-plot-line-plot" class="level4" data-number="8.3.2.1">
-<h4 data-number="8.3.2.1" class="anchored" data-anchor-id="scatter-plot-line-plot"><span class="header-section-number">8.3.2.1</span> Scatter plot / Line plot</h4>
+<section id="visualization-2" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-2">Visualization</h3>
+<section id="scatter-plot-line-plot" class="level4">
+<h4 class="anchored" data-anchor-id="scatter-plot-line-plot">Scatter plot / Line plot</h4>
 <p>For the dataframe <code>chirps</code>, we will plot <code>temperature</code> as the predictor (independent) variable on the X axis and chirps_per_min as the response (dependent) variable on the Y axis. A linear regression line will be added.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> chirps, <span class="fu">aes</span>(<span class="at">x =</span> temperature, <span class="at">y =</span> chirps_per_min)) <span class="sc">+</span> </span>
@@ -960,19 +927,19 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 </section>
 </section>
 </section>
-<section id="two-types-of-chi-square-x2-tests" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="two-types-of-chi-square-x2-tests"><span class="header-section-number">8.4</span> Two types of Chi-square (X<sup>2</sup>) tests</h2>
+<section id="d.-two-types-of-chi-square-x2-tests" class="level2">
+<h2 class="anchored" data-anchor-id="d.-two-types-of-chi-square-x2-tests">D. Two types of Chi-square (X<sup>2</sup>) tests</h2>
 <p><strong>Chi-Square tests are used when both the dependent and independent variables are nominal or categorical.</strong></p>
-<section id="chi-square---goodness-of-fit-test" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="chi-square---goodness-of-fit-test"><span class="header-section-number">8.4.1</span> <strong>Chi-square - Goodness of Fit test</strong></h3>
-<p>The <strong>Goodness of Fit test</strong> is used to determine if the observed result (i.e.&nbsp;collected during an experiment) is significantly different than the “expected” result (i.e.&nbsp;that based on the laws of probability). It involves calculating the degrees of freedom (DF), which corresponds to the following equation: DF = (C – 1) where C is the number of categories. It also involves calculating the Chi-square value (X<sup>2</sup>), which corresponds to the following equation: X<sup>2</sup> = <span class="math inline">\(\sum{D^2/E}\)</span> where D is the difference between the observed result (O) and expected result (E). The biologist determines if the X<sup>2</sup> value is less than the “critical” X<sup>2</sup> value for an experiment with a particular DF to determine if there is a significant difference (p value &lt; 0.05) between the observed and expected result.</p>
+<section id="chi-square---goodness-of-fit-test" class="level3">
+<h3 class="anchored" data-anchor-id="chi-square---goodness-of-fit-test"><strong>Chi-square - Goodness of Fit test</strong></h3>
+<p>The <strong>Goodness of Fit test</strong> is used to determine if the observed result (i.e.&nbsp;collected during an experiment) is significantly different than the “expected” result (i.e.&nbsp;that based on the laws of probability). It involves calculating the degrees of freedom (DF), which corresponds to the following equation: DF = (C – 1) where C is the number of categories. It also involves calculating the Chi-square value (X<sup>2</sup>), which corresponds to the following equation: X<sup>2</sup> = <span class="math inline">\(\sum{D^2/E}\)</span> where D is the difference between the observed result (O) and the expected result (E). The biologist determines if the X<sup>2</sup> value is less than the “critical” X<sup>2</sup> value for an experiment with a particular DF to determine if there is a significant difference (p value &lt; 0.05) between the observed and expected result.</p>
 <p><img src="Images/chisq.png" id="chisq" class="img-fluid" alt="Chi-square">.</p>
 <p>Let’s say that you have crustaceans and test their preference for a light or dark environment. In this example there is only ONE variable: the observed preference (are they in the light or dark when you check on them?). You want to see if the distribution of crustaceans is random (roughly 50% in the light and 50% in the dark because they have no preference and distribute according to the laws of probability) OR if the distribution is non-random because they prefer either dark or light.</p>
 <p>The <strong>null hypothesis</strong> for this test is that the variable of interest (light/dark environment) will have no impact on the distribution of the data. In other words, the null hypothesis assumes a random distribution, which means the <strong>observed is no different from the expected</strong>. If p&gt;0.05, you accept the null.</p>
 <p>A <strong>significant result</strong> (p&lt;0.05) means the distribution of your <strong>observed data is different than expected</strong>; it is non-random.</p>
 <p>The goodness of fit Chi-square test is used to test whether the distribution of a categorical variable is significantly different than an “expected” distribution.</p>
 <p>For example, in a species of crustacean, we counted the number of individuals that prefer a light and a dark treatment. We may expect the light:dark ratio to be 1:1 and we can test it with the chi-square goodness of fit test.</p>
-<p>We will create a file that may be similar to how your raw data will look like in a “long form”:</p>
+<p>We will create a file that may be similar to how your raw data will look in a “long form”:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>crust_sp1 <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 1"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"dark"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>, <span class="st">"light"</span>))</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1027,10 +994,10 @@ data:  crust_table
 X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 </div>
 </div>
-<p>The X-squared value (6) is the “Pearson” test chi square value. It is used, with the degrees of freedom (df) value, to obtain the p-value from a chi-squared table.</p>
+<p>The X-squared value (6) is the “Pearson” test chi-square value. It is used, with the degrees of freedom (df) value, to obtain the p-value from a chi-squared table.</p>
 <p>The null hypothesis of the test is that the groups are equally distributed. The p-value is &lt; 0.05, which means that we can reject the null hypothesis. Therefore, our observed distribution of light preferences by crustaceans is significantly different from 1:1.</p>
-<section id="visualization-3" class="level4" data-number="8.4.1.1">
-<h4 data-number="8.4.1.1" class="anchored" data-anchor-id="visualization-3"><span class="header-section-number">8.4.1.1</span> <strong>Visualization</strong></h4>
+<section id="visualization-3" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-3"><strong>Visualization</strong></h4>
 <p>There are several ways of visually representing X<sup>2</sup> results in either a figure or a table. Ask your instructor about their preference.</p>
 <p><em>For a table</em>:</p>
 <p>The table should be <u>a simplified version</u> of the table R used to run the analysis.</p>
@@ -1060,13 +1027,14 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 </div>
 </section>
 </section>
-<section id="chi-square---contingency-test" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="chi-square---contingency-test"><span class="header-section-number">8.4.2</span> Chi-square - Contingency test</h3>
-<p>The <strong>Contingency test</strong>, also called the <strong>Test of Independence</strong>, is used to determine if the frequency of outcomes for one set of observations matches those for another set of observations. For example, let’s imagine that we want to know whether two different species of crustaceans exhibit the same preference for light or dark. In other words, is the preference for light or dark contingent on which species it is? To find this out one uses a version of a Chi-square test known as a contingency table.</p>
+<section id="chi-square---contingency-test" class="level3">
+<h3 class="anchored" data-anchor-id="chi-square---contingency-test">Chi-square - Contingency test</h3>
+<p>The <strong>Contingency test</strong>, also called the <strong>Test of Independence</strong>, is used to determine if the frequency of outcomes for one set of observations matches those for another set of observations.</p>
+<p>For example, let’s imagine that we want to know whether two different species of crustaceans exhibit the same preference for light or dark. In other words, is the preference for light or dark contingent on which species it is? To find this out one uses a version of a Chi-square test known as a contingency table.</p>
 <p>In this case, your <strong>independent variable</strong> is species and your <strong>dependent variable</strong> is preference (because you think preference might depend on species); your null hypothesis is that there is no difference in the preference for light versus dark between Species 1 and 2. When you run a contingency test you produce a X<sup>2</sup> value as in the Goodness of Fit test. If the X<sup>2</sup> value is large enough (leading to p&lt;0.05), then you can reject the null hypothesis that the proportion of crustaceans showing a preference for light is <strong>not different</strong> between the two species, and state that the data shows that the preference for light or dark <strong>is contingent</strong> on the species. Another way to say the same thing: the two species show significantly different preferences for light.</p>
 <p>Let’s imagine that we test the preference of two crustacean species for light versus dark and compare the preferences. The values could be arranged in a table like the one below.</p>
 <p><img src="Images/Contingency_data.png" id="fig-Contingency_data" class="img-fluid"></p>
-<p>If the preferences of the two species were the same, then they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences? Note that the total number of observations/ occurrences do not have to be the same for both species. A contingency test will correct for different sizes between samples.</p>
+<p>If the preferences of the two species were the same, they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences? Note that the total number of observations/ occurrences does not have to be the same for both species. A contingency test will correct for different sizes between samples.</p>
 <p>We will begin by making up the data for species 2:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>crust_sp2 <span class="ot">=</span>  <span class="fu">data.frame</span>(<span class="at">Crustacean =</span> <span class="st">"Species 2"</span>, <span class="at">Result =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"dark"</span>, <span class="dv">22</span>), <span class="fu">rep</span>(<span class="st">"light"</span>, <span class="dv">2</span>)))</span>
@@ -1100,13 +1068,15 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 24  Species 2  light</code></pre>
 </div>
 </div>
-<p>Then we will add it to the previous <code>crust_sp1</code> to make a new object;</p>
+<p>Then we will add it to the previous <code>crust_sp1</code> to make a new object:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>crust_twoSp <span class="ot">=</span> <span class="fu">rbind</span>(crust_sp1, crust_sp2)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>crust_twoSp</span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The table is very long; so we are not displaying it here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The table is very long; so we are not displaying it here.</span></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="co"># rbind() combines two dataframes by adding the second datafrome (crust_sp2) to the bottom on the first dataframe (crust_sp1).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We will first reshape our data into a contingency table using <code>table()</code>:</p>
 <div class="cell">
@@ -1131,7 +1101,8 @@ data:  crust_twoSp_table
 X-squared = 19.286, df = 1, p-value = 1.125e-05</code></pre>
 </div>
 </div>
-<p><strong>Visualization</strong></p>
+<section id="visualization-4" class="level4">
+<h4 class="anchored" data-anchor-id="visualization-4"><strong>Visualization</strong></h4>
 <p>You can plot the contingency table by <code>geom_bar()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_twoSp, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>Crustacean) <span class="sc">+</span></span>
@@ -1144,16 +1115,24 @@ X-squared = 19.286, df = 1, p-value = 1.125e-05</code></pre>
 </section>
 </section>
 </section>
-<section id="appendix-1.-editing-data-in-.csv-and-dataframe" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Appendix 1. Editing data in .csv and dataframe</h1>
+</section>
+<section id="appendix" class="level1">
+<h1>Appendix</h1>
+<section id="appendix-1.-editing-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-1.-editing-data-in-r">Appendix 1. Editing data in R</h2>
 <p>Some times you would need to edit your data after loading it into R. There are two options.</p>
 <ol type="1">
 <li><p>(Beginner) Modify the .csv file that was uploaded to Posit.</p>
-<p><br>
-Click on the .csv file in the <code>Files</code> panel and click <code>View File</code>. It will open the .csv file in the top left panel. You can modify any values there and save it. <strong>Once the editing is done, you must load the file into R again using read.csv().</strong></p></li>
-<li><p>(Advanced) Modify the dataframe that was loaded into R.</p>
-<p><br>
-It is a good practice to keep a record of all editing in your R script and to not modify the raw data file. To do this, we will modify the dataframe that is already loaded into R. Keep reading if you want to try this option.</p></li>
+<ul>
+<li><p>Click on the .csv file in the <code>Files</code> panel and click <code>View File</code>.</p></li>
+<li><p>It will open the .csv file in the top left panel.</p></li>
+<li><p>You can modify any values there and save it.</p></li>
+<li><p><strong>Once the editing is done, you must load the file into R again using read.csv().</strong></p></li>
+<li><p>Note: If you are using Posit Cloud, this option modifies the .csv file on the cloud, but the file on your computer is NOT modified.</p></li>
+</ul></li>
+<li><p>(Advanced) Modify the dataframe that was loaded into R.<br>
+<br>
+It is a good practice to keep a record of all editing in your R script and to not modify the raw data file. To do this, we will modify the dataframe that is already loaded into R, using codes that will be saved in the R script. Keep reading if you want to try this option.</p></li>
 </ol>
 <p>After loading the data into R as a data frame, you can modify it using the command line.</p>
 <p>We will use <code>test_df</code> as an example:</p>
@@ -1177,8 +1156,8 @@ It is a good practice to keep a record of all editing in your R script and to no
 4    B        4</code></pre>
 </div>
 </div>
-<section id="changing-column-names" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="changing-column-names"><span class="header-section-number">9.1</span> Changing column names</h2>
+<section id="changing-column-names" class="level3">
+<h3 class="anchored" data-anchor-id="changing-column-names">Changing column names</h3>
 <p><strong>Option 1.</strong> You can change the column name after knowing the index (position) of the name that needs to be changed.</p>
 <p>For example, we want to change <code>Pred</code> to <code>Predictor</code>.</p>
 <div class="cell">
@@ -1225,8 +1204,8 @@ It is a good practice to keep a record of all editing in your R script and to no
 </div>
 <p>There are many other ways to do it. You can explore on your own!</p>
 </section>
-<section id="changing-values-in-a-data-frame" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="changing-values-in-a-data-frame"><span class="header-section-number">9.2</span> Changing values in a data frame</h2>
+<section id="changing-values-in-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="changing-values-in-a-data-frame">Changing values in a data frame</h3>
 <p>This is best done by knowing the index of the column and row of the cell that needs to be changed.</p>
 <p>For example, if we want to change the 3 to 300 in test_df:</p>
 <div class="cell">
@@ -1251,8 +1230,8 @@ It is a good practice to keep a record of all editing in your R script and to no
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co"># So [3,2] means row 3 and column 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="combining-text-from-two-columns" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="combining-text-from-two-columns"><span class="header-section-number">9.3</span> Combining text from two columns</h2>
+<section id="combining-text-from-two-columns" class="level3">
+<h3 class="anchored" data-anchor-id="combining-text-from-two-columns">Combining text from two columns</h3>
 <p>For example, we have a dataframe called <code>test_df2</code> and want to combine the columns <code>Variable1</code> and <code>Variable2</code> into a new column.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create test_df2</span></span>
@@ -1290,11 +1269,11 @@ It is a good practice to keep a record of all editing in your R script and to no
 <hr>
 </section>
 </section>
-<section id="appendix-2.-advanced-graphing" class="level1" data-link="How to graph in R" data-number="10">
-<h1 data-link="How to graph in R" data-number="10"><span class="header-section-number">10</span> Appendix 2. Advanced graphing</h1>
-<section id="overlaying-data-points-in-bar-graph-and-boxplot" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="overlaying-data-points-in-bar-graph-and-boxplot"><span class="header-section-number">10.1</span> Overlaying data points in bar graph and boxplot</h2>
-<p>When visualizing data, it is sometime beneficial to show the raw data. We can overlap the data points on a bar graph. This example uses the raw data <code>fertilizer</code> and the dataframe <code>height_by_Trt_summary</code> generated by <code>summarySE</code> from <a href="#t-test">T-test</a>.</p>
+<section id="appendix-2.-advanced-graphing" class="level2" data-link="How to graph in R">
+<h2 data-link="How to graph in R" class="anchored" data-anchor-id="appendix-2.-advanced-graphing">Appendix 2. Advanced graphing</h2>
+<section id="overlaying-data-points-in-bar-graph-and-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="overlaying-data-points-in-bar-graph-and-boxplot">Overlaying data points in bar graph and boxplot</h3>
+<p>When visualizing data, it is sometime beneficial to show the raw data. We can overlap the data points on a bar graph. This example uses the raw data <code>fertilizer</code> and the dataframe <code>height_by_Trt_summary</code> generated by <code>summarySE</code> from <a href="#a.-t-test">A. T-test</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> height_by_Trt_summary, <span class="fu">aes</span>(<span class="at">x =</span> Treatment, <span class="at">y =</span> Plant_height_cm)) <span class="sc">+</span> </span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> </span>
@@ -1318,9 +1297,9 @@ It is a good practice to keep a record of all editing in your R script and to no
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There is no outlier point in this example!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="adding-post-hoc-grouping-into-bar-graph-and-boxplot" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="adding-post-hoc-grouping-into-bar-graph-and-boxplot"><span class="header-section-number">10.2</span> Adding post hoc grouping into bar graph and boxplot</h2>
-<p>We will use the dataframe <code>penicillin</code>, <code>penicillin_summary</code>, and <code>hsd</code> created in <a href="#anova">ANOVA</a>.</p>
+<section id="adding-post-hoc-grouping-into-bar-graph-and-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="adding-post-hoc-grouping-into-bar-graph-and-boxplot">Adding post hoc grouping into bar graph and boxplot</h3>
+<p>We will use the dataframe <code>penicillin</code>, <code>penicillin_summary</code>, and <code>hsd</code> created in <a href="#b.-anova">B. ANOVA</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the letters from hsd to build a dataframe to help us label the plot.</span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="co"># temp_label will have the data from hsd$means and the group letters from hsd$groups. </span></span>
@@ -1372,6 +1351,7 @@ It is a good practice to keep a record of all editing in your R script and to no
 <p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-67-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
 </section>
 </section>
 
