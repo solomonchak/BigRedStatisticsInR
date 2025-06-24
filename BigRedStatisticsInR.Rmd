@@ -18,7 +18,6 @@ code-overflow: wrap
 
 # code for html output
 
-
 ---
 title: "Big Red Statistics in R"
 # output: word_document
@@ -35,14 +34,11 @@ code-overflow: wrap
 
 # code for doc output
 
-# To add this to an existing Google Doc, first upload the whole docx to google, then copy and paste the relavent section
-
-# To generate a table of content of ONLY the R guide on Google Doc, click Insert > Table of Content. Then in the table of content, remove the sections are are not needed.
-
-
 ---
 title: "Big Red Statistics in R"
-output: word_document
+output: 
+  word_document:
+    reference_docx: style.docx
 format: html
 date: "`r Sys.Date()`"
 toc: true
@@ -54,6 +50,11 @@ project:
 code-overflow: wrap
 ---
 
+# To add this to an existing Google Doc, first upload the whole docx to google, then copy and paste the relevant section
+
+# To generate a table of content of ONLY the R guide on Google Doc, click Insert > Table of Content. Then in the table of content, remove the sections are are not needed.
+  
+  
 ```
 
 # I. Overview of the scientific method
@@ -100,13 +101,13 @@ The **mean (**$\bar{X}$**)** (often referred to as the average) corresponds to t
 
 The standard deviation (s) is a measure of the distribution of the data (i.e. extent of variation among different subjects) and weights each value by its distance from the mean. There is an increase in the standard deviation if there is a large distance of the values from the mean (as in the case of 10, 40, 25, 35, 40, which have a mean of 30). In contrast, there is a decrease in the standard deviation if there is a small distance (if any) of the values from the mean (as in the case of 25, 30, 35, 30, 30, which have the same mean of 30). The result for each group is summarized as the mean "plus or minus" the standard deviation ($\bar{X}$ ± s). This gives you a lot of information about the data set. If someone describes a data set as the mean plus or minus one SD, they are giving you the range into which 68% of the data points fall. Mean ± 2 SD gives you the range of 95% of the data, and Mean ± 3 SD encompasses 99% of the data. Note that on a bar graph or boxplot the standard deviation is sometimes represented by vertical lines known as error bars that extend from the mean in both an upward and downward direction.
 
-![](Images/errorbar.png)
+![](Images/errorbar.png){width="300"}
 
 ***Standard error***
 
 The standard error of the mean (SEM), or simply the **standard error** (SE) is another common way to state the variation around the mean. Instead of telling you about the range of the data set, it tells you the range of the "true" mean. If you added one sample to your study or took one sample away, the mean may change a little. So your mean is correct for your group of samples, but not necessarily for the whole population of all organisms that could have been in your study. SEM tells you that if you could have included every possible subject or sample - the mean probably would have been somewhere in this range. Once you have calculated the standard deviation of the mean (s), it is easy to calculate SE.
 
-![](Images/SE.png){width="197"}
+![](Images/SE.png){width="80"}
 
 n = the number of samples or trials or replicates. This technique results in a smaller number than the standard deviation (s) offers, and thus often makes graphs with error bars look smaller. Whether to use s or SE in reporting your statistics and making error bars varies depending on the application, style, and field. Be sure to find out what your instructor prefers for your assignments!
 
@@ -183,15 +184,15 @@ Once in the classroom space, you will see project assignments that your instruct
 
 To create your own project on Posit, click `New Project > New RStudio Project` on the upper right. You should rename your project(s) as directed by your instructor.
 
-![](Images/NewProject.png){#fig-NewProject width="452"}
+![](Images/NewProject.png){#fig-NewProject width="300"}
 
 Once the project is deployed, on the lower right panel, click the `Upload` button and choose the data file from your computer (e.g., a `.csv` file).
 
-![](Images/upload.png){#fig-upload width="462"}
+![](Images/upload.png){#fig-upload width="300"}
 
 To download a file to your computer (e.g., a saved graph), check the box next to the file you want to export, click `More > Export…` and click `Download`.
 
-![](Images/Export.png){#fig-export width="451"}
+![](Images/Export.png){#fig-export width="300"}
 
 ### **Local - RStudio**
 
@@ -203,7 +204,7 @@ Then click `Create Project`. Now you can access all files in the folder `R_is_fu
 
 ## C. Starting an R script
 
-Once your project is opened, you should create an **R script**. The R script is a text file where your R commands and notes (after hashtags #) will be saved.
+Once your project is opened, you should create an **R script**. The R script is a text file where your R commands and notes (after hashtags \#) will be saved.
 
 To do this, click `File > New File > R Script`.
 
@@ -263,7 +264,7 @@ install.packages("agricolae")
 
 Alternatively, you can install packages from the `Package` tab on the Files Panel (Panel D). Click `Install` and type the package name in the box (it will auto-complete for you to prevent typos).
 
-![](Images/install_package.png){width="322"}
+![](Images/install_package.png){width="237"}
 
 ### Loading packages
 
@@ -299,7 +300,7 @@ Place the .csv file into your project's directory (e.g., R_is_fun) or upload it 
 
 Now, you should see the .csv file listed in the File Panel (Panel D) of RStudio.
 
-![](Images/filepanel.png){#fig-FilePanel}
+![](Images/filepanel.png){#fig-FilePanel width="450"}
 
 ## B. Loading a .csv file into R
 
@@ -330,7 +331,7 @@ The code above will read `name.csv` into R and save it as an "object" called `da
 
 Now the object `data_name` will appear in the Environment Panel (Panel C).
 
-![](Images/env_panel.png){#fig-env_panel}
+![](Images/env_panel.png){#fig-env_panel width="450"}
 
 In the environment panel, you can click on the object to open it in a new tab in the Script Panel. Note that doing it actually sends a code to the Console Panel as `View(data_name)`
 
@@ -382,7 +383,7 @@ Follow the instructions in the previous section to enter your continuous data in
 
 For example, you can first enter your data into Excel, save it as `seashells.csv`, and upload that to your project's directory in Posit.
 
-![](Images/seashell%20data%20in%20excel.png){#fig-seashellexcel width="139"}
+![](Images/seashell%20data%20in%20excel.png){#fig-seashellexcel width="103"}
 
 Then you can load it as a dataframe called `seashells`
 
@@ -418,7 +419,7 @@ class(seashells$Length_cm)
 
 Generate a quick histogram of the data, if you have a continuous variable.
 
-```{r}
+```{r, out.width="50%"}
 hist(seashells$Length_cm)
 
 ```
@@ -464,13 +465,13 @@ seashell_lengthXsp_summary
 
 With this data, you can make a table in Excel to summarize descriptive statistics of seashell lengths of the three species.
 
-![](Images/Mean%20shell%20length%20by%20species.png){#fig-meanshell}
+![](Images/Mean%20shell%20length%20by%20species.png){#fig-meanshell width="300"}
 
 #### Boxplot
 
 Boxplot is a good way to visually examine your data before running any analysis. It will show you the distribution of the data and any outlines. For most test we assume that the data is normally distributed. There are ways to deal with non-normally distributed data, but they are not covered in this guide.
 
-```{r}
+```{r, out.width="50%"}
 # Note that we use the RAW data, not the summarized data from summarySE for boxplot.
 
 ggplot(data = seashells, aes(x = Species, y = Length_cm)) + 
@@ -581,7 +582,7 @@ heightXtrt_summary
 
 We can then use `heightXtrt_summary` to build a bar graph.
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + 
   geom_col( fill = "lightblue", color = "black") + 
   geom_errorbar(aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd), width = 0.2) + 
@@ -611,7 +612,7 @@ See the Appendix if you want to overlay data points on the graph.
 
 To export your plot from Posit Cloud, go to the `Plot` tab on the Files Panel and click `Export`.
 
-![](Images/export_graph.png)
+![](Images/export_graph.png){width="300"}
 
 -   You can simple do `Copy to Clipboard` and paste the figure into other programs on your computer. This option may not work for all programs and operation systems.
 
@@ -621,13 +622,14 @@ After exporting the figure, it will appear as an image file in the Files Panel i
 
 In the Files Panel, check the box next to the image file that you want to download. Click `More` and choose `Export`. In the pop-up window, click `Download`.
 
-![](Images/download_graph.png){width="542"}
+![](Images/download_graph.png){width="450"}
 
 #### Boxplot
 
 Another good way to display the same data is to use a boxplot.
 
-```{r}
+```{r, out.width="50%"}
+
 ggplot(data = fertilizer, aes(x = Treatment, y = Plant_height_cm)) + 
   geom_boxplot() +
   labs(x = "Treatment", y = "Plant height (cm)")
@@ -667,7 +669,7 @@ t.test(Values~AminoAcid, data = TwoTen_data, var.equal = TRUE)
 # We can skip a lot of the default arguments. 
 ```
 
-```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide'}
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide', out.width="50%"}
 # And now plot it
 
 ggplot(data = TwoTen_data, aes(x = AminoAcid, y = Values)) + 
@@ -680,7 +682,7 @@ ggplot(data = TwoTen_data, aes(x = AminoAcid, y = Values)) +
 # If you need to change the (column) name on the dataframe, please see the section "Editing data in .csv and dataframe"
 ```
 
-```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide'}
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide', out.width="50%"}
 
 # We can also do a bar graph after using summarySE() to calculate the average, SD, and SE.
 
@@ -805,7 +807,7 @@ Similar to a t-test, we can create a bar graph with error bars after using `summ
 
 After you export the figure, you can use Words, PowerPoints, Preview (Macs), or other software to add the post hoc letter labels from `hsd`. Alternatively, you can do this using codes in R. See Appendix 2 Advanced graphing.
 
-```{r}
+```{r, out.width="50%"}
 penicillin_summary = summarySE(data = penicillin, measurevar = "CFU", groupvars = "Penicillin_conc")
 
 ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
@@ -816,7 +818,7 @@ ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
 
 Your final figure should include the post hoc letters, similar to the figure below. You can export the graph to add the letters manually. Alternatively, you can do it in R. See Appendix 2. [Adding post hoc grouping into bar graph and boxplot].
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="50%"}
 # add group letters
 
 temp_label = merge(hsd$means, hsd$groups, by = c("row.names", names(hsd$means)[1]))
@@ -838,7 +840,7 @@ ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
 
 Similar to the t-test, we can plot the data used for ANOVA using a boxplot.
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = penicillin, aes(x = Penicillin_conc, y = CFU)) + 
   geom_boxplot() +
   labs(x = "Penicillin concentration") 
@@ -1051,7 +1053,7 @@ Therefore, we can write a statement to summarize the result and provide statisti
 
 For the dataframe `chirps`, we will plot `temperature` as the predictor (independent) variable on the X axis and chirps_per_min as the response (dependent) variable on the Y axis. A linear regression line will be added.
 
-```{r, message=FALSE}
+```{r, message=FALSE, out.width="50%"}
 ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) + 
   geom_point() + 
   geom_smooth(method = lm, se = F, color = "red") +
@@ -1065,7 +1067,7 @@ ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) +
 
 [If the p-value is not significant:]{.underline} this means the line fit is not meaningful, so just show the scatter plot without the linear fit (as shown below).
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) + 
   geom_point() + 
   labs(y = "Chirps per minute", x = expression("Temperature " ( degree*C)))
@@ -1074,7 +1076,7 @@ ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) +
 
 Some instructors or journals prefer to display an insignificant trend with a dashed line:
 
-```{r, message=FALSE}
+```{r, message=FALSE, out.width="50%"}
 ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) + 
   geom_point() + 
   geom_smooth(method = lm, se = F, color = "grey", linetype = "dashed") +
@@ -1091,7 +1093,7 @@ ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) +
 
 The **Goodness of Fit test** is used to determine if the observed result (i.e. collected during an experiment) is significantly different than the "expected" result (i.e. that based on the laws of probability). It involves calculating the degrees of freedom (DF), which corresponds to the following equation: DF = (C -- 1) where C is the number of categories. It also involves calculating the Chi-square value (X^2^), which corresponds to the following equation: X^2^ = $\sum{D^2/E}$ where D is the difference between the observed result (O) and the expected result (E). The biologist determines if the X^2^ value is less than the "critical" X^2^ value for an experiment with a particular DF to determine if there is a significant difference (p value \< 0.05) between the observed and expected result.
 
-![Chi-square](Images/chisq.png){#chisq}.
+![Chi-square](Images/chisq.png){#chisq width="450"}.
 
 Let's say that you have crustaceans and test their preference for a light or dark environment. In this example there is only ONE variable: the observed preference (are they in the light or dark when you check on them?). You want to see if the distribution of crustaceans is random (roughly 50% in the light and 50% in the dark because they have no preference and distribute according to the laws of probability) OR if the distribution is non-random because they prefer either dark or light.
 
@@ -1146,7 +1148,7 @@ There are several ways of visually representing X^2^ results in either a figure 
 
 The table should be [a simplified version]{.underline} of the table R used to run the analysis.
 
-![](Images/chisq_table.png){#fig-chisq_table}
+![](Images/chisq_table.png){#fig-chisq_table width="450"}
 
 *For a graph*:
 
@@ -1154,7 +1156,7 @@ The type of graph used to display frequency (count) data is called a histogram.
 
 You can plot the data for a goodness-of-fit Chi-square test by using the raw data in `crust_sp1`.
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = crust_sp1, aes(x = Result)) + 
   geom_bar() +
   labs(x = "Result", y = "Count")
@@ -1162,7 +1164,7 @@ ggplot(data = crust_sp1, aes(x = Result)) +
 
 Alternative, you could also plot using the count data `crust_table` after converting it to a dataframe:
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data.frame(crust_table), aes(Var1, Freq, fill = Var1)) + 
   geom_col() + 
   labs(x = "Result", y = "Count")
@@ -1182,7 +1184,7 @@ In this case, your **independent variable** is species and your **dependent vari
 
 Let's imagine that we test the preference of two crustacean species for light versus dark and compare the preferences. The values could be arranged in a table like the one below.
 
-![](Images/Contingency_data.png){#fig-Contingency_data}
+![](Images/Contingency_data.png){#fig-Contingency_data width="450"}
 
 If the preferences of the two species were the same, they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences? Note that the total number of observations/ occurrences does not have to be the same for both species. A contingency test will correct for different sizes between samples.
 
@@ -1228,7 +1230,7 @@ chisq.test(crust_twoSp_table)
 
 You can plot the contingency table by `geom_bar()`:
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = crust_twoSp, aes(x = Result)) + geom_bar() + facet_grid(~Crustacean) +
   labs(x = "Result", y = "Count")
 
@@ -1379,7 +1381,7 @@ test_df2
 
 When visualizing data, it is sometime beneficial to show the raw data. We can overlap the data points on a bar graph. This example uses the raw data `fertilizer` and the dataframe `heightXtrt_summary` generated by `summarySE` from [A. T-test].
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + 
   geom_bar(stat="identity", fill = "lightblue", color = "black") + 
   geom_errorbar(aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd), width = 0.2) + 
@@ -1392,7 +1394,7 @@ ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) +
 
 We can do the same for a boxplot. When an outlier is present, it will be displayed as a point by `geom_boxplot()`. Therefore, the argument `outlier.colour = "grey"` is used to specify the color of the outlier point.
 
-```{r}
+```{r, out.width="50%"}
 ggplot(data = fertilizer, aes(x = Treatment, y = Plant_height_cm)) + 
   geom_boxplot(outlier.colour = "grey") +
   labs(x = "Treatment", y = "Plant height (cm)") +
@@ -1420,7 +1422,7 @@ temp_label
 
 Bar plot:
 
-```{r}
+```{r, out.width="50%"}
 # Then, geom_text takes data from temp_label to add the post hoc letters to the plot.  
 # y = Max + max(Max)*0.1 calculates a y-coordinate to place the label based on the Max values of the data.
 # Jittered data point is included here for your reference.
@@ -1440,7 +1442,7 @@ ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
 
 Boxplot:
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, out.width="50%"}
 ggplot(data = penicillin, aes(x = Penicillin_conc, y = CFU)) + 
   geom_boxplot() +
   geom_jitter(width = 0.1, height = 0) + 

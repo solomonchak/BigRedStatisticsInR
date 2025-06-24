@@ -227,10 +227,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <strong>mean (</strong><span class="math inline">\(\bar{X}\)</span><strong>)</strong> (often referred to as the average) corresponds to the sum of the measurements divided by the number of measurements (as in the case of 10, 40, 25, 35, and 40, which produce a mean of 30). In the case of an odd number of measurements, the <strong>median</strong> corresponds to the measurement in the middle when all of the measurements are sorted from lowest to highest (as in the case of 10, 40, 25, 35, and 40, which produces a median of 35). In the case of an even number of measurements, the median corresponds to the mean of the two measurements in the middle when all of the measurements are sorted from lowest to highest. Finally, the <strong>mode</strong> corresponds to the most common measurement (as in the case of 10, 40, 25, 35, and 40, which produces a mode of 40).</p>
 <p><strong><em>Standard deviation</em></strong></p>
 <p>The standard deviation (s) is a measure of the distribution of the data (i.e.&nbsp;extent of variation among different subjects) and weights each value by its distance from the mean. There is an increase in the standard deviation if there is a large distance of the values from the mean (as in the case of 10, 40, 25, 35, 40, which have a mean of 30). In contrast, there is a decrease in the standard deviation if there is a small distance (if any) of the values from the mean (as in the case of 25, 30, 35, 30, 30, which have the same mean of 30). The result for each group is summarized as the mean “plus or minus” the standard deviation (<span class="math inline">\(\bar{X}\)</span> ± s). This gives you a lot of information about the data set. If someone describes a data set as the mean plus or minus one SD, they are giving you the range into which 68% of the data points fall. Mean ± 2 SD gives you the range of 95% of the data, and Mean ± 3 SD encompasses 99% of the data. Note that on a bar graph or boxplot the standard deviation is sometimes represented by vertical lines known as error bars that extend from the mean in both an upward and downward direction.</p>
-<p><img src="Images/errorbar.png" class="img-fluid"></p>
+<p><img src="Images/errorbar.png" class="img-fluid" width="300"></p>
 <p><strong><em>Standard error</em></strong></p>
 <p>The standard error of the mean (SEM), or simply the <strong>standard error</strong> (SE) is another common way to state the variation around the mean. Instead of telling you about the range of the data set, it tells you the range of the “true” mean. If you added one sample to your study or took one sample away, the mean may change a little. So your mean is correct for your group of samples, but not necessarily for the whole population of all organisms that could have been in your study. SEM tells you that if you could have included every possible subject or sample - the mean probably would have been somewhere in this range. Once you have calculated the standard deviation of the mean (s), it is easy to calculate SE.</p>
-<p><img src="Images/SE.png" class="img-fluid" width="197"></p>
+<p><img src="Images/SE.png" class="img-fluid" width="80"></p>
 <p>n = the number of samples or trials or replicates. This technique results in a smaller number than the standard deviation (s) offers, and thus often makes graphs with error bars look smaller. Whether to use s or SE in reporting your statistics and making error bars varies depending on the application, style, and field. Be sure to find out what your instructor prefers for your assignments!</p>
 <p><strong><em>Coefficient of variation</em></strong></p>
 <p>The <strong>coefficient of variation (CV)</strong> corresponds to the standard deviation divided by the mean and is useful when comparing the amount of variation for one variable among groups with different means.</p>
@@ -281,11 +281,11 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <p>For the online option, you will need to upload data to the cloud or download output files from the cloud. The benefit is that you can use R anywhere and on virtually any machine with the internet (even a tablet)!</p>
 <p>Once in the classroom space, you will see project assignments that your instructor has created for you. Your instructor will also have access to your assignments in this space. In some cases, your instructor may have created a template that includes pre-installed packages.</p>
 <p>To create your own project on Posit, click <code>New Project &gt; New RStudio Project</code> on the upper right. You should rename your project(s) as directed by your instructor.</p>
-<p><img src="Images/NewProject.png" id="fig-NewProject" class="img-fluid" width="452"></p>
+<p><img src="Images/NewProject.png" id="fig-NewProject" class="img-fluid" width="300"></p>
 <p>Once the project is deployed, on the lower right panel, click the <code>Upload</code> button and choose the data file from your computer (e.g., a <code>.csv</code> file).</p>
-<p><img src="Images/upload.png" id="fig-upload" class="img-fluid" width="462"></p>
+<p><img src="Images/upload.png" id="fig-upload" class="img-fluid" width="300"></p>
 <p>To download a file to your computer (e.g., a saved graph), check the box next to the file you want to export, click <code>More &gt; Export…</code> and click <code>Download</code>.</p>
-<p><img src="Images/Export.png" id="fig-export" class="img-fluid" width="451"></p>
+<p><img src="Images/Export.png" id="fig-export" class="img-fluid" width="300"></p>
 </section>
 <section id="local---rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="local---rstudio"><strong>Local - RStudio</strong></h3>
@@ -340,7 +340,7 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># We will explain the R syntax below in "Importing data into R"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Alternatively, you can install packages from the <code>Package</code> tab on the Files Panel (Panel D). Click <code>Install</code> and type the package name in the box (it will auto-complete for you to prevent typos).</p>
-<p><img src="Images/install_package.png" class="img-fluid" width="322"></p>
+<p><img src="Images/install_package.png" class="img-fluid" width="237"></p>
 </section>
 <section id="loading-packages" class="level3">
 <h3 class="anchored" data-anchor-id="loading-packages">Loading packages</h3>
@@ -368,7 +368,7 @@ The variance in data sometimes fits a <strong>normal distribution</strong> (i.e.
 <p>Try doing this with <code>name.xlsx</code> which can be downloaded from <a href="https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing">here</a> (<a href="https://tinyurl.com/5dpk43x7" class="uri">https://tinyurl.com/5dpk43x7</a>)</p>
 <p>Place the .csv file into your project’s directory (e.g., R_is_fun) or upload it to your project in posit.cloud using the Files pane.</p>
 <p>Now, you should see the .csv file listed in the File Panel (Panel D) of RStudio.</p>
-<p><img src="Images/filepanel.png" id="fig-FilePanel" class="img-fluid"></p>
+<p><img src="Images/filepanel.png" id="fig-FilePanel" class="img-fluid" width="450"></p>
 </section>
 <section id="b.-loading-a-.csv-file-into-r" class="level2">
 <h2 class="anchored" data-anchor-id="b.-loading-a-.csv-file-into-r">B. Loading a .csv file into R</h2>
@@ -391,7 +391,7 @@ Since R knows the expected sequence of arguments (this is called positional argu
 <p>There are many other arguments in <code>read.csv</code>. To see them, type <code>?read.csv</code> in the Console Panel (Panel B) to display the Help page in the File Console (Panel D). In this example, the default arguments work (e.g., header = TRUE, sep = “,”) because <code>name.csv</code> has a header row and values are separated by “,”. So <code>data_name = read.csv("name.csv")</code> is doing the same command as <code>data_name = read.csv("name.csv", header = TRUE, sep = ",")</code>. Because of this default arguments, R may read a csv file incorrectly if it does not have a header line. <strong>So be sure to include column names in the .csv file.</strong></p>
 <p>The code above will read <code>name.csv</code> into R and save it as an “object” called <code>data_name</code>. An object is data that is stored in R. Objects are different from files that are being imported into Posit Cloud and RStudio. Objects can be used in the Script or Console Panel (e.g., by running <code>data_name</code>), but files in the File Panel cannot.</p>
 <p>Now the object <code>data_name</code> will appear in the Environment Panel (Panel C).</p>
-<p><img src="Images/env_panel.png" id="fig-env_panel" class="img-fluid"></p>
+<p><img src="Images/env_panel.png" id="fig-env_panel" class="img-fluid" width="450"></p>
 <p>In the environment panel, you can click on the object to open it in a new tab in the Script Panel. Note that doing it actually sends a code to the Console Panel as <code>View(data_name)</code></p>
 <p>You can show the content of the object in the Console Panel by running (or “calling”) it directly:</p>
 <div class="cell">
@@ -448,7 +448,7 @@ Since R knows the expected sequence of arguments (this is called positional argu
 <p>Let’s say that you measure the length of 12 seashells. Here are the instructions for determining the mean and standard deviation using R:</p>
 <p>Follow the instructions in the previous section to enter your continuous data into a new dataframe called <code>seashells</code>. In this case your dependent variable is <code>Length_cm</code> of the seashells.</p>
 <p>For example, you can first enter your data into Excel, save it as <code>seashells.csv</code>, and upload that to your project’s directory in Posit.</p>
-<p><img src="Images/seashell%20data%20in%20excel.png" id="fig-seashellexcel" class="img-fluid" width="139"></p>
+<p><img src="Images/seashell%20data%20in%20excel.png" id="fig-seashellexcel" class="img-fluid" width="103"></p>
 <p>Then you can load it as a dataframe called <code>seashells</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>seashells <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"seashells.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -489,7 +489,7 @@ Since R knows the expected sequence of arguments (this is called positional argu
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(seashells<span class="sc">$</span>Length_cm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Generate basic summary statistics:</p>
@@ -549,7 +549,7 @@ Since R knows the expected sequence of arguments (this is called positional argu
 </div>
 </div>
 <p>With this data, you can make a table in Excel to summarize descriptive statistics of seashell lengths of the three species.</p>
-<p><img src="Images/Mean%20shell%20length%20by%20species.png" id="fig-meanshell" class="img-fluid"></p>
+<p><img src="Images/Mean%20shell%20length%20by%20species.png" id="fig-meanshell" class="img-fluid" width="300"></p>
 <section id="boxplot" class="level4">
 <h4 class="anchored" data-anchor-id="boxplot">Boxplot</h4>
 <p>Boxplot is a good way to visually examine your data before running any analysis. It will show you the distribution of the data and any outlines. For most test we assume that the data is normally distributed. There are ways to deal with non-normally distributed data, but they are not covered in this guide.</p>
@@ -559,7 +559,7 @@ Since R knows the expected sequence of arguments (this is called positional argu
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> seashells, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Length_cm)) <span class="sc">+</span> </span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In the ggplot command, we are telling it to look for the data in seashells, and then plot Species on the x and Length_cm on the y axis. Then geom_boxplot() specifies the type of plot to use </span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -666,7 +666,7 @@ sample estimates:
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Plant_height_cm <span class="sc">-</span> sd, <span class="at">ymax =</span> Plant_height_cm <span class="sc">+</span> sd), <span class="at">width =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatment"</span>, <span class="at">y =</span> <span class="st">"Plant height (cm)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that we are NOT using the raw data (fertilizer) here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -689,14 +689,14 @@ You will need at least the first two lines (connected by +) to build a ggplot. F
 <section id="exporting-graphs" class="level4">
 <h4 class="anchored" data-anchor-id="exporting-graphs">Exporting graphs</h4>
 <p>To export your plot from Posit Cloud, go to the <code>Plot</code> tab on the Files Panel and click <code>Export</code>.</p>
-<p><img src="Images/export_graph.png" class="img-fluid"></p>
+<p><img src="Images/export_graph.png" class="img-fluid" width="300"></p>
 <ul>
 <li><p>You can simple do <code>Copy to Clipboard</code> and paste the figure into other programs on your computer. This option may not work for all programs and operation systems.</p></li>
 <li><p>With <code>Save as Image…</code>, you can adjust the image size so that the font size and image size would fit the document where you intend to use the image for (e.g., lab report, presentation, or poster). You should enter an informative name in the box next to <code>File name:</code>.</p></li>
 </ul>
 <p>After exporting the figure, it will appear as an image file in the Files Panel in Posit Cloud or as a file in the project’s folder in RStudio on your computer. For Posit Cloud, you should download the image file to your computer.</p>
 <p>In the Files Panel, check the box next to the image file that you want to download. Click <code>More</code> and choose <code>Export</code>. In the pop-up window, click <code>Download</code>.</p>
-<p><img src="Images/download_graph.png" class="img-fluid" width="542"></p>
+<p><img src="Images/download_graph.png" class="img-fluid" width="450"></p>
 </section>
 <section id="boxplot-1" class="level4">
 <h4 class="anchored" data-anchor-id="boxplot-1">Boxplot</h4>
@@ -706,7 +706,7 @@ You will need at least the first two lines (connected by +) to build a ggplot. F
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatment"</span>, <span class="at">y =</span> <span class="st">"Plant height (cm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Type <code>?geom_boxplot</code> in the Console Panel to show the help page for <code>geom_boxplot()</code>. The values displayed by the hinges and whiskers are explained in the section “Summary statistics”. Note that SD and SE are not displayed in the boxplot.</p>
@@ -882,13 +882,13 @@ Medium - Zero     -215.2 0.0007     *** -339.063656  -91.33634</code></pre>
 <span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>CFU<span class="sc">-</span>sd, <span class="at">ymax=</span>CFU<span class="sc">+</span>sd), <span class="at">width=</span>.<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Penicillin concentration"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Your final figure should include the post hoc letters, similar to the figure below. You can export the graph to add the letters manually. Alternatively, you can do it in R. See Appendix 2. <a href="#adding-post-hoc-grouping-into-bar-graph-and-boxplot">Adding post hoc grouping into bar graph and boxplot</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 </section>
@@ -900,7 +900,7 @@ Medium - Zero     -215.2 0.0007     *** -339.063656  -91.33634</code></pre>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Penicillin concentration"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If needed add this command to rotate and right-justify the axis text. </span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># + theme(axis.text.x = element_text(angle = 90, hjust = 1))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -998,7 +998,7 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> F, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Chirps per minute"</span>, <span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Temperature "</span> ( degree<span class="sc">*</span>C)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-53-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-53-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p><u>Always do the following (regardless of the result):</u> Make sure your axes are labeled properly in Title Case and include units of measure.</p>
@@ -1009,7 +1009,7 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Chirps per minute"</span>, <span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Temperature "</span> ( degree<span class="sc">*</span>C)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Some instructors or journals prefer to display an insignificant trend with a dashed line:</p>
@@ -1019,7 +1019,7 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> F, <span class="at">color =</span> <span class="st">"grey"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Chirps per minute"</span>, <span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Temperature "</span> ( degree<span class="sc">*</span>C)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-55-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <hr>
@@ -1032,7 +1032,7 @@ F-statistic: 48.47 on 1 and 8 DF,  p-value: 0.000117</code></pre>
 <section id="chi-square---goodness-of-fit-test" class="level3">
 <h3 class="anchored" data-anchor-id="chi-square---goodness-of-fit-test"><strong>Chi-square - Goodness of Fit test</strong></h3>
 <p>The <strong>Goodness of Fit test</strong> is used to determine if the observed result (i.e.&nbsp;collected during an experiment) is significantly different than the “expected” result (i.e.&nbsp;that based on the laws of probability). It involves calculating the degrees of freedom (DF), which corresponds to the following equation: DF = (C – 1) where C is the number of categories. It also involves calculating the Chi-square value (X<sup>2</sup>), which corresponds to the following equation: X<sup>2</sup> = <span class="math inline">\(\sum{D^2/E}\)</span> where D is the difference between the observed result (O) and the expected result (E). The biologist determines if the X<sup>2</sup> value is less than the “critical” X<sup>2</sup> value for an experiment with a particular DF to determine if there is a significant difference (p value &lt; 0.05) between the observed and expected result.</p>
-<p><img src="Images/chisq.png" id="chisq" class="img-fluid" alt="Chi-square">.</p>
+<p><img src="Images/chisq.png" id="chisq" class="img-fluid" width="450" alt="Chi-square">.</p>
 <p>Let’s say that you have crustaceans and test their preference for a light or dark environment. In this example there is only ONE variable: the observed preference (are they in the light or dark when you check on them?). You want to see if the distribution of crustaceans is random (roughly 50% in the light and 50% in the dark because they have no preference and distribute according to the laws of probability) OR if the distribution is non-random because they prefer either dark or light.</p>
 <p>The <strong>null hypothesis</strong> for this test is that the variable of interest (light/dark environment) will have no impact on the distribution of the data. In other words, the null hypothesis assumes a random distribution, which means the <strong>observed is no different from the expected</strong>. If p&gt;0.05, you accept the null.</p>
 <p>A <strong>significant result</strong> (p&lt;0.05) means the distribution of your <strong>observed data is different than expected</strong>; it is non-random.</p>
@@ -1101,7 +1101,7 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 <p>There are several ways of visually representing X<sup>2</sup> results in either a figure or a table. Ask your instructor about their preference.</p>
 <p><em>For a table</em>:</p>
 <p>The table should be <u>a simplified version</u> of the table R used to run the analysis.</p>
-<p><img src="Images/chisq_table.png" id="fig-chisq_table" class="img-fluid"></p>
+<p><img src="Images/chisq_table.png" id="fig-chisq_table" class="img-fluid" width="450"></p>
 <p><em>For a graph</em>:</p>
 <p>The type of graph used to display frequency (count) data is called a histogram.</p>
 <p>You can plot the data for a goodness-of-fit Chi-square test by using the raw data in <code>crust_sp1</code>.</p>
@@ -1110,7 +1110,7 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-60-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-60-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Alternative, you could also plot using the count data <code>crust_table</code> after converting it to a dataframe:</p>
@@ -1119,7 +1119,7 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-61-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-61-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fill tells R to color the bar by Var1</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># you can remove the side legend by adding:</span></span>
@@ -1133,7 +1133,7 @@ X-squared = 6, df = 1, p-value = 0.01431</code></pre>
 <p>For example, let’s imagine that we want to know whether two different species of crustaceans exhibit the same preference for light or dark. In other words, is the preference for light or dark contingent on which species it is? To find this out one uses a version of a Chi-square test known as a contingency table.</p>
 <p>In this case, your <strong>independent variable</strong> is species and your <strong>dependent variable</strong> is preference (because you think preference might depend on species); your null hypothesis is that there is no difference in the preference for light versus dark between Species 1 and 2. When you run a contingency test you produce a X<sup>2</sup> value as in the Goodness of Fit test. If the X<sup>2</sup> value is large enough (leading to p&lt;0.05), then you can reject the null hypothesis that the proportion of crustaceans showing a preference for light is <strong>not different</strong> between the two species, and state that the data shows that the preference for light or dark <strong>is contingent</strong> on the species. Another way to say the same thing: the two species show significantly different preferences for light.</p>
 <p>Let’s imagine that we test the preference of two crustacean species for light versus dark and compare the preferences. The values could be arranged in a table like the one below.</p>
-<p><img src="Images/Contingency_data.png" id="fig-Contingency_data" class="img-fluid"></p>
+<p><img src="Images/Contingency_data.png" id="fig-Contingency_data" class="img-fluid" width="450"></p>
 <p>If the preferences of the two species were the same, they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences? Note that the total number of observations/ occurrences does not have to be the same for both species. A contingency test will correct for different sizes between samples.</p>
 <p>We will begin by creating the data for species 2. Alternatively, according to <a href="#vi.-importing-data-into-r">VI. Importing data into R</a>, import <code>crust_sp2.csv</code> from the shared drive (<a href="https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing">here</a> or <a href="https://tinyurl.com/5dpk43x7" class="uri">https://tinyurl.com/5dpk43x7</a>) as a daraframe named <code>crust_sp2</code>.</p>
 <div class="cell">
@@ -1208,7 +1208,7 @@ X-squared = 19.286, df = 1, p-value = 1.125e-05</code></pre>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crust_twoSp, <span class="fu">aes</span>(<span class="at">x =</span> Result)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>Crustacean) <span class="sc">+</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Result"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-66-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-66-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <hr>
@@ -1381,7 +1381,7 @@ It is a good practice to keep a record of all editing in your R script and to no
 <span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatment"</span>, <span class="at">y =</span> <span class="st">"Plant height (cm)"</span>) <span class="sc">+</span></span>
 <span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> fertilizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-75-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-75-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It requires adding a new argument geom_point(), where the arguments specify getting the raw data from fertilizer and "jittering" the points to avoid overlapping points with the same values. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1392,7 +1392,7 @@ It is a good practice to keep a record of all editing in your R script and to no
 <span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Treatment"</span>, <span class="at">y =</span> <span class="st">"Plant height (cm)"</span>) <span class="sc">+</span></span>
 <span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-76-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-76-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 <div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There is no outlier point in this example!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1435,7 +1435,7 @@ It is a good practice to keep a record of all editing in your R script and to no
 <span id="cb105-12"><a href="#cb105-12" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max <span class="sc">+</span> <span class="fu">max</span>(Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
 <span id="cb105-13"><a href="#cb105-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-78-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-78-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 <p>Boxplot:</p>
@@ -1448,7 +1448,7 @@ It is a good practice to keep a record of all editing in your R script and to no
 <span id="cb106-6"><a href="#cb106-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">y =</span> Max<span class="sc">+</span><span class="fu">max</span>(Max)<span class="sc">*</span><span class="fl">0.1</span>, </span>
 <span id="cb106-7"><a href="#cb106-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">label =</span> groups))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-79-1.png" class="img-fluid" width="672"></p>
+<p><img src="BigRedStatisticsInR_files/figure-html/unnamed-chunk-79-1.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>
 </section>
