@@ -204,7 +204,7 @@ Then click `Create Project`. Now you can access all files in the folder `R_is_fu
 
 ## C. Starting an R script
 
-Once your project is opened, you should create an **R script**. The R script is a text file where your R commands and notes (after hashtags \#) will be saved.
+Once your project is opened, you should create an **R script**. The R script is a text file where your R commands and notes (after hashtags #) will be saved.
 
 To do this, click `File > New File > R Script`.
 
@@ -264,7 +264,7 @@ install.packages("agricolae")
 
 Alternatively, you can install packages from the `Package` tab on the Files Panel (Panel D). Click `Install` and type the package name in the box (it will auto-complete for you to prevent typos).
 
-![](Images/install_package.png){width="237"}
+![](Images/install_package.png){width="207"}
 
 ### Loading packages
 
@@ -313,7 +313,7 @@ data_name = read.csv(file = "name.csv")
 
 | Here is a breakdown of the R syntax:
 
-| `data_name` is a name of the **object** (in the form of a dataframe, see below) that we are assigning to the output of `read.csv(file = "name.csv")` via a `=` sign.
+| `data_name` is a name of the **object** (in the form of a data frame, see below) that we are assigning to the output of `read.csv(file = "name.csv")` via a `=` sign.
 | 
 | `read.csv()` is a function. It is typically shown in blue.
 | 
@@ -344,14 +344,14 @@ data_name
 
 As shown above, when you view an object in the console panel, the file has loaded correctly. The 9 rows and 4 columns are present, as well as the column names.
 
-The object is a *dataframe*, which stores a two-dimensional table that is like a spreadsheet with columns and rows. There are many other classes of R object, see [here](https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/) for other classes in R. We will only be using dataframes in this guide.
+The object is a *data frame*, which stores a two-dimensional table that is like a spreadsheet with columns and rows. There are many other classes of R object, see [here](https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/) for other classes in R. We will only be using data frames in this guide.
 
 ```{r}
 class(data_name)
 
 ```
 
-With dataframe, you can show the column titles with:
+With data frame, you can show the column titles with:
 
 ```{r}
 names(data_name)
@@ -379,13 +379,13 @@ Tips:
 
 Let's say that you measure the length of 12 seashells. Here are the instructions for determining the mean and standard deviation using R:
 
-Follow the instructions in the previous section to enter your continuous data into a new dataframe called `seashells`. In this case your dependent variable is `Length_cm` of the seashells.
+Follow the instructions in the previous section to enter your continuous data into a new data frame called `seashells`. In this case your dependent variable is `Length_cm` of the seashells.
 
 For example, you can first enter your data into Excel, save it as `seashells.csv`, and upload that to your project's directory in Posit.
 
 ![](Images/seashell%20data%20in%20excel.png){#fig-seashellexcel width="103"}
 
-Then you can load it as a dataframe called `seashells`
+Then you can load it as a data frame called `seashells`
 
 ```{r, eval=FALSE}
 seashells = read.csv("seashells.csv")
@@ -413,9 +413,9 @@ class(seashells$Length_cm)
 
 ```
 
-| `$` is an "operator" to get a column from a dataframe's table.
+| `$` is an "operator" to get a column from a data frame's table.
 
-`seashells$Length_cm` means that from the dataframe `seashells`, show the column called `Length_cm`. \| \| Then, the function `class()` is applied to the column to examine the "class" of the column, which will typically be "numeric" for a continuous variable and "character" for a categorical variable.
+`seashells$Length_cm` means that from the data frame `seashells`, show the column called `Length_cm`. \| \| Then, the function `class()` is applied to the column to examine the "class" of the column, which will typically be "numeric" for a continuous variable and "character" for a categorical variable.
 
 Generate a quick histogram of the data, if you have a continuous variable.
 
@@ -443,7 +443,7 @@ seashell_length_summary
 You can also calculate the means and standard deviations of different groups at the same time. Let's say you measured 12 shells again, but in this experiment you used 3 different species. You can calculate the means and standard deviations of the different species by inputting your data in the following way:
 
 ```{r}
-# We will add another column to the dataframe
+# We will add another column to the data frame
 seashells$Species = c(rep("Species1", 4), 
                       rep("Species2", 4), 
                       rep("Species3", 4))
@@ -469,7 +469,7 @@ With this data, you can make a table in Excel to summarize descriptive statistic
 
 #### Boxplot
 
-Boxplot is a good way to visually examine your data before running any analysis. It will show you the distribution of the data and any outlines. For most test we assume that the data is normally distributed. There are ways to deal with non-normally distributed data, but they are not covered in this guide.
+Boxplot is a good way to visually examine your data before running any analysis. It will show you the distribution of the data and any outlines. For most test we assume that the data is normally distributed. There are ways to deal with non-normally distributed data, but they are not covered in this guide (e.g., transformation or generalized linear models).
 
 ```{r, out.width="50%"}
 # Note that we use the RAW data, not the summarized data from summarySE for boxplot.
@@ -507,12 +507,12 @@ A **t-test is used when the independent variable is nominal (categorical) and ha
 
 Let's say that you want to test if a fertilizer has a significant effect on the growth of plants. You measure the height of 10 plants, 5 grown with just soil and 5 grown with soil and added fertilizer. Both groups are grown for the same length of time. Here are the instructions for performing a t-test (for comparing two groups) using R:
 
-According to [VI. Importing data into R], import `fertilizer.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a daraframe named `fertilizer`. Also, be sure you are [Loading packages].
+According to [VI. Importing data into R], import `fertilizer.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a data frame named `fertilizer`. Also, be sure you are [Loading packages].
 
-(See [Appendix 3. Create dataframes in R] if you want to create a dataframe manually in R.)
+(See [Appendix 2. Create data frames in R] if you want to create a data frame manually in R.)
 
 ```{r, echo=FALSE}
-# Make a dataframe called fertilizer
+# Make a data frame called fertilizer
 fertilizer = data.frame("Treatment" = c(rep("Soil", 5), 
                                         rep("Soil+fertilizer", 5)),
                         "Plant_height_cm" = c(10.5, 13, 9, 11, 14, 
@@ -528,7 +528,7 @@ write.csv(fertilizer, "./csv files/fertilizer.csv", row.names = F)
 ```
 
 ```{r}
-# This is what the dataframe should look like:
+# This is what the data frame should look like:
 fertilizer
 
 ```
@@ -562,9 +562,9 @@ You can plot the continuous variable from two groups with a bar graph or boxplot
 
 #### Bar graph
 
-In this example, we will use the dataframe `fertilizer`, which was used above for the t-test. We will plot the mean `Plant_height_cm` across different `Treatment` and add an error bar that represents the standard deviation (or standard error if needed).
+In this example, we will use the data frame `fertilizer`, which was used above for the t-test. We will plot the mean `Plant_height_cm` across different `Treatment` and add an error bar that represents the standard deviation (or standard error if needed).
 
-Because the dataframe `fertilizer` does not have the mean or standard deviation, we will use `summarySE()` to generate the mean, SD, and SE by group, similar to how we generated descriptive statistics in [VII. How to generate descriptive statistics].
+Because the data frame `fertilizer` does not have the mean or standard deviation, we will use `summarySE()` to generate the mean, SD, and SE by group, similar to how we generated descriptive statistics in [VII. How to generate descriptive statistics].
 
 ```{r, warning=FALSE}
 # We will store the result of summarySE as a new object called heightXtrt_summary
@@ -583,30 +583,41 @@ heightXtrt_summary
 We can then use `heightXtrt_summary` to build a bar graph.
 
 ```{r, out.width="50%"}
+# Note that we are NOT using the raw data (fertilizer) here!
+
 ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + 
-  geom_col( fill = "lightblue", color = "black") + 
+  geom_col(fill = "lightblue", color = "black") + 
   geom_errorbar(aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd), width = 0.2) + 
   labs(x = "Treatment", y = "Plant height (cm)") 
 
-# Note that we are NOT using the raw data (fertilizer) here!
 ```
 
 | The `ggplot` function is from the `ggplot2` package. It results multiple functions connected by `+`. The new line are not required, but are used for a better organization of the codes.
 | 
-| `ggplot()` specifies a dataframe used for plotting with `data = heightXtrt_summary` and the x and y variables to use with `aes(x = Treatment, y = Plant_height_cm)`.
+| `ggplot()` specifies a data frame used for plotting with `data = heightXtrt_summary` and the x and y variables to use with `aes(x = Treatment, y = Plant_height_cm)`.
 | 
 | `geom_col()` adds the bar graph.
-| The bar graph to display the values in the column `Plant_height_cm`, which are the means of `Plant_height_cm` grouped by `Treatment` in the object `heightXtrt_summary.` Then, `fill="lightblue"` and `color = "black"` controls the color of the box and the color of the outline, respectively.
+| The bar graph displays the values in the column `Plant_height_cm` as y, which are the means of `Plant_height_cm` grouped by `Treatment` in the object `heightXtrt_summary`.
+| Then, `fill="lightblue"` and `color = "black"` controls the color of the box and the color of the outline, respectively. You can see all colors [here](https://r-charts.com/colors/).
 | 
 | `geom_errorbar()` adds the error bar.
-| The argument `aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd)` specifies the coordinates of the top and bottom of the error bar. In this case, the error bar will begin at (ymin) the mean minus SD and end at (ymax) the mean plus SD).
+| The argument `aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd)` specifies the coordinates of the top and bottom of the error bar. In this case, the error bar will begin (ymin) at the mean minus SD and end (ymax) at the mean plus SD).
 | The argument `width = 0.2` controls the width of the error bar.
 | 
 | The last line `labs(x = "Treatment", y = "Plant height (cm)")` specifies the x and y axis labels.
 | 
-| You will need at least the first two lines (connected by +) to build a ggplot. For example: `ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) +    geom_bar(stat="identity")`
+| You will need at least the first two lines (connected by +) to build a ggplot. For example: `ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + geom_col()`
 
-See the Appendix if you want to overlay data points on the graph.
+When visualizing data, it is sometime beneficial to show the raw data. We can overlap the data points on a bar graph using `geom_jitter()`, which spreads out the points horizontally to avoid overlapping points with the y-values.
+
+```{r, out.width="50%"}
+ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + 
+  geom_col(fill = "lightblue", color = "black") + 
+  geom_errorbar(aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd), width = 0.2) + 
+  labs(x = "Treatment", y = "Plant height (cm)") +
+  geom_jitter(data = fertilizer)
+
+```
 
 #### Exporting graphs
 
@@ -635,9 +646,20 @@ ggplot(data = fertilizer, aes(x = Treatment, y = Plant_height_cm)) +
   labs(x = "Treatment", y = "Plant height (cm)")
 ```
 
-Type `?geom_boxplot` in the Console Panel to show the help page for `geom_boxplot()`. The values displayed by the hinges and whiskers are explained in the section "Summary statistics". Note that SD and SE are not displayed in the boxplot.
+Type `?geom_boxplot` in the Console Panel to show the help page for `geom_boxplot()`. The values displayed by the hinges and whiskers are explained in the section "Summary statistics". Note that the boxplot does not display SD and SE.
 
-See the Appendix if you want to overlay data points on the graph.
+You can also overlay the raw data point in a boxplot
+
+```{r, out.width="50%"}
+# There is no outlier data in this example. However, when an outlier is present, it will be displayed as a point by geom_boxplot(). 
+# The argument outlier.colour = "grey" is used to specify the color of the outlier point to be different from points generated by geom_jitter. You can even turn off all outlier by outlier.color = NA.
+
+ggplot(data = fertilizer, aes(x = Treatment, y = Plant_height_cm)) + 
+  geom_boxplot(outlier.colour = "grey") +
+  labs(x = "Treatment", y = "Plant height (cm)")+
+  geom_jitter(width = 0.1) 
+
+```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide'}
 # 210 Example: T test (For Faculty only)
@@ -679,7 +701,7 @@ ggplot(data = TwoTen_data, aes(x = AminoAcid, y = Values)) +
 
 # Yes, glucose is not Amino acid! Dispite the wrong labal in the data, we can change it in the plot.
 
-# If you need to change the (column) name on the dataframe, please see the section "Editing data in .csv and dataframe"
+# If you need to change the (column) name on the data frame, please see the section "Editing data in .csv and data frame"
 ```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide', out.width="50%"}
@@ -692,7 +714,7 @@ TwoTen_data_summary = summarySE(TwoTen_data, "Values", "AminoAcid")
 # Bar graph
 
 ggplot(data = TwoTen_data_summary, aes(x = AminoAcid, y = Values)) + 
-  geom_bar(stat="identity") +
+  geom_col() +
   geom_jitter(data = TwoTen_data, width = 0.1, height = 0) +
     geom_errorbar(aes(ymin=Values-sd, ymax=Values+sd), width=.2,
                  position=position_dodge(.9)) +
@@ -713,7 +735,7 @@ Let's say you want to measure the effectiveness of penicillin in disrupting *E. 
 
 **Here are the instructions for performing an ANOVA (for comparing more than 2 groups) in R:**
 
-According to [VI. Importing data into R], import `penicillin.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a daraframe named `penicillin`. Also, be sure you are [Loading packages].
+According to [VI. Importing data into R], import `penicillin.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a data frame named `penicillin`. Also, be sure you are [Loading packages].
 
 ```{r, echo=FALSE}
 
@@ -734,7 +756,7 @@ write.csv(penicillin, "./csv files/penicillin.csv", row.names = F)
 ```
 
 ```{r}
-# This is what the dataframe should look like:
+# This is what the data frame should look like:
 penicillin
 ```
 
@@ -793,7 +815,7 @@ hsd
 
 Under `$groups`, the letters indicate which groups are significantly different from each other in a post hoc test. Groups with the same letter are not significantly different from each other (e.g., Zero and Low, which both have "a"), while groups with different letters are significantly different (e.g., Medium and High, which has "b" and "c", respectively).
 
-You can also show the p value of each comparison with:
+You can find the p value of each comparison with:
 
 ```{r}
 HSD.test(p_anova_model, trt = "Penicillin_conc", group = F, console = T)
@@ -805,35 +827,48 @@ HSD.test(p_anova_model, trt = "Penicillin_conc", group = F, console = T)
 
 Similar to a t-test, we can create a bar graph with error bars after using `summarySE()` to generate the mean, SD, and SE for each predictor group.
 
-After you export the figure, you can use Words, PowerPoints, Preview (Macs), or other software to add the post hoc letter labels from `hsd`. Alternatively, you can do this using codes in R. See Appendix 2 Advanced graphing.
-
 ```{r, out.width="50%"}
 penicillin_summary = summarySE(data = penicillin, measurevar = "CFU", groupvars = "Penicillin_conc")
 
 ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
-  geom_bar(stat="identity") + 
-  geom_errorbar(aes(ymin=CFU-sd, ymax=CFU+sd), width=.2) +
+  geom_col() + 
+  geom_errorbar(aes(ymin = CFU - sd, ymax = CFU + sd), width = .2) +
   labs(x = "Penicillin concentration") 
 ```
 
-Your final figure should include the post hoc letters, similar to the figure below. You can export the graph to add the letters manually. Alternatively, you can do it in R. See Appendix 2. [Adding post hoc grouping into bar graph and boxplot].
+Your final figure should include the post hoc letters from `hsd`. You could export the graph to add the letters manually. Alternatively, you can do it in R using the data frames `penicillin`, `penicillin_summary`, and `hsd` created above.
 
-```{r, echo=FALSE, out.width="50%"}
-# add group letters
+```{r}
+# We will use the letters from hsd to build a temporary data frame (temp_label) to help us label the plot. It will have the data from hsd$means and the group letters from hsd$groups. 
 
 temp_label = merge(hsd$means, hsd$groups, by = c("row.names", names(hsd$means)[1]))
 
+# We need to have a column called Penicillin_conc so that ggplot can refer to this column. Instead of manually specifying the column name, we will retrieve it from hsd$parameters$name.t 
+
 names(temp_label)[1] = hsd$parameters$name.t 
 
-ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
-  geom_bar(stat="identity") + 
-  geom_errorbar(aes(ymin=CFU-sd, ymax=CFU+sd), width=.2,
-                 position=position_dodge(.9)) +
+temp_label
+```
+
+Bar plot:
+
+```{r, out.width="50%"}
+# Here, geom_text takes data from temp_label and add the post hoc letters to the plot.  
+# as.factor(Penicillin_conc) is used in case the column is numeric instead of categorical
+# y = Max + max(Max)*0.1 calculates a y-coordinate to place the label based on the Max values of the data.
+# Jittered data point is included here for your reference.
+
+ggplot(data = penicillin_summary, aes(x = as.factor(Penicillin_conc), y = CFU)) +
+  geom_col() + 
+  geom_errorbar(aes(ymin = CFU - sd, ymax = CFU + sd), 
+                width=.2, outlier.color = NA) +
   labs(x = "Penicillin concentration") + 
-  #geom_jitter(data = penicillin, aes(x = Penicillin_conc, y = CFU), width = 0.2) + 
-    geom_text(data = temp_label, aes(x = Penicillin_conc, 
+  geom_jitter(data = penicillin, aes(x = Penicillin_conc, y = CFU), 
+              width = 0.2) + 
+  geom_text(data = temp_label, aes(x = Penicillin_conc, 
                                    y = Max + max(Max)*0.1, 
                                    label = groups))
+
 ```
 
 #### **Box plot**
@@ -848,6 +883,22 @@ ggplot(data = penicillin, aes(x = Penicillin_conc, y = CFU)) +
 # If needed add this command to rotate and right-justify the axis text. 
 # + theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
+
+Similar to the bar plot, we can overlay the raw data and post hoc letters to a boxplot.
+
+```{r, out.width="50%"}
+
+ggplot(data = penicillin, aes(x = Penicillin_conc, y = CFU)) + 
+  geom_boxplot(outlier.colour = NA) +
+  geom_jitter(width = 0.1, height = 0) + 
+  labs(x = "Penicillin concentration") + 
+  geom_text(data = temp_label, aes(x = Penicillin_conc, 
+                                   y = Max+  max(Max)*0.1, 
+                                   label = groups))
+
+```
+
+###  {data-link="Adding post hoc grouping into bar graph and boxplot"}
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide'}
 
@@ -940,7 +991,7 @@ ggplot(data = ames, aes(x = treatment, y = values)) +
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE, fig.show='hide'}
 
 # We can then add the letters. 
-# But we first need to extract the letters from hsd to build a dataframe to help us label the plot
+# But we first need to extract the letters from hsd to build a data frame to help us label the plot
 
 ames_temp_label = merge(ames_hsd$means, ames_hsd$groups, by = c("row.names", names(ames_hsd$means)[1]))
 
@@ -956,7 +1007,7 @@ ames_temp_label
 ames_summary = summarySE(data = ames, measurevar = "values", groupvars = "treatment")
 
 ggplot(data = ames_summary, aes(x = treatment, y = values)) +
-  geom_bar(stat="identity", fill = "lightblue") + 
+  geom_col(fill = "lightblue") + 
   geom_errorbar(aes(ymin=values-sd, ymax=values+sd), width=.2,
                  position=position_dodge(.9)) +
   labs(x = "Treatments", y = "CFU") + 
@@ -978,13 +1029,13 @@ A linear regression is employed to determine if there is a relationship between 
 
 Let's say that you want to determine if the chirp rates of the snowy tree cricket are related to temperature. You measure the temperature and the rate of 10 chirping crickets at those respective temperatures. Since crickets are ectotherms and their metabolism is affected by their external environment, we should expect to see an increase in chirping as temperature increases.
 
-According to [VI. Importing data into R], import `chirps.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a daraframe named `chirps`. Also, be sure you are [Loading packages].
+According to [VI. Importing data into R], import `chirps.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a data frame named `chirps`. Also, be sure you are [Loading packages].
 
 We have two continuous variables `temperature` and `chips_per_min`.
 
 ```{r, echo=FALSE}
 
-# Create a dataframe called chirps using the command data.frame()
+# Create a data frame called chirps using the command data.frame()
 # Inside data.frame(), we provide the name of a column with "temperature = " and the value of each row with c().
 
 chirps = data.frame(temperature = c(31, 22, 34, 29, 27, 24, 21, 29, 26, 29), chirps_per_min = c(79, 64, 79, 73, 69, 62, 59, 70, 64, 68))
@@ -994,7 +1045,7 @@ write.csv(chirps, "./csv files//chirps.csv", row.names = F)
 ```
 
 ```{r}
-# Display the dataframe chirps
+# Display the data frame chirps
 chirps
 ```
 
@@ -1051,7 +1102,7 @@ Therefore, we can write a statement to summarize the result and provide statisti
 
 #### Scatter plot / Line plot
 
-For the dataframe `chirps`, we will plot `temperature` as the predictor (independent) variable on the X axis and chirps_per_min as the response (dependent) variable on the Y axis. A linear regression line will be added.
+For the data frame `chirps`, we will plot `temperature` as the predictor (independent) variable on the X axis and chirps_per_min as the response (dependent) variable on the Y axis. A linear regression line will be added.
 
 ```{r, message=FALSE, out.width="50%"}
 ggplot(data = chirps, aes(x = temperature, y = chirps_per_min)) + 
@@ -1105,7 +1156,7 @@ The goodness of fit Chi-square test is used to test whether the distribution of 
 
 For example, in a species of crustacean, we counted the number of individuals that prefer a light and a dark treatment. We may expect the light:dark ratio to be 1:1 and we can test it with the chi-square goodness of fit test.
 
-According to [VI. Importing data into R], import `crust_sp1.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a daraframe named `crust_sp1`. Also, be sure you are [Loading packages].
+According to [VI. Importing data into R], import `crust_sp1.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a data frame named `crust_sp1`. Also, be sure you are [Loading packages].
 
 ```{r, echo=FALSE}
 crust_sp1 = data.frame(Crustacean = "Species 1", Result = c("light", "light", "dark", "light", "light", "light", "light", "light", "dark", "dark", "light", "light", "light", "light", "light", "light", "light", "dark", "dark", "dark", "light", "light", "light", "light"))
@@ -1113,16 +1164,14 @@ crust_sp1 = data.frame(Crustacean = "Species 1", Result = c("light", "light", "d
 write.csv(crust_sp1, "./csv files//crust_sp1.csv", row.names = F)
 ```
 
-We will create a :
+We will create a file in a "long form":
 
 ```{r}
-
-# This file may be similar to how your raw data will look in a “long form”
 
 crust_sp1
 ```
 
-We can convert this into the "short form" :
+We can convert this into the "short form":
 
 ```{r}
 crust_table = table(crust_sp1[,"Result"])
@@ -1130,10 +1179,21 @@ crust_table = table(crust_sp1[,"Result"])
 crust_table
 ```
 
+With your own data, you could directly enter the counts in the short form as a data frame:
+
+```{r}
+crust_df = data.frame("Treatment" = c("dark", "light"), "Count" = c(6, 18))
+
+crust_df
+```
+
 We can then test whether the observed distribution of `Result` is equally distributed among the two groups (i.e., 1:1) using `chisq.test()`.
 
 ```{r}
 chisq.test(x = crust_table)
+
+# You can do the same analysis with the count data in a data frame
+# chisq.test(crust_df2$Count)
 ```
 
 The X-squared value (6) is the "Pearson" test chi-square value. It is used, with the degrees of freedom (df) value, to obtain the p-value from a chi-squared table.
@@ -1157,21 +1217,29 @@ The type of graph used to display frequency (count) data is called a histogram.
 You can plot the data for a goodness-of-fit Chi-square test by using the raw data in `crust_sp1`.
 
 ```{r, out.width="50%"}
-ggplot(data = crust_sp1, aes(x = Result)) + 
+ggplot(data = crust_sp1, aes(x = Result, fill = Result)) +  # fill tells R to color the bar by Result
   geom_bar() +
-  labs(x = "Result", y = "Count")
+  labs(x = "Result", y = "Count") + 
+  theme(legend.position = "none") # remove the side legend
 ```
 
-Alternative, you could also plot using the count data `crust_table` after converting it to a dataframe:
+Alternative, you could also plot using the count data `crust_table` after converting it to a data frame. You can also use `crust_df` directly.
 
-```{r, out.width="50%"}
+```{r, fig.keep = "none"}
 ggplot(data.frame(crust_table), aes(Var1, Freq, fill = Var1)) + 
   geom_col() + 
-  labs(x = "Result", y = "Count")
+  labs(x = "Result", y = "Count") + 
+  theme(legend.position = "none") 
 
-# fill tells R to color the bar by Var1
-# you can remove the side legend by adding:
-# + theme(legend.position = "none")
+```
+
+You can make the same plot using the count data in a data frame.
+
+```{r, fig.keep = "none"}
+ggplot(crust_df, aes(Treatment, Count, fill = Treatment)) + 
+  geom_col() + 
+  labs(x = "Result", y = "Count") + 
+  theme(legend.position = "none") 
 ```
 
 ### Chi-square - Contingency test
@@ -1188,7 +1256,7 @@ Let's imagine that we test the preference of two crustacean species for light ve
 
 If the preferences of the two species were the same, they should each have roughly the same frequencies as the pooled results, which show animals split between dark and light, with possibly a small preference for dark (28 dark and 20 light). Do species 1 and 2 appear to have similar preferences? Note that the total number of observations/ occurrences does not have to be the same for both species. A contingency test will correct for different sizes between samples.
 
-We will begin by creating the data for species 2. Alternatively, according to [VI. Importing data into R], import `crust_sp2.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a daraframe named `crust_sp2`.
+We will begin by creating the data for species 2. Alternatively, according to [VI. Importing data into R], import `crust_sp2.csv` from the shared drive ([here](https://drive.google.com/drive/folders/18p2BJvPVNJhLtYQ-HolEADr5Hwpi67JB?usp=sharing) or <https://tinyurl.com/5dpk43x7>) as a dara frame named `crust_sp2`.
 
 ```{r}
 crust_sp2 =  data.frame(Crustacean = "Species 2", Result = c(rep("dark", 22), rep("light", 2)))
@@ -1206,7 +1274,7 @@ crust_twoSp
 
 # The table is very long; so we are not displaying it here.
 
-# rbind() combines two dataframes by adding the second datafrome (crust_sp2) to the bottom on the first dataframe (crust_sp1).
+# rbind() combines two data frames by adding the second datafrome (crust_sp2) to the bottom on the first data frame (crust_sp1).
 
 ```
 
@@ -1219,19 +1287,60 @@ crust_twoSp_table
 
 ```
 
+With your own data, you can choose to enter the counts directly as a data frame:
+
+```{r}
+
+crust_twoSp_df = data.frame("Treatment" = c("dark", "light", 
+                                            "dark", "light"), 
+                            "Count" = c(6, 18, 
+                                        22, 2), 
+                            "Species" = c("Species 1", "Species 1", 
+                                          "Species 2", "Species 2"))
+# Note that the new lines are for display purpose only.
+
+crust_twoSp_df
+```
+
 We can then test the null hypothesis that there is no difference in the preference for light versus dark between Species 1 and 2.
 
 ```{r}
 chisq.test(crust_twoSp_table)
 
+# With the count data in a data frame, it needs to be converted to a table
+# chisq.test(xtabs(Count ~ Species + Treatment, data = crust_twoSp_df))
+
 ```
 
 #### **Visualization**
 
-You can plot the contingency table by `geom_bar()`:
+You can plot the contingency table from the long form using `geom_bar()`:
 
 ```{r, out.width="50%"}
+
 ggplot(data = crust_twoSp, aes(x = Result)) + geom_bar() + facet_grid(~Crustacean) +
+  labs(x = "Result", y = "Count")
+
+```
+
+You can also plot the data using the short form using `geom_col()`:
+
+```{r, fig.keep = "none"}
+
+ggplot(data.frame(crust_twoSp_table), aes(Var2, Freq)) + 
+  # fill tells R to color the bar by Var1
+  geom_col() + 
+  labs(x = "Result", y = "Count") + 
+  facet_grid(~Var1)
+
+```
+
+You can do the same with the data frame.
+
+```{r, fig.keep = "none"}
+ggplot(crust_twoSp_df, aes(Treatment, Count)) +
+  geom_col() +
+  facet_grid(~Species) +
   labs(x = "Result", y = "Count")
 
 ```
@@ -1256,16 +1365,16 @@ Some times you would need to edit your data after loading it into R. There are t
 
     -   Note: If you are using Posit Cloud, this option modifies the .csv file on the cloud, but the file on your computer is NOT modified.
 
-2.  (Advanced) Modify the dataframe that was loaded into R.\
+2.  (Advanced) Modify the data frame that was loaded into R.\
     \
-    It is a good practice to keep a record of all editing in your R script and to not modify the raw data file. To do this, we will modify the dataframe that is already loaded into R, using codes that will be saved in the R script. Keep reading if you want to try this option.
+    It is a good practice to keep a record of all editing in your R script and to not modify the raw data file. To do this, we will modify the data frame that is already loaded into R, using codes that will be saved in the R script. Keep reading if you want to try this option.
 
 After loading the data into R as a data frame, you can modify it using the command line.
 
 We will use `test_df` as an example:
 
 ```{r}
-# Create a dataframe called test_df using the command data.frame()
+# Create a data frame called test_df using the command data.frame()
 
 test_df = data.frame(Pred = c("A","A", "B",'B'), Response = 1:4)
 
@@ -1274,7 +1383,7 @@ test_df = data.frame(Pred = c("A","A", "B",'B'), Response = 1:4)
 # 1:4 is the same as c(1, 2, 3, 4)
 # For non-numeric values inside c(), we need to add "" around the characters.
 
-# Display the dataframe test_df
+# Display the data frame test_df
 test_df
 
 ```
@@ -1328,7 +1437,7 @@ This is best done by knowing the index of the column and row of the cell that ne
 For example, if we want to change the 3 to 300 in test_df:
 
 ```{r}
-# We can first take a look at the dataframe
+# We can first take a look at the data frame
 View(test_df)
 
 ```
@@ -1340,7 +1449,7 @@ test_df[3,2] = 300
 
 test_df
 
-# Note that indexing for dataframe goes from row to column in R
+# Note that indexing for data frame goes from row to column in R
 # R start counting from 1. (While other programming language, like Python, starts at 0.)
 # So [3,2] means row 3 and column 2
 
@@ -1348,7 +1457,7 @@ test_df
 
 ### Combining text from two columns
 
-For example, we have a dataframe called `test_df2` and want to combine the columns `Variable1` and `Variable2` into a new column.
+For example, we have a data frame called `test_df2` and want to combine the columns `Variable1` and `Variable2` into a new column.
 
 ```{r}
 # Create test_df2
@@ -1375,100 +1484,22 @@ test_df2
 
 ------------------------------------------------------------------------
 
-## Appendix 2. Advanced graphing {data-link="How to graph in R"}
+## Appendix 2. Create data frames in R {data-link="How to graph in R"}
 
-### Overlaying data points in bar graph and boxplot
-
-When visualizing data, it is sometime beneficial to show the raw data. We can overlap the data points on a bar graph. This example uses the raw data `fertilizer` and the dataframe `heightXtrt_summary` generated by `summarySE` from [A. T-test].
-
-```{r, out.width="50%"}
-ggplot(data = heightXtrt_summary, aes(x = Treatment, y = Plant_height_cm)) + 
-  geom_bar(stat="identity", fill = "lightblue", color = "black") + 
-  geom_errorbar(aes(ymin = Plant_height_cm - sd, ymax = Plant_height_cm + sd), width = 0.2) + 
-  labs(x = "Treatment", y = "Plant height (cm)") +
-  geom_jitter(data = fertilizer)
-
-# It requires adding a new argument geom_point(), where the arguments specify getting the raw data from fertilizer and "jittering" the points to avoid overlapping points with the same values. 
-
-```
-
-We can do the same for a boxplot. When an outlier is present, it will be displayed as a point by `geom_boxplot()`. Therefore, the argument `outlier.colour = "grey"` is used to specify the color of the outlier point.
-
-```{r, out.width="50%"}
-ggplot(data = fertilizer, aes(x = Treatment, y = Plant_height_cm)) + 
-  geom_boxplot(outlier.colour = "grey") +
-  labs(x = "Treatment", y = "Plant height (cm)") +
-  geom_jitter(width = 0.1) 
-
-# There is no outlier point in this example!
-```
-
-### Adding post hoc grouping into bar graph and boxplot
-
-We will use the dataframe `penicillin`, `penicillin_summary`, and `hsd` created in [B. ANOVA].
+Sometime you may need to create a data frame in R for testing purpose.
 
 ```{r}
-# We can use the letters from hsd to build a dataframe to help us label the plot.
-# temp_label will have the data from hsd$means and the group letters from hsd$groups. 
-
-temp_label = merge(hsd$means, hsd$groups, by = c("row.names", names(hsd$means)[1]))
-
-# We need to have a column called Penicillin_conc so the ggplot can refer to this column. Instead of manually specifying the column name, we will retrieve it from hsd$parameters$name.t 
-
-names(temp_label)[1] = hsd$parameters$name.t 
-
-temp_label
-```
-
-Bar plot:
-
-```{r, out.width="50%"}
-# Then, geom_text takes data from temp_label to add the post hoc letters to the plot.  
-# y = Max + max(Max)*0.1 calculates a y-coordinate to place the label based on the Max values of the data.
-# Jittered data point is included here for your reference.
-
-ggplot(data = penicillin_summary, aes(x = Penicillin_conc, y = CFU)) +
-  geom_bar(stat="identity") + 
-  geom_errorbar(aes(ymin=CFU-sd, ymax=CFU+sd), width=.2,
-                 position=position_dodge(.9)) +
-  labs(x = "Penicillin concentration") + 
-  geom_jitter(data = penicillin, aes(x = Penicillin_conc, y = CFU), width = 0.2) + 
-    geom_text(data = temp_label, aes(x = Penicillin_conc, 
-                                   y = Max + max(Max)*0.1, 
-                                   label = groups))
-
-
-```
-
-Boxplot:
-
-```{r, warning=FALSE, out.width="50%"}
-ggplot(data = penicillin, aes(x = Penicillin_conc, y = CFU)) + 
-  geom_boxplot() +
-  geom_jitter(width = 0.1, height = 0) + 
-  labs(x = "Penicillin concentration") + 
-  geom_text(data = temp_label, aes(x = Penicillin_conc, 
-                                   y = Max+max(Max)*0.1, 
-                                   label = groups))
-
-```
-
-## Appendix 3. Create dataframes in R {data-link="How to graph in R"}
-
-Sometime you may need to create a dataframe in R for testing purpose.
-
-```{r}
-# Make a dataframe called fertilizer2
+# Make a data frame called fertilizer2
 fertilizer2 = data.frame("Treatment" = c(rep("Soil", 5), 
                                         rep("Soil+fertilizer", 5)),
                         "Plant_height_cm" = c(10.5, 13, 9, 11, 14, 
                                               17, 18.5, 20, 16, 17.5))
-
+fertilizer2 
 # Note that the new lines are only used for a better display. They are not interpreted by R.
 
 # rep("Soil", 5) repeats "Soil" five times. It's the same as c("Soil", "Soil", "Soil", "Soil", "Soil")
 
 
-# You can save the dataframe as a csv file:
+# You can save the data frame as a csv file:
 # write.csv(fertilizer2, "fertilizer2.csv", row.names = F)
 ```
